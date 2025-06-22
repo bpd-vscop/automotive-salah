@@ -1,0 +1,370 @@
+﻿E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps
+    admin
+    api
+    web
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment
+    docker
+    scripts
+    windows-server
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\docs
+    api.md
+    deployment.md
+    development.md
+    README.md
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages
+    auth
+    config
+    database
+    trpc
+    types
+    ui
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin
+    app
+    components
+    next.config.js
+    package.json
+    tailwind.config.ts
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api
+    src
+    .env.example
+    Dockerfile
+    package.json
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web
+    app
+    components
+    hooks
+    lib
+    public
+    store
+    .env.local
+    next.config.js
+    package.json
+    tailwind.config.ts
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app
+    (dashboard)
+    login
+    globals.css
+    layout.tsx
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components
+    dashboard
+    forms
+    tables
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)
+    analytics
+    customers
+    inventory
+    orders
+    products
+    layout.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\login
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\analytics
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\customers
+    [id]
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\inventory
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\orders
+    [id]
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products
+    new
+    [id]
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\customers\[id]
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\orders\[id]
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products\new
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products\[id]
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products\[id]\edit
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components\dashboard
+    Header.tsx
+    Sidebar.tsx
+    StatsCards.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components\forms
+    CustomerForm.tsx
+    ProductForm.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components\tables
+    OrderTable.tsx
+    ProductTable.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src
+    middleware
+    services
+    trpc
+    utils
+    app.ts
+    server.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\middleware
+    auth.ts
+    cors.ts
+    rateLimit.ts
+    security.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\services
+    authService.ts
+    emailService.ts
+    orderService.ts
+    paymentService.ts
+    productService.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\trpc
+    routers
+    context.ts
+    root.ts
+    trpc.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\utils
+    errors.ts
+    jwt.ts
+    validation.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\trpc\routers
+    analytics.ts
+    auth.ts
+    customers.ts
+    inventory.ts
+    orders.ts
+    products.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app
+    (account)
+    (auth)
+    (shop)
+    api
+    globals.css
+    layout.tsx
+    loading.tsx
+    not-found.tsx
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components
+    auth
+    checkout
+    product
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\hooks
+    useAuth.ts
+    useCart.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\lib
+    auth.ts
+    trpc.ts
+    utils.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\public
+    icons
+    images
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\store
+    authStore.ts
+    cartStore.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)
+    dashboard
+    orders
+    profile
+    layout.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(auth)
+    login
+    register
+    layout.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)
+    cart
+    categories
+    checkout
+    products
+    layout.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\api
+    auth
+    trpc
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\dashboard
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\orders
+    [orderId]
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\profile
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\orders\[orderId]
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(auth)\login
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(auth)\register
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\cart
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\categories
+    [category]
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\checkout
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\products
+    [slug]
+    page.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\categories\[category]
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\products\[slug]
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\api\auth
+    [...nextauth].ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\api\trpc
+    [trpc].ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components\auth
+    LoginForm.tsx
+    RegisterForm.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components\checkout
+    PaymentForm.tsx
+    ShippingForm.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components\product
+    ProductDetail.tsx
+    ProductReviews.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\public\icons
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\public\images
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment\docker
+    docker-compose.prod.yml
+    docker-compose.yml
+    Dockerfile.admin
+    Dockerfile.api
+    Dockerfile.web
+    nginx.conf
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment\scripts
+    backup.ps1
+    restore.ps1
+    update.ps1
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment\windows-server
+    deploy.ps1
+    install-docker.ps1
+    setup-iis.ps1
+    ssl-setup.ps1
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\auth
+    src
+    package.json
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\config
+    src
+    package.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database
+    prisma
+    src
+    package.json
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\trpc
+    src
+    package.json
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\types
+    src
+    package.json
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui
+    components
+    hooks
+    styles
+    utils
+    components.json
+    index.ts
+    package.json
+    tailwind.config.ts
+    tsconfig.json
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\auth\src
+    hash.ts
+    index.ts
+    jwt.ts
+    validation.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\config\src
+    index.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database\prisma
+    migrations
+    schema.prisma
+    seed.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database\src
+    client.ts
+    index.ts
+    queries.ts
+    types.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database\prisma\migrations
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\trpc\src
+    client.ts
+    index.ts
+    server.ts
+    types.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\types\src
+    index.ts
+    order.ts
+    product.ts
+    user.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components
+    forms
+    layout
+    marketing
+    products
+    ui
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\hooks
+    useDebounce.ts
+    useLocalStorage.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\styles
+    components.css
+    globals.css
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\utils
+    cn.ts
+    formatters.ts
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\forms
+    Button.tsx
+    Input.tsx
+    Select.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\layout
+    footer.tsx
+    HeaderMenu.tsx
+    VehicleSearch.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\marketing
+    BatteryPromo.tsx
+    HeroSlider.tsx
+    ManufacturerLogos.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\products
+    BackInStock.tsx
+    CategoryGrid.tsx
+    FeaturedProducts.tsx
+    NewProductsSection.tsx
+    OnSale.tsx
+    ProductCard.tsx
+E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\ui
+    accordion.tsx
+    alert-dialog.tsx
+    alert.tsx
+    aspect-ratio.tsx
+    avatar.tsx
+    badge.tsx
+    breadcrumb.tsx
+    button.tsx
+    calendar.tsx
+    card.tsx
+    carousel.tsx
+    chart.tsx
+    checkbox.tsx
+    collapsible.tsx
+    command.tsx
+    context-menu.tsx
+    dialog.tsx
+    drawer.tsx
+    dropdown-menu.tsx
+    form.tsx
+    hover-card.tsx
+    input-otp.tsx
+    input.tsx
+    label.tsx
+    menubar.tsx
+    navigation-menu.tsx
+    pagination.tsx
+    popover.tsx
+    progress.tsx
+    radio-group.tsx
+    resizable.tsx
+    scroll-area.tsx
+    select.tsx
+    separator.tsx
+    sheet.tsx
+    sidebar.tsx
+    skeleton.tsx
+    slider.tsx
+    sonner.tsx
+    switch.tsx
+    table.tsx
+    tabs.tsx
+    textarea.tsx
+    toast.tsx
+    toaster.tsx
+    toggle-group.tsx
+    toggle.tsx
+    tooltip.tsx
+    use-mobile.tsx
+    use-toast.ts

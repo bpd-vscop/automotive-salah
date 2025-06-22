@@ -1,0 +1,17 @@
+# Initialize the output array
+$output = @()
+
+# Recursively get directories, excluding any with "node_modules" in the path
+Get-ChildItem -Recurse -Directory | Where-Object { $_.FullName -notlike "*node_modules*" } | ForEach-Object {
+    # Add the directory path to the output
+    $output += $_.FullName
+
+    # Get the contents of each directory, again excluding "node_modules"
+    Get-ChildItem $_.FullName | Where-Object { $_.FullName -notlike "*node_modules*" } | ForEach-Object {
+        # Indent each file or subdirectory and add to the output
+        $output += "    " + $_.Name
+    }
+}
+
+# Write the output to directory_structure.txt
+$output | Out-File -FilePath directory_structure.txt -Encoding utf8

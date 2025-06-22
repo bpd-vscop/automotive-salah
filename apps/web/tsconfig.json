@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@automotive/ui": ["../../packages/ui"],
+      "@automotive/auth": ["../../packages/auth/src"],
+      "@automotive/config": ["../../packages/config/src"],
+      "@automotive/database": ["../../packages/database/src"],
+      "@automotive/trpc": ["../../packages/trpc/src"],
+      "@automotive/types": ["../../packages/types/src"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
