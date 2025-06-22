@@ -8,7 +8,11 @@ const nextConfig = {
       'img1.wsimg.com',
       'i.postimg.cc',
       'i.ebayimg.com',
-      'm.media-amazon.com'
+      'm.media-amazon.com',
+      'cdn.freebiesupply.com',
+      'auto-sens.com',
+      'upload.wikimedia.org',
+      'static.vecteezy.com',
     ],
   },
   transpilePackages: ['@automotive/ui'],
