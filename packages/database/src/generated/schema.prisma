@@ -1,0 +1,370 @@
+// filepath: packages/database/prisma/schema.prisma
+// Prisma Schema for Automotive Locksmith Platform
+// This defines your database structure - MongoDB with type safety
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// ======================== PRODUCTS ========================
+// Main product catalog - this replaces your placeholder data
+model Product {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Basic Product Info
+  name             String // Product name (e.g., "BMW Key Programming Tool")
+  description      String // Detailed description
+  shortDescription String? // Brief description for cards
+
+  // Pricing
+  price     Float // Regular price
+  salePrice Float? // Sale price (optional)
+  costPrice Float? // Your cost (for profit calculation)
+
+  // Product Images
+  images         String[] // Array of image URLs ["image1.jpg", "image2.jpg"]
+  thumbnailImage String? // Main thumbnail for cards
+
+  // Categorization
+  category    String // Main category (e.g., "Programming Tools")
+  subCategory String? // Sub category (e.g., "BMW Tools")
+  brand       String // Manufacturer (e.g., "Autel", "Launch")
+  tags        String[] // Search tags ["bmw", "programming", "obd"]
+
+  // Product Codes
+  partNumber             String  @unique // Your internal part number
+  sku                    String? @unique // Stock keeping unit
+  upc                    String? // Universal product code
+  manufacturerPartNumber String? // Manufacturer's part number
+
+  // Inventory
+  inStock       Boolean @default(true)
+  stockQuantity Int     @default(0)
+  lowStockAlert Int     @default(5) // Alert when stock below this
+
+  // Vehicle Compatibility (Key4.com feature)
+  compatibility VehicleCompatibility[] // Which cars this works with
+
+  // Product Status Flags
+  featured     Boolean @default(false) // Show in featured section
+  onSale       Boolean @default(false) // Show in sale section  
+  newProduct   Boolean @default(false) // Show in new products
+  discontinued Boolean @default(false) // No longer available
+
+  // Business Features
+  professionalOnly     Boolean @default(false) // B2B customers only
+  minimumOrderQuantity Int     @default(1) // Minimum order qty
+
+  // SEO & Marketing
+  slug            String  @unique // URL slug (e.g., "bmw-key-programmer")
+  metaTitle       String? // SEO title
+  metaDescription String? // SEO description
+
+  // Weight & Shipping
+  weight        Float? // Product weight in lbs
+  dimensions    ProductDimensions? // L x W x H
+  shippingClass String? // Shipping category
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  orderItems OrderItem[]
+  reviews    ProductReview[]
+
+  @@map("products")
+}
+
+// Product dimensions for shipping calculation
+type ProductDimensions {
+  length Float // inches
+  width  Float // inches  
+  height Float // inches
+}
+
+// Vehicle compatibility - matches your VehicleSearch component
+model VehicleCompatibility {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  productId String @db.ObjectId
+
+  // Vehicle Details
+  year   String // e.g., "2020"
+  make   String // e.g., "BMW"
+  model  String // e.g., "X5"
+  trim   String? // e.g., "xDrive40i"
+  engine String? // e.g., "3.0L I6"
+
+  // Additional Info
+  notes    String? // Special compatibility notes
+  verified Boolean @default(false) // Compatibility verified
+
+  // Relations
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("vehicle_compatibility")
+}
+
+// ======================== USERS & AUTHENTICATION ========================
+// User management for B2B customers and admins
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Basic Info
+  email     String  @unique
+  password  String // Hashed password
+  firstName String
+  lastName  String
+  phone     String?
+
+  // Account Status
+  emailVerified DateTime?
+  isActive      Boolean   @default(true)
+  role          UserRole  @default(CUSTOMER)
+
+  // Business Information (B2B)
+  businessInfo BusinessInfo?
+
+  // Professional Tier (Bronze, Silver, Gold, Platinum)
+  professionalTier ProfessionalTier @default(BRONZE)
+  discountRate     Float            @default(0) // Percentage discount
+
+  // Preferences
+  newsletter       Boolean @default(false)
+  smsNotifications Boolean @default(false)
+
+  // Timestamps
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastLoginAt DateTime?
+
+  // Relations
+  orders    Order[]
+  addresses Address[]
+  reviews   ProductReview[]
+
+  @@map("users")
+}
+
+// Business information for B2B customers
+type BusinessInfo {
+  businessName     String
+  businessType     String // "Locksmith", "Dealer", "Repair Shop"
+  taxId            String? // Business tax ID
+  licenseNumber    String? // Professional license
+  website          String?
+  verified         Boolean  @default(false)
+  verificationDocs String[] // Document URLs
+}
+
+// User roles
+enum UserRole {
+  ADMIN
+  MANAGER
+  CUSTOMER
+  PROFESSIONAL
+}
+
+// Professional pricing tiers (like Key4.com)
+enum ProfessionalTier {
+  BRONZE // Basic discount
+  SILVER // Better discount
+  GOLD // Great discount  
+  PLATINUM // Best discount
+}
+
+// ======================== ORDERS & CHECKOUT ========================
+// Order management system
+model Order {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  orderNumber String @unique // Human-readable order number
+
+  // Customer Info
+  userId        String  @db.ObjectId
+  customerEmail String
+  customerPhone String?
+
+  // Order Status
+  status        OrderStatus   @default(PENDING)
+  paymentStatus PaymentStatus @default(PENDING)
+
+  // Pricing
+  subtotal       Float // Before tax and shipping
+  taxAmount      Float // Sales tax
+  shippingAmount Float // Shipping cost
+  discountAmount Float @default(0) // Applied discounts
+  totalAmount    Float // Final total
+
+  // Addresses (embedded documents, not relations)
+  shippingAddress Json // Embedded address object
+  billingAddress  Json // Embedded address object
+
+  // Shipping
+  shippingMethod    String? // "Standard", "Express", "Overnight"
+  trackingNumber    String? // Shipping tracking
+  estimatedDelivery DateTime?
+
+  // Payment
+  paymentMethod   String? // "Credit Card", "PayPal", etc.
+  paymentIntentId String? // Stripe payment intent
+
+  // Notes
+  customerNotes String?
+  internalNotes String?
+
+  // Timestamps
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  shippedAt   DateTime?
+  deliveredAt DateTime?
+
+  // Relations
+  user  User        @relation(fields: [userId], references: [id])
+  items OrderItem[]
+
+  @@map("orders")
+}
+
+// Individual items in an order
+model OrderItem {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // References
+  orderId   String @db.ObjectId
+  productId String @db.ObjectId
+
+  // Item Details (snapshot at time of order)
+  productName String // Product name at time of order
+  productSku  String // SKU at time of order
+  unitPrice   Float // Price per unit at time of order
+  quantity    Int // Quantity ordered
+  totalPrice  Float // quantity * unitPrice
+
+  // Relations
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@map("order_items")
+}
+
+// Order status tracking
+enum OrderStatus {
+  PENDING // Order placed, payment pending
+  CONFIRMED // Payment confirmed, processing
+  PROCESSING // Picking and packing
+  SHIPPED // Shipped to customer
+  DELIVERED // Delivered to customer
+  CANCELLED // Order cancelled
+  REFUNDED // Order refunded
+}
+
+// Payment status
+enum PaymentStatus {
+  PENDING // Payment not yet processed
+  PROCESSING // Payment being processed
+  COMPLETED // Payment successful
+  FAILED // Payment failed
+  REFUNDED // Payment refunded
+  CANCELLED // Payment cancelled
+}
+
+// ======================== ADDRESSES ========================
+// Customer addresses for shipping/billing
+model Address {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Address Details
+  firstName    String
+  lastName     String
+  company      String?
+  addressLine1 String
+  addressLine2 String?
+  city         String
+  state        String
+  zipCode      String
+  country      String  @default("US")
+
+  // Address Type
+  type      AddressType @default(SHIPPING)
+  isDefault Boolean     @default(false)
+
+  // User Relation
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("addresses")
+}
+
+// Address types
+enum AddressType {
+  SHIPPING
+  BILLING
+  BOTH
+}
+
+// ======================== PRODUCT REVIEWS ========================
+// Customer product reviews
+model ProductReview {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Review Content
+  rating   Int // 1-5 stars
+  title    String? // Review title
+  content  String // Review text
+  verified Boolean @default(false) // Verified purchase
+
+  // Relations
+  productId String @db.ObjectId
+  userId    String @db.ObjectId
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("product_reviews")
+}
+
+// ======================== CATEGORIES ========================
+// Product categories for organization
+model Category {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Category Info
+  name        String  @unique // "Programming Tools"
+  slug        String  @unique // "programming-tools"
+  description String?
+
+  // Hierarchy
+  parentId String?    @db.ObjectId
+  parent   Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  children Category[] @relation("CategoryHierarchy")
+
+  // Display
+  image     String? // Category image
+  icon      String? // Category icon
+  sortOrder Int     @default(0)
+  isActive  Boolean @default(true)
+
+  // SEO
+  metaTitle       String?
+  metaDescription String?
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("categories")
+}
