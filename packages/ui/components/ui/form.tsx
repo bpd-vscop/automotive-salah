@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/form.tsx
+// filepath: automotive-salah/packages/ui/components/ui/form.tsx
 "use client"
 
 
@@ -55,11 +55,11 @@ import {
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 
-import { Label } from "@/components/ui/label"
+import { Label } from "./label"
 
 
 

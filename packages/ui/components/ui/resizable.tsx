@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/resizable.tsx
+// filepath: automotive-salah/packages/ui/components/ui/resizable.tsx
 "use client"
 
 
@@ -19,7 +19,7 @@ import * as ResizablePrimitive from "react-resizable-panels"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

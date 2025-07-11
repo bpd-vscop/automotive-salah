@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/label.tsx
+// filepath: automotive-salah/packages/ui/components/ui/label.tsx
 "use client"
 
 
@@ -23,7 +23,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

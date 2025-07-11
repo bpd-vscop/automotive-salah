@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/pagination.tsx
+// filepath: automotive-salah/packages/ui/components/ui/pagination.tsx
 import * as React from "react"
 
 
@@ -11,11 +11,9 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
-
-
-import { ButtonProps, buttonVariants } from "@/components/ui/button"
+import { ButtonProps, buttonVariants } from "./button"
 
 
 

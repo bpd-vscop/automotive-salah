@@ -53,7 +53,7 @@ export async function disconnectDatabase() {
 export async function checkDatabaseHealth() {
   try {
     // Simple query to check if database is responding
-    await prisma.user.count()
+    await prisma.customer.count()
     return { status: 'healthy', timestamp: new Date().toISOString() }
   } catch (error) {
     return { 

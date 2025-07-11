@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/navigation-menu.tsx
+// filepath: automotive-salah/packages/ui/components/ui/navigation-menu.tsx
 import * as React from "react"
 
 
@@ -19,7 +19,7 @@ import { ChevronDown } from "lucide-react"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

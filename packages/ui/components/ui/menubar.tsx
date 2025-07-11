@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/menubar.tsx
+// filepath: automotive-salah/packages/ui/components/ui/menubar.tsx
 "use client"
 
 
@@ -23,7 +23,7 @@ import { Check, ChevronRight, Circle } from "lucide-react"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

@@ -23,7 +23,8 @@ import { Check, ChevronRight, Circle } from "lucide-react"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
+
 
 
 

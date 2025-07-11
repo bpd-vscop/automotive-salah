@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/drawer.tsx
+// filepath: automotive-salah/packages/ui/components/ui/drawer.tsx
 "use client"
 
 
@@ -19,7 +19,7 @@ import { Drawer as DrawerPrimitive } from "vaul"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

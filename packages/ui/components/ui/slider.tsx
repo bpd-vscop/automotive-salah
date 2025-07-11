@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/slider.tsx
+// filepath: automotive-salah/packages/ui/components/ui/slider.tsx
 "use client"
 
 
@@ -19,7 +19,7 @@ import * as SliderPrimitive from "@radix-ui/react-slider"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

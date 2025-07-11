@@ -10,9 +10,9 @@ export type {
     ProductDimensions,
     
     // User Types  
-    User,
+    Customer,
     BusinessInfo,
-    UserRole,
+    Role,
     ProfessionalTier,
     
     // Order Types
@@ -46,7 +46,7 @@ export type {
       compatibility: true
       reviews: {
         include: {
-          user: {
+          customer: {
             select: {
               firstName: true
               lastName: true
@@ -62,11 +62,11 @@ export type {
     select: {
       id: true
       name: true
-      price: true
+      regularPrice: true
       salePrice: true
       thumbnailImage: true
       images: true
-      inStock: true
+      stockQuantity: true
       brand: true
       featured: true
       onSale: true
@@ -78,7 +78,7 @@ export type {
   // Order with complete details
   export type OrderWithDetails = Prisma.OrderGetPayload<{
     include: {
-      user: {
+      customer: {
         select: {
           firstName: true
           lastName: true
@@ -100,7 +100,7 @@ export type {
   }>
   
   // User with business info
-  export type UserWithBusiness = Prisma.UserGetPayload<{
+  export type CustomerWithBusiness = Prisma.CustomerGetPayload<{
     include: {
       addresses: true
     }

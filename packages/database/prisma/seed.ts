@@ -2,63 +2,73 @@
 // Database seeding script - creates initial data for development
 // This will replace your placeholder data with real automotive locksmith products
 
-import { PrismaClient, UserRole, ProfessionalTier, OrderStatus, PaymentStatus } from '../src/generated'
+import { PrismaClient, ProfessionalTier, OrderStatus, PaymentStatus } from '../src/generated'
 
 const prisma = new PrismaClient()
 
 async function main() {
   console.log('🌱 Starting database seed...')
 
+  // ======================== DELETE EXISTING DATA ========================
+  await prisma.orderItem.deleteMany({})
+  await prisma.order.deleteMany({})
+  await prisma.productReview.deleteMany({})
+  await prisma.vehicleCompatibility.deleteMany({})
+  await prisma.product.deleteMany({})
+  await prisma.category.deleteMany({})
+  await prisma.customer.deleteMany({})
+  await prisma.address.deleteMany({})
+
+
   // ======================== CATEGORIES ========================
   console.log('📂 Creating categories...')
   
-  const categories = await Promise.all([
-    // Main Categories - Using createMany to avoid transaction issues
-    prisma.category.create({
-      data: {
-        name: 'Programming Tools',
-        slug: 'programming-tools',
-        description: 'Professional key programming and diagnostic tools',
-        sortOrder: 1,
-      },
-    }),
-    
-    prisma.category.create({
-      data: {
-        name: 'Key Cutting Machines',
-        slug: 'key-cutting-machines',
-        description: 'Precision key cutting and duplicating machines',
-        sortOrder: 2,
-      },
-    }),
-    
-    prisma.category.create({
-      data: {
-        name: 'Transponder Keys',
-        slug: 'transponder-keys',
-        description: 'Blank transponder keys and remotes',
-        sortOrder: 3,
-      },
-    }),
-    
-    prisma.category.create({
-      data: {
-        name: 'Lockout Tools',
-        slug: 'lockout-tools',
-        description: 'Professional vehicle lockout and entry tools',
-        sortOrder: 4,
-      },
-    }),
-    
-    prisma.category.create({
-      data: {
-        name: 'Key Fob Batteries',
-        slug: 'batteries',
-        description: 'Replacement batteries for key fobs and remotes',
-        sortOrder: 5,
-      },
-    }),
-  ])
+  const category1 = await prisma.category.create({
+    data: {
+      name: 'Programming Tools',
+      slug: 'programming-tools',
+      description: 'Professional key programming and diagnostic tools',
+      sortOrder: 1,
+    },
+  })
+  
+  const category2 = await prisma.category.create({
+    data: {
+      name: 'Key Cutting Machines',
+      slug: 'key-cutting-machines',
+      description: 'Precision key cutting and duplicating machines',
+      sortOrder: 2,
+    },
+  })
+  
+  const category3 = await prisma.category.create({
+    data: {
+      name: 'Transponder Keys',
+      slug: 'transponder-keys',
+      description: 'Blank transponder keys and remotes',
+      sortOrder: 3,
+    },
+  })
+  
+  const category4 = await prisma.category.create({
+    data: {
+      name: 'Lockout Tools',
+      slug: 'lockout-tools',
+      description: 'Professional vehicle lockout and entry tools',
+      sortOrder: 4,
+    },
+  })
+  
+  const category5 = await prisma.category.create({
+    data: {
+      name: 'Key Fob Batteries',
+      slug: 'batteries',
+      description: 'Replacement batteries for key fobs and remotes',
+      sortOrder: 5,
+    },
+  })
+
+  const categories = [category1, category2, category3, category4, category5]
 
   // ======================== SAMPLE PRODUCTS ========================
   console.log('🔧 Creating sample products...')
@@ -69,9 +79,13 @@ async function main() {
       name: 'Autel MaxiIM IM608 Pro Key Programming Tool',
       description: 'Advanced key programming diagnostic tool with comprehensive vehicle coverage. Features include all keys lost programming, ECU programming, and advanced diagnostics.',
       shortDescription: 'Professional key programming tool with advanced diagnostics',
-      price: 4299.00,
+      regularPrice: 4299.00,
       salePrice: 3899.00,
-      category: 'programming-tools',
+      category: {
+        connect: {
+          slug: 'programming-tools',
+        },
+      },
       brand: 'Autel',
       partNumber: 'IM608PRO',
       sku: 'AUT-IM608PRO',
@@ -97,8 +111,12 @@ async function main() {
       name: 'Launch X-PROG3 Key Programmer',
       description: 'Next-generation key programming solution with wireless connectivity and cloud-based updates. Supports latest vehicle models.',
       shortDescription: 'Wireless key programmer with cloud updates',
-      price: 1899.00,
-      category: 'programming-tools',
+      regularPrice: 1899.00,
+      category: {
+        connect: {
+          slug: 'programming-tools',
+        },
+      },
       brand: 'Launch',
       partNumber: 'XPROG3',
       sku: 'LAU-XPROG3',
@@ -122,10 +140,15 @@ async function main() {
       name: 'Silca Futura Edge Key Cutting Machine',
       description: 'Precision automatic key cutting machine with touch screen interface. Cuts automotive, residential, and commercial keys.',
       shortDescription: 'Professional automatic key cutting machine',
-      price: 12999.00,
-      category: 'key-cutting-machines',
+      regularPrice: 12999.00,
+      category: {
+        connect: {
+          slug: 'key-cutting-machines',
+        },
+      },
       brand: 'Silca',
       partNumber: 'FUTURA-EDGE',
+      sku: 'SIL-FUTURA-EDGE',
       stockQuantity: 3,
       featured: true,
       professionalOnly: true,
@@ -142,11 +165,16 @@ async function main() {
       name: 'JMA Nomad Portable Key Cutter',
       description: 'Portable key cutting solution for mobile locksmiths. Battery powered with precision cutting capabilities.',
       shortDescription: 'Portable battery-powered key cutter',
-      price: 2499.00,
+      regularPrice: 2499.00,
       salePrice: 2199.00,
-      category: 'key-cutting-machines',
+      category: {
+        connect: {
+          slug: 'key-cutting-machines',
+        },
+      },
       brand: 'JMA',
       partNumber: 'NOMAD-PORTABLE',
+      sku: 'JMA-NOMAD',
       stockQuantity: 12,
       onSale: true,
       images: [
@@ -162,11 +190,16 @@ async function main() {
       name: 'BMW Proximity Key Blank (FEM/BDC)',
       description: 'High-quality BMW proximity key blank for FEM/BDC systems. Compatible with 2011+ BMW vehicles with comfort access.',
       shortDescription: 'BMW proximity key blank for FEM/BDC systems',
-      price: 89.99,
+      regularPrice: 89.99,
       salePrice: 79.99,
-      category: 'transponder-keys',
+      category: {
+        connect: {
+          slug: 'transponder-keys',
+        },
+      },
       brand: 'BMW',
       partNumber: 'BMW-PROX-FEM',
+      sku: 'BMW-PROX-FEM',
       stockQuantity: 45,
       onSale: true,
       images: [
@@ -186,10 +219,15 @@ async function main() {
       name: 'Mercedes-Benz Smart Key Blank (BE Key)',
       description: 'Original equipment quality smart key blank for Mercedes-Benz vehicles. Features chrome finish and genuine MB logo.',
       shortDescription: 'Mercedes-Benz smart key blank with chrome finish',
-      price: 125.00,
-      category: 'transponder-keys',
+      regularPrice: 125.00,
+      category: {
+        connect: {
+          slug: 'transponder-keys',
+        },
+      },
       brand: 'Mercedes-Benz',
       partNumber: 'MB-SMART-BE',
+      sku: 'MB-SMART-BE',
       stockQuantity: 28,
       newProduct: true,
       images: [
@@ -209,10 +247,15 @@ async function main() {
       name: 'Pro-Lok Air Wedge Kit',
       description: 'Professional air wedge kit for safe vehicle entry. Includes multiple sizes and pump for gradual door opening.',
       shortDescription: 'Professional air wedge kit with pump',
-      price: 149.99,
-      category: 'lockout-tools',
+      regularPrice: 149.99,
+      category: {
+        connect: {
+          slug: 'lockout-tools',
+        },
+      },
       brand: 'Pro-Lok',
       partNumber: 'PL-AIRWEDGE-KIT',
+      sku: 'PL-AIRWEDGE-KIT',
       stockQuantity: 35,
       featured: true,
       images: [
@@ -227,11 +270,16 @@ async function main() {
       name: 'Steck Big Easy Lock Out Tool',
       description: 'Inflatable lockout tool for creating entry space in vehicle doors. Easy to use and prevents door damage.',
       shortDescription: 'Inflatable lockout tool for safe entry',
-      price: 89.99,
+      regularPrice: 89.99,
       salePrice: 74.99,
-      category: 'lockout-tools',
+      category: {
+        connect: {
+          slug: 'lockout-tools',
+        },
+      },
       brand: 'Steck',
       partNumber: 'STECK-BIGEASY',
+      sku: 'STECK-BIGEASY',
       stockQuantity: 22,
       onSale: true,
       images: [
@@ -247,10 +295,15 @@ async function main() {
       name: 'CR2032 Key Fob Battery (10-Pack)',
       description: 'High-quality CR2032 lithium batteries for key fobs and remotes. Long-lasting power with 10-year shelf life.',
       shortDescription: 'CR2032 batteries for key fobs (10-pack)',
-      price: 19.99,
-      category: 'batteries',
+      regularPrice: 19.99,
+      category: {
+        connect: {
+          slug: 'batteries',
+        },
+      },
       brand: 'Panasonic',
       partNumber: 'CR2032-10PK',
+      sku: 'PAN-CR2032-10PK',
       stockQuantity: 150,
       featured: true,
       images: [
@@ -266,10 +319,15 @@ async function main() {
       name: 'CR2025 Key Fob Battery (5-Pack)',
       description: 'Premium CR2025 lithium batteries for automotive key fobs. Compatible with most European vehicle remotes.',
       shortDescription: 'CR2025 batteries for European key fobs',
-      price: 12.99,
-      category: 'batteries',
+      regularPrice: 12.99,
+      category: {
+        connect: {
+          slug: 'batteries',
+        },
+      },
       brand: 'Energizer',
       partNumber: 'CR2025-5PK',
+      sku: 'ENG-CR2025-5PK',
       stockQuantity: 89,
       images: [
         'https://www.key4.com/uploads/files/products/cr2025-batteries-1.jpg'
@@ -313,13 +371,12 @@ async function main() {
   // ======================== ADMIN USER ========================
   console.log('👤 Creating admin user...')
   
-  const adminUser = await prisma.user.create({
+  const adminUser = await prisma.customer.create({
     data: {
       email: 'admin@automotive-locksmith.com',
-      password: '$2a$10$example.hash.password', // In real app, hash with bcrypt
+      passwordHash: '$2a$10$example.hash.password', // In real app, hash with bcrypt
       firstName: 'Admin',
       lastName: 'User',
-      role: UserRole.ADMIN,
       professionalTier: ProfessionalTier.PLATINUM,
       discountRate: 0.15, // 15% admin discount
       emailVerified: new Date(),
@@ -330,14 +387,13 @@ async function main() {
   // ======================== SAMPLE CUSTOMER ========================
   console.log('👥 Creating sample customer...')
   
-  const sampleCustomer = await prisma.user.create({
+  const sampleCustomer = await prisma.customer.create({
     data: {
       email: 'john@pro-locksmith.com',
-      password: '$2a$10$example.hash.password',
+      passwordHash: '$2a$10$example.hash.password',
       firstName: 'John',
       lastName: 'Smith',
       phone: '(555) 123-4567',
-      role: UserRole.PROFESSIONAL,
       professionalTier: ProfessionalTier.GOLD,
       discountRate: 0.10, // 10% professional discount
       businessInfo: {
@@ -358,7 +414,7 @@ async function main() {
   // Create sample address for customer
   await prisma.address.create({
     data: {
-      userId: sampleCustomer.id,
+      customerId: sampleCustomer.id,
       firstName: 'John',
       lastName: 'Smith',
       company: 'Pro Locksmith Services',
@@ -377,18 +433,18 @@ async function main() {
   
   const sampleProducts = await prisma.product.findMany({
     take: 3,
-    select: { id: true, price: true, name: true, partNumber: true }
+    select: { id: true, regularPrice: true, name: true, partNumber: true }
   })
 
   if (sampleProducts.length > 0) {
     const order = await prisma.order.create({
       data: {
         orderNumber: 'ORD-2024-001',
-        userId: sampleCustomer.id,
+        customerId: sampleCustomer.id,
         customerEmail: sampleCustomer.email,
         customerPhone: sampleCustomer.phone!,
         status: OrderStatus.SHIPPED,
-        paymentStatus: PaymentStatus.COMPLETED,
+        paymentStatus: PaymentStatus.PAID,
         subtotal: 299.97,
         taxAmount: 24.00,
         shippingAmount: 15.99,
@@ -432,10 +488,10 @@ async function main() {
           orderId: order.id,
           productId: product.id,
           productName: product.name,
-          productSku: product.partNumber,
-          unitPrice: product.price,
+          productSku: product.partNumber ?? '',
+          unitPrice: product.regularPrice,
           quantity: quantity,
-          totalPrice: product.price * quantity,
+          totalPrice: product.regularPrice * quantity,
         },
       })
     }
@@ -453,7 +509,7 @@ async function main() {
     await prisma.productReview.create({
       data: {
         productId: product.id,
-        userId: sampleCustomer.id,
+        customerId: sampleCustomer.id,
         rating: Math.floor(Math.random() * 2) + 4, // 4-5 stars
         title: 'Great product!',
         content: 'This tool works exactly as described. Professional quality and fast shipping.',

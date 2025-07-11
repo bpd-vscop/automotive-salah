@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/separator.tsx
+// filepath: automotive-salah/packages/ui/components/ui/separator.tsx
 "use client"
 
 
@@ -19,7 +19,7 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 

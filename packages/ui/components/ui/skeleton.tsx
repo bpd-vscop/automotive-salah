@@ -1,5 +1,5 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/skeleton.tsx
-import { cn } from "@/lib/utils"
+// filepath: automotive-salah/packages/ui/components/ui/skeleton.tsx
+import { cn } from "../../lib/utils"
 
 
 

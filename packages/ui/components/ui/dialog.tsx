@@ -1,4 +1,4 @@
-﻿// filepath: automotive-salah/packages/ui/components/ui/dialog.tsx
+// filepath: automotive-salah/packages/ui/components/ui/dialog.tsx
 "use client"
 
 
@@ -23,7 +23,7 @@ import { X } from "lucide-react"
 
 
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 
 
