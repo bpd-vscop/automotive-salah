@@ -1,132 +1,251 @@
-﻿E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps
+﻿E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\.turbo
+    cookies
+    daemon
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps
     admin
     api
     web
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\deployment
     docker
     scripts
     windows-server
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\docs
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\docs
+    admin_dashboard_specification.md
     api.md
+    Backend API Setup - Fastify + tRPC - UPDATED.md
+    backend_api_setup.md
     deployment.md
     development.md
+    development_checklist.md
+    prisma_schema_complete.txt
+    products_10-examples.csv
     README.md
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages
     auth
     config
     database
     trpc
     types
     ui
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\.turbo\cookies
+    1.cookie
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\.turbo\daemon
+    70ef07e3feab8315-turbo.log.2025-07-09
+    70ef07e3feab8315-turbo.log.2025-07-10
+    70ef07e3feab8315-turbo.log.2025-07-11
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin
+    .next
     app
     components
+    .eslintrc.json
+    next-env.d.ts
     next.config.js
     package.json
     tailwind.config.ts
     tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api
     src
+    .env
     .env.example
     Dockerfile
     package.json
     tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web
+    tsconfig.tsbuildinfo
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web
+    .next
     app
     components
     hooks
     lib
-    public
     store
-    .env.local
+    .eslintrc.json
+    next-env.d.ts
     next.config.js
     package.json
+    postcss.config.js
     tailwind.config.ts
     tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app
+    tsconfig.tsbuildinfo
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next
+    cache
+    server
+    static
+    types
+    app-build-manifest.json
+    build-manifest.json
+    package.json
+    react-loadable-manifest.json
+    trace
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app
     (dashboard)
     login
     globals.css
     layout.tsx
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\components
     dashboard
     forms
     tables
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache
+    swc
+    webpack
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\server
+    app
+    vendor-chunks
+    app-paths-manifest.json
+    middleware-build-manifest.js
+    middleware-manifest.json
+    middleware-react-loadable-manifest.js
+    next-font-manifest.js
+    next-font-manifest.json
+    pages-manifest.json
+    server-reference-manifest.js
+    server-reference-manifest.json
+    webpack-runtime.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\static
+    chunks
+    development
+    webpack
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\types
+    app
+    package.json
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache\swc
+    plugins
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache\webpack
+    client-development
+    server-development
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache\swc\plugins
+    v7_windows_x86_64_0.104.14
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache\swc\plugins\v7_windows_x86_64_0.104.14
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache\webpack\client-development
+    0.pack.gz
+    1.pack.gz
+    2.pack.gz
+    index.pack.gz
+    index.pack.gz.old
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\cache\webpack\server-development
+    0.pack.gz
+    1.pack.gz
+    index.pack.gz
+    index.pack.gz.old
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\server\app
+    login
+    not-found.js
+    not-found_client-reference-manifest.js
+    _not-found_client-reference-manifest.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\server\vendor-chunks
+    @swc.js
+    next.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\server\app\login
+    page.js
+    page_client-reference-manifest.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\static\chunks
+    app
+    app-pages-internals.js
+    main-app.js
+    polyfills.js
+    webpack.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\static\development
+    _buildManifest.js
+    _ssgManifest.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\static\webpack
+    30f95d1a9a6d064f.webpack.hot-update.json
+    633457081244afec._.hot-update.json
+    webpack.30f95d1a9a6d064f.hot-update.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\static\chunks\app
+    login
+    layout.js
+    not-found.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\static\chunks\app\login
+    page.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\types\app
+    login
+    layout.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\.next\types\app\login
+    page.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)
     analytics
     customers
     inventory
     orders
     products
     layout.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\login
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\login
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\analytics
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\analytics
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\customers
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\customers
     [id]
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\inventory
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\inventory
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\orders
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\orders
     [id]
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\products
     new
     [id]
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\customers\[id]
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\orders\[id]
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products\new
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\customers\[id]
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\orders\[id]
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\products\new
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products\[id]
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\app\(dashboard)\products\[id]\edit
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components\dashboard
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\products\[id]
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\app\(dashboard)\products\[id]\edit
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\components\dashboard
     Header.tsx
     Sidebar.tsx
     StatsCards.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components\forms
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\components\forms
     CustomerForm.tsx
     ProductForm.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\admin\components\tables
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\admin\components\tables
     OrderTable.tsx
     ProductTable.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src
     middleware
-    services
     trpc
     utils
     app.ts
     server.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\middleware
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src\middleware
     auth.ts
     cors.ts
     rateLimit.ts
-    security.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\services
-    authService.ts
-    emailService.ts
-    orderService.ts
-    paymentService.ts
-    productService.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\trpc
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src\trpc
     routers
     context.ts
-    root.ts
-    trpc.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\utils
+    router.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src\utils
     errors.ts
     jwt.ts
     validation.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\api\src\trpc\routers
-    analytics.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src\trpc\routers
+    admin
+    customer
     auth.ts
+    categories.ts
+    products.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src\trpc\routers\admin
     customers.ts
-    inventory.ts
     orders.ts
     products.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app
+    settings.ts
+    users.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\api\src\trpc\routers\customer
+    orders.ts
+    profile.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next
+    cache
+    server
+    static
+    types
+    app-build-manifest.json
+    build-manifest.json
+    package.json
+    react-loadable-manifest.json
+    trace
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app
     (account)
     (auth)
     (shop)
@@ -136,188 +255,631 @@ E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app
     loading.tsx
     not-found.tsx
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\components
     auth
     checkout
     product
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\hooks
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\hooks
     useAuth.ts
     useCart.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\lib
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\lib
     auth.ts
     trpc.ts
     utils.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\public
-    icons
-    images
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\store
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\store
     authStore.ts
     cartStore.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache
+    images
+    swc
+    webpack
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\server
+    app
+    vendor-chunks
+    app-paths-manifest.json
+    middleware-build-manifest.js
+    middleware-manifest.json
+    middleware-react-loadable-manifest.js
+    next-font-manifest.js
+    next-font-manifest.json
+    pages-manifest.json
+    server-reference-manifest.js
+    server-reference-manifest.json
+    webpack-runtime.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static
+    chunks
+    css
+    development
+    webpack
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\types
+    app
+    package.json
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images
+    +mW5IAhpuHdBqc0cwYsYtpcA+Z74SgjlnrMtYaqiqE4=
+    +UCRYCceL++UGcZeFjI9GL01+A-gxQvwburcf-Wkn7o=
+    +Z5GDWOaDSOOnSREb7ibZ6-WErUkPzg7qy7jGzfGBAI=
+    -Z2FruI-RO6c6YAB+BHz71iS+9jC0YnDCpJsmntl2q8=
+    0GoY+UepKyaHu2E0vpBk3JWpGBo1BOErZg1eE63A5AE=
+    1HSngjAVsja9lkeHVM2R6Z276tLxqRiECYlpOW5FXow=
+    1vn5nddaKv8GyBD3XGWxe-xTDgVVWGJaekiWSeNt-zg=
+    2gzVoFyNzL0NBImScvIIoTZ-VqJ+uKsuN0wjIyxMPcM=
+    3Bq+8Ib3V73kakpdSHyzwW9a5FV+Yfy8hKs2HXovjKo=
+    57wa-FJcWMP-s-uXONRWnFCWgxukI-dNYAMvX-80F58=
+    5mf3e-3Xe0NEgpQQ2BWXBCWnkomJKe6v7jbs4iiCqX4=
+    64p3vIHCtm9Iu9b41UAssL3hC1M+Xr8e6Gf3ez2gBQI=
+    6vuaUrfQN1dN+bbotxDydTrKWqznli6KT0aw727-bvY=
+    7XN7fp4UdK3Cgxmf+7cxUtHBfZxK7w6SKnldeZgyAxc=
+    9BOA5CqwjX85bZX3JRoGQbUsbzI+MR8CW2jBYz+Kors=
+    9rFmAtc2o5kDKqrIlU1jsMww933ZnHTTdOHEvbjBfxk=
+    aSWnDmMX2mm8zwrQ6gvVxT+gAhOOL8I+s9VZCLwaPq8=
+    AV9dzPEyRS2mTFVGIQiLTpCeWKzi+lUFTT4BQ61NJm8=
+    B0RbIQvmO2hGLdOqnRikDppARbv6Qv+JoATdVLu+6qk=
+    B9cEFvnqpSbA-+CDIr-PXikKqg8+EvjBMVpWx8-HwGw=
+    bpV+D6ZWoq2eETJlgeBC9DHzsHimnRaPbIfVX9r06bk=
+    BXfpko295gDuThB+ndjOB32dG1FkrSWv53AovaYWS6Q=
+    c9hlRjnvcI6Dt9x-3e-WoXyUiUwrkY0e+j5R8oiPGbA=
+    cb7U5dyjhpwLukhPpdlUvX+FIkc-HxSIeh7o1Rx7-lQ=
+    cCVTGHawm29MHBEVsVPLixOPQ0S5FhIYyfYuY7cGtVg=
+    CEgQJloZK+Ki4tu9lNOHM-rRdy0VckOk11zvRbnKpsw=
+    CZ+DMkuOnigAHYMKaoljWQOlmrMQR08zMzVC1smd+rg=
+    d9RHOt9ost2u42Be9AjT1Gzx+inUS66nQRyH8yAOelU=
+    dmx5J+4Qj2VMvc4xTTvTt7BXMeoN7Tl8o0IQA6NJ0X8=
+    Ei4y3lRinyY9TyxhOSSp0j1bTpXaXETSJmTmwTes9FQ=
+    EJXcWs6j8I2DbHkUU9WUlJBDYokrblCAVhxoKvubVWw=
+    er+v-83-Ex6gvstUALa7RkDAvk6WIOjqrMGyFmuNgtc=
+    Fb3KjmNt71Bt8hT+V1TK1hVv2QOXODZ35XqxYSd-FY4=
+    FeSFKqe6T2zcshHRBqANXS7CBCk+ZJck56FleEZaGlY=
+    gFTnY1sN6jmL1kHo9+1OW++jmQEp7IiSl-sZzy0rvPE=
+    hjqQZ1DWxH600QszXIX7sKr8S6+5aSQgDGhwPxt8rh8=
+    hobpIc-OOaycf-ehB-Mbe3u9wJVnaXt-3XWh2d5D5og=
+    HUKtQjNLnPylSXgKvZGljMYtoI1tA3K-g50qihWwfbo=
+    I2j-+JGzSziWziW36tuJQ3D-paTyunoXE0PI79Roq-A=
+    IGcEQ9JOXZnmMM0-kYPfyY3UDXnRbbstomhh9BJJS0k=
+    InuRSLwH+NV+EC0lOYdFrzWhtt4TCLtBvhdD8JMCYdU=
+    IOBv51IaqMonxGbR8Qk+VlmNTXvvrmuSu25yMa3mq-s=
+    IP1opEs35BWFzJ-wfVCJSptbkSjjCy5WesNDDSz2ykM=
+    iqvHRJFBXFjnsPpO-7vF-KlppoZSrYm7Px+I03SyYu4=
+    IWauhJcu6v+guMlWn2hdit-3dvUY+6dKpLrxzoc4WzE=
+    ixBV7-DAtqbU-9EAzv6cWQLKVeva1Pv7QMyWq+yWgJA=
+    J0r26pzulg3eK2fsSTUIJIfrHd-kHt1lGwEznhk-RWI=
+    J8v71tIIXsbqtxcedFtoOpQmT8FIvDiCQWdAme6Cnos=
+    JKvoLkGe09Iz8YUfA1oO7Un1-+M6hNi3KVyBd9f+Bsw=
+    koCxdTbNiENEi5OZ+bOf0kuGm6nIYmoAwz979NjSFMo=
+    kqTi26uIhrtHuRQ1t4iRsnjk0XkH3b9PjazZ0pNN5fg=
+    kUYYBx7G3DupPoaIcdy-Y0miqaiQ65UW1vcbdLTAqTw=
+    lOu5kbP7+q+go5np799j6mTP9aITHZifUjYdjK7OCyo=
+    M9P1F4FQ9wMn643mxgodNM+jciIRh6j9Ccvw3u436Lw=
+    mS2cdj231zv1ghBgL7ClKo-noyB06FO1tvULJEBzpI0=
+    mTdWEyMcz0H-JsP2pUL44KuceEs0SmlMiMsJAgNh4sQ=
+    MXPhgevtwPP2vvNXcoHUaHwmvS2V5mAMkMDxuhZh19s=
+    MyZBOFKnOwXpUVEbCW54lO+Rc7vbmUk1gXA4IGaPFbU=
+    n5rWWPG7IuLrvslqPfylQbdHA3NzGYAK7DdVXJQVM0U=
+    NLKcWAB-5329E7FSmhKctyIRpj9006QRgPUpvq0c2h4=
+    NXYEdaNKD8xvGinolOmy3xCbRCeDHOrLLxxJXB48QIE=
+    O-M6kNtm6Keix4x1Zebrxa3NCyi-S-rx7jU7D8Hy7s4=
+    OaI0T8AMfleJl1e9ir-3BQoo94IHxUQhVRr1+t45SLc=
+    OdCnQlqO0tGwUI1DKGnUe1ejPspIzwBclda-g4acQEc=
+    ODumF4RTMxI-apDxvccn4q8PzYR0Q6m4Mi6-yjKgqcc=
+    oNlHxE5W965HdkSt4RDBDA0oYqEOD47OWNIRDwV-k94=
+    ORFGwHla-k6pfH7wWHdxhI7LYveGmpLsKhz42AHkZoU=
+    Os+3zSmKXeIHaQKnZGouA2WyB1Hf3lw6F512Lfm9+YA=
+    P-bp6103p4xPTosUsJT9BgjOtOIeK7gjkoOP6Oig8aY=
+    P2kiIPFLxCvsNCAfId-8yuUkkNG8fjn6L8Bnr3AjsDQ=
+    peQw0JQg2VEVaeH-oGxOj-J2+GEVZS6kTKaEHPUODo4=
+    PFhyqgcGI6GNx+iKI9misYsvQpMJ-uUuyldzkW6Msdo=
+    PflxxfTp2i2CAksd5xAURZcGhZbrN9tStbx-MXht5zA=
+    PMz3zSIn-H1npAEzikEcCzUxWS1vo0qrpTnZLd6NyG0=
+    psiwR4e9c4bs5WTUxuALFVX7Bs9FFmAQXS79QeVcAXM=
+    Q+HjJ0fgKV6wiZDE1fTWC-LDlvCjOifuby72igX3U28=
+    Q3g9wLic9mbtDATSACP1c6JnfTNJHNiCVeBxXH9IDeo=
+    q7N1rErlwvJO7fu-e7urEXB6IyB-CTtg1eSvwGbzBHE=
+    qACDMR+9RnoK8zNpES7qfv7WMMsHZoZ7nHTj+ZHMic8=
+    QBCH7S50vQq2W5XX82aYzJt8mMcRUuWhLikUHLeHjVE=
+    QoOgRTzV-cBHaLUeSiw4KYMUvCNjYeCkB6ldAvzTSFE=
+    qSbOlUo9lG-X5PUwifwBMgivbnA647Tt+m8OgRAKgyY=
+    qzJgJio3xKBwnXWkTOfTgMf8WQEad4JrwIAa-7faNoY=
+    rgnt6I8vYkptDIB3B4dTCyXMVW4P4M8qYNeg87JVFIU=
+    RjGSYixhEjHTK-8BPYTbcFChaj1hVs1qbqChzXZwdEo=
+    RLMtuSy97CW9eahIGj7LFLi8TkXhYdh0EH6B1TiqgiY=
+    rRXV5vagGNi5NWESFsO2zyJyC1PQngs+QQEYHp0oPjE=
+    S-cq8Q5KeaYg1dtdyUwImc-Srv+fvgTauo2uiSX5S7g=
+    SfBqhAh4dcPApsTZWL-KMxxfeYN-CWM87Gp328RDLWE=
+    SGlAsLg1f5Fu2Ek9-fpLucVNnZzUCqlCRiKu2scO-nQ=
+    sSmsqpQsn9IJeawMUUBIzcHrfP8Ou9cW+E9wjqrCywo=
+    Tng2OIbhvNLMeTpj6q20eL7upDUB9acICLY9EyC+z1M=
+    tQRCoW8nZN--nS5RtW0WcJJVNxxsVRpqb6lUBM+NZN4=
+    uo0ZqeyhY41nkprRuJVZjOdlIl0IKOVGtEZTqvRNhg8=
+    uwPBkmMHFwf4x7FFfmJ3lcAATymPSLvHnaQisKLe6SU=
+    VbPC5LTVymc50CxOZYFDMxAbcXYyjmpIdNaqgbzsl98=
+    VoNmhLXO7wlOnle7dCH6L+KACh39e2N28wCPHXok8H8=
+    W9eZnkXCrKFBOxelSenlZgiYr0xKnonm4lciUUcQSpY=
+    wDxOjWOYzQl3f+YPw8Q5PWXo+hbHskXGR+yi6tsiUoI=
+    wqqcIhgAMrgbX7CebgGI536949tuXAMAMZxBqZsUFdw=
+    Xc5nAMspmf3S-zxlDTbEpnvryVl-yjYRhK4egkImfbo=
+    xCxhWDZRugk+98vQ5a01oz61FD+PBPhRZgybq5XPL5o=
+    xoA0AvWbavjyaIC6jWVLqKMniKhDU6BlHHvEqosRXDM=
+    y6GJLDZx2G7cLc1i1rpsNNzWov-yMGKWowZ1x0EvEds=
+    YHg+OhPgqU8rCoeZp7UJn+Ctnk9UOiCDfAOCI-2Gws8=
+    Yn4KjnX1mSU09czY0Bga38WYimiWTWZE6Z9Zjj74StQ=
+    z+dg9MUJoxpj3jj423H38u41u6Jvc0XvisPAhnA9CVg=
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\swc
+    plugins
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\webpack
+    client-development
+    server-development
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\+mW5IAhpuHdBqc0cwYsYtpcA+Z74SgjlnrMtYaqiqE4=
+    31536000.1783706334967.KZIxpRr0K4OHSjdpLgu4N7jAJT5+6fAG8XZzfe-U+QQ=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\+UCRYCceL++UGcZeFjI9GL01+A-gxQvwburcf-Wkn7o=
+    31536000.1783643001213.40JcQXq4gToqkJVV1JApuoDdOZRDSt7prv4KXaD3OPo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\+Z5GDWOaDSOOnSREb7ibZ6-WErUkPzg7qy7jGzfGBAI=
+    630720000.2382814125603.VrA7m4Tgsy+CilutLUYBdp1ES-fXgnwQYMi6gQZnT6M=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\-Z2FruI-RO6c6YAB+BHz71iS+9jC0YnDCpJsmntl2q8=
+    31536000.1783706335670.XyomDROVTQ4hBrnTd0VZWGN23uscX9NKrecod8ZilpA=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\0GoY+UepKyaHu2E0vpBk3JWpGBo1BOErZg1eE63A5AE=
+    31536000.1783643003660.omkBKwEP4F62XHjepfFspR8BxOoE1wNjohT-wkPAYEk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\1HSngjAVsja9lkeHVM2R6Z276tLxqRiECYlpOW5FXow=
+    31536000.1783630158952.o5vWOj5fEjYaVUf7qCC+XyKiDQvmQa1I+OkRFLPFbUI=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\1vn5nddaKv8GyBD3XGWxe-xTDgVVWGJaekiWSeNt-zg=
+    315360000.2067463719865.B7NXY7o4ccWmJxQyIeV-ETBmQOSu7JvUC9U425U3HDE=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\2gzVoFyNzL0NBImScvIIoTZ-VqJ+uKsuN0wjIyxMPcM=
+    31536000.1783643690289.7e+RVo7ydpQaMbpeR1Razp8V03Nhh8V-Gt7Zm1PeAYM=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\3Bq+8Ib3V73kakpdSHyzwW9a5FV+Yfy8hKs2HXovjKo=
+    31536000.1783706334886.yNP7n1endo1yusbg7S+Zy+wzIn-5ZWq5V9PGkhI1dp8=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\57wa-FJcWMP-s-uXONRWnFCWgxukI-dNYAMvX-80F58=
+    31536000.1783643001789.-BaiVHjjSmbroauRY9goEM4YYid71Be6IohQBbyPjKg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\5mf3e-3Xe0NEgpQQ2BWXBCWnkomJKe6v7jbs4iiCqX4=
+    31536000.1783630126852.XyomDROVTQ4hBrnTd0VZWGN23uscX9NKrecod8ZilpA=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\64p3vIHCtm9Iu9b41UAssL3hC1M+Xr8e6Gf3ez2gBQI=
+    31536000.1783630158938.+h8EgszF1m30jQjS5Eb5teN1fq6-lrXZWqC7WJS1yoY=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\6vuaUrfQN1dN+bbotxDydTrKWqznli6KT0aw727-bvY=
+    31536000.1783645029991.2WbkWFQLvKLQ7DvkRthvzACT0oFb05+EEzC-u1oC7ww=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\7XN7fp4UdK3Cgxmf+7cxUtHBfZxK7w6SKnldeZgyAxc=
+    630720000.2382829029744.n+dOayLl2uoETvy7rmoNNLe6pNVgXuzwNqd5yVFkdxo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\9BOA5CqwjX85bZX3JRoGQbUsbzI+MR8CW2jBYz+Kors=
+    31536000.1783643002236.4RFm0RSzUtKly-rn3Ww+++A9M+fPfB1wKXGlEtL3rvk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\9rFmAtc2o5kDKqrIlU1jsMww933ZnHTTdOHEvbjBfxk=
+    31536000.1783706309166.FC+s+nO5tVaBQVCMd74zQDLNSoa9zFTXjnmmpwp6dKo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\aSWnDmMX2mm8zwrQ6gvVxT+gAhOOL8I+s9VZCLwaPq8=
+    31536000.1783630126818.yA-qXIm50eCeb36jVhrGoR+Mx3IqwgvUDjF0mOME8ek=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\AV9dzPEyRS2mTFVGIQiLTpCeWKzi+lUFTT4BQ61NJm8=
+    31536000.1783706309420.omkBKwEP4F62XHjepfFspR8BxOoE1wNjohT-wkPAYEk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\B0RbIQvmO2hGLdOqnRikDppARbv6Qv+JoATdVLu+6qk=
+    31536000.1783706309857.LzCE0zMw7ptZ1r0AP7ahKZa3kc7UGcaHzkXfU1cThFo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\B9cEFvnqpSbA-+CDIr-PXikKqg8+EvjBMVpWx8-HwGw=
+    31536000.1783630128814.XTw412tA5MLRzWVVk+UlDuXx3phLZd61EA5OjXVpJ9Q=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\bpV+D6ZWoq2eETJlgeBC9DHzsHimnRaPbIfVX9r06bk=
+    31536000.1783643001969.7ic+RrmqU99flWQpV3d3695WrkPz3yxkkyqejPWk1O4=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\BXfpko295gDuThB+ndjOB32dG1FkrSWv53AovaYWS6Q=
+    31536000.1783706335724.29OKDpSegJoXuQHod2fo0mfJkq3xP5lLq8WSLGPpxF8=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\c9hlRjnvcI6Dt9x-3e-WoXyUiUwrkY0e+j5R8oiPGbA=
+    315360000.2067463719729.8yf5iNteH051mwnJ2ObzlYgmsEtN8phzEfuLEiKbHXg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\cb7U5dyjhpwLukhPpdlUvX+FIkc-HxSIeh7o1Rx7-lQ=
+    31536000.1783630133623.FCMGxemA+dvYY6Vo86dpsj44UY9OWSjXfz-Sz+RFcVA=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\cCVTGHawm29MHBEVsVPLixOPQ0S5FhIYyfYuY7cGtVg=
+    31536000.1783643001779.iYcOkXDrwc5n4+toj2PS9lR3kRsrImqle--z9MFID9M=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\CEgQJloZK+Ki4tu9lNOHM-rRdy0VckOk11zvRbnKpsw=
+    31536000.1783643690315.6D0mjuWHUGA6gkiz6c1PD9UGdbmw9cq4IY5yfsNA-QQ=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\CZ+DMkuOnigAHYMKaoljWQOlmrMQR08zMzVC1smd+rg=
+    31536000.1783706335077.TtCy7vblN984t7E0lQzRE-3cgouBRqvVXHLtdrToi88=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\d9RHOt9ost2u42Be9AjT1Gzx+inUS66nQRyH8yAOelU=
+    31536000.1783706335216.ODkHXUxDVjZvnS4dty+NwlSJkS6yFJV-58ESg78MKGk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\dmx5J+4Qj2VMvc4xTTvTt7BXMeoN7Tl8o0IQA6NJ0X8=
+    31536000.1783706309589.XTw412tA5MLRzWVVk+UlDuXx3phLZd61EA5OjXVpJ9Q=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Ei4y3lRinyY9TyxhOSSp0j1bTpXaXETSJmTmwTes9FQ=
+    31536000.1783630126986.29OKDpSegJoXuQHod2fo0mfJkq3xP5lLq8WSLGPpxF8=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\EJXcWs6j8I2DbHkUU9WUlJBDYokrblCAVhxoKvubVWw=
+    31536000.1783706309755.yA-qXIm50eCeb36jVhrGoR+Mx3IqwgvUDjF0mOME8ek=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\er+v-83-Ex6gvstUALa7RkDAvk6WIOjqrMGyFmuNgtc=
+    31536000.1783643003328.h+bTrI3OUZqloiCnQbDAq24xWmTKiqVMF7XX-y84rO0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Fb3KjmNt71Bt8hT+V1TK1hVv2QOXODZ35XqxYSd-FY4=
+    31536000.1783706309943.FCMGxemA+dvYY6Vo86dpsj44UY9OWSjXfz-Sz+RFcVA=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\FeSFKqe6T2zcshHRBqANXS7CBCk+ZJck56FleEZaGlY=
+    31536000.1783643001622.MnLQXsfXnZsARXPj+7fkwJhyi3A+OhqDTHCPknfy6wg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\gFTnY1sN6jmL1kHo9+1OW++jmQEp7IiSl-sZzy0rvPE=
+    31536000.1783643003321.S3Z0IQK-iE7aeSrgtPUySuV41MGK99TOqOuaPngkKuw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\hjqQZ1DWxH600QszXIX7sKr8S6+5aSQgDGhwPxt8rh8=
+    31536000.1783630126092.FC+s+nO5tVaBQVCMd74zQDLNSoa9zFTXjnmmpwp6dKo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\hobpIc-OOaycf-ehB-Mbe3u9wJVnaXt-3XWh2d5D5og=
+    31536000.1783630127624.FBmhRcGP4xcYSZtpmRVxgV+aoi-O+iuf1lAHrm2vmng=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\HUKtQjNLnPylSXgKvZGljMYtoI1tA3K-g50qihWwfbo=
+    31536000.1783630127416.PQlQyiYm3HG3Smy-AariDKoJyfK1t05ZTLODtRxBm6w=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\I2j-+JGzSziWziW36tuJQ3D-paTyunoXE0PI79Roq-A=
+    31536000.1783645029982.q15verIOjdM+D-XdDTVlcrrpnSyY6lMgY4ljz2tMucw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\IGcEQ9JOXZnmMM0-kYPfyY3UDXnRbbstomhh9BJJS0k=
+    31536000.1783706335032.AF9ZbjsR+JI9wke5q2ytX42cNCbe+ZTzhq6zg7IBz7s=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\InuRSLwH+NV+EC0lOYdFrzWhtt4TCLtBvhdD8JMCYdU=
+    60.1752261786339.TwU7gvGRu5nTCzHZSYWPDSBe26G5O8h9HmcqlmQGD0I=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\IOBv51IaqMonxGbR8Qk+VlmNTXvvrmuSu25yMa3mq-s=
+    31536000.1783643001991.xt70jUM-nqGnvPttgQXOwgjAT4xeeQjURzwOtFu3HyQ=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\IP1opEs35BWFzJ-wfVCJSptbkSjjCy5WesNDDSz2ykM=
+    31536000.1783643003996.EAyYGg8Q6nY3TnHtZKZ1qV1JCiRWcS5XYyFNOPPtMbw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\iqvHRJFBXFjnsPpO-7vF-KlppoZSrYm7Px+I03SyYu4=
+    31536000.1783706335372.xBkH4by+q9LvcyZlsm704luBBXUD0luyEgPcH0igqXw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\IWauhJcu6v+guMlWn2hdit-3dvUY+6dKpLrxzoc4WzE=
+    31536000.1783643001450.6w2SRO1-913mvY93JKAJjt0y6w3b6kgZMhR9+RoDIcY=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\ixBV7-DAtqbU-9EAzv6cWQLKVeva1Pv7QMyWq+yWgJA=
+    31536000.1783706333089.MCFO-xYkUb-KkWmum-KyBFFiOnQJlUCbSNFB12X+Ubo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\J0r26pzulg3eK2fsSTUIJIfrHd-kHt1lGwEznhk-RWI=
+    315360000.2067530310896.+1RGG7GQnylQqKQvpEGI48M4JI5hE-56fvixj8zHOx0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\J8v71tIIXsbqtxcedFtoOpQmT8FIvDiCQWdAme6Cnos=
+    31536000.1783630147555.EBAGyLzBEwZLo1CMorCCjwnSxi9tlWu+3WcNC7VqTaM=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\JKvoLkGe09Iz8YUfA1oO7Un1-+M6hNi3KVyBd9f+Bsw=
+    31536000.1783643685557.rjjGZsEDfyvq03O148PYapwcMdSL306BlW6iuvOUSdk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\koCxdTbNiENEi5OZ+bOf0kuGm6nIYmoAwz979NjSFMo=
+    31536000.1783643002573.kh4IvHRevWPopnShHQYpM8gTIQ+VMnJ8H5eqa0XLgYA=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\kqTi26uIhrtHuRQ1t4iRsnjk0XkH3b9PjazZ0pNN5fg=
+    31536000.1783630125421.gQ39+wquq5XthO6WW9lFC-5nJdcR3sAs0TMr0kCksLg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\kUYYBx7G3DupPoaIcdy-Y0miqaiQ65UW1vcbdLTAqTw=
+    315360000.2067467001960.7ZZojgj77DzjGX6f8LrlXj9YfXT2UOsfY+qETqucFPA=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\lOu5kbP7+q+go5np799j6mTP9aITHZifUjYdjK7OCyo=
+    315360000.2067463719711.+1RGG7GQnylQqKQvpEGI48M4JI5hE-56fvixj8zHOx0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\M9P1F4FQ9wMn643mxgodNM+jciIRh6j9Ccvw3u436Lw=
+    31536000.1783643003893.yA-qXIm50eCeb36jVhrGoR+Mx3IqwgvUDjF0mOME8ek=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\mS2cdj231zv1ghBgL7ClKo-noyB06FO1tvULJEBzpI0=
+    31536000.1783643003421.SHMNOueYDBu9hwt+PFLBSAvR02HDVLmqm36q9zpTl4c=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\mTdWEyMcz0H-JsP2pUL44KuceEs0SmlMiMsJAgNh4sQ=
+    31536000.1783643001237.JhCSAsVxLKwr3uOu6fs7gzUOQ0RQI1AC5J+F2d87hjw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\MXPhgevtwPP2vvNXcoHUaHwmvS2V5mAMkMDxuhZh19s=
+    31536000.1783706335308.3i+u-4DqMEKIJEnVIS4FRLbe998b4NMfihJTDWYM4bk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\MyZBOFKnOwXpUVEbCW54lO+Rc7vbmUk1gXA4IGaPFbU=
+    630720000.2382827004140.VrA7m4Tgsy+CilutLUYBdp1ES-fXgnwQYMi6gQZnT6M=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\n5rWWPG7IuLrvslqPfylQbdHA3NzGYAK7DdVXJQVM0U=
+    31536000.1783643003444.uSYxds6GPiqnmgrafIdh0T5nnP0w5Dgpb2AuUWfrvjg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\NLKcWAB-5329E7FSmhKctyIRpj9006QRgPUpvq0c2h4=
+    31536000.1783630124585.RbRcUyFcHkXP4pf8cOWj51u-gmvNqX0PLM-EKm6Aptw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\NXYEdaNKD8xvGinolOmy3xCbRCeDHOrLLxxJXB48QIE=
+    315360000.2067467003403.nnJGmSNPIP0VqH4dj5eiDl9FsXWcUU9YOn8FPEicI14=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\O-M6kNtm6Keix4x1Zebrxa3NCyi-S-rx7jU7D8Hy7s4=
+    31536000.1783705870183.MURepssPuYDGcmqJMFf+EHGCyhEuyA-oXtFIXUcWbmw=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\OaI0T8AMfleJl1e9ir-3BQoo94IHxUQhVRr1+t45SLc=
+    31536000.1783630146279.suuI+4ovhVsjYlYtsNY2Jsa8xXR928s7RNdfHne06EQ=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\OdCnQlqO0tGwUI1DKGnUe1ejPspIzwBclda-g4acQEc=
+    31536000.1783630126837.u++5yA3wZ5qM+GjguaAfBnHzfs4UUlPF-iTTXbO5rEI=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\ODumF4RTMxI-apDxvccn4q8PzYR0Q6m4Mi6-yjKgqcc=
+    31536000.1783645030475.vWv9AygIrZZIh65qP1Wx01C7pXx0ydFUBj96kaDyB8U=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\oNlHxE5W965HdkSt4RDBDA0oYqEOD47OWNIRDwV-k94=
+    31536000.1783643004483.rk4JtAQzO5b4AqvLdCNOcL4YB2GzmBsFoYfnsG5-rmY=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\ORFGwHla-k6pfH7wWHdxhI7LYveGmpLsKhz42AHkZoU=
+    31536000.1783643003060.59oh1bYPg6jJ40rUCd1yAIja5uwJDg0aLOnp+16nptg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Os+3zSmKXeIHaQKnZGouA2WyB1Hf3lw6F512Lfm9+YA=
+    31536000.1783630127454.-3iKrYoY0WlYzU189HXkA6MhBIzBPdsFPlmAn4IRD8I=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\P-bp6103p4xPTosUsJT9BgjOtOIeK7gjkoOP6Oig8aY=
+    31536000.1783643004195.Biqr7RhPWXpCe9Kl4Hn9A0WM467W86QxAXOdq8FGg3Y=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\P2kiIPFLxCvsNCAfId-8yuUkkNG8fjn6L8Bnr3AjsDQ=
+    31536000.1783706334807.NgqH-yrvXuQ6jNnTnOk20pClw8af2E3CKozw0VSOIFY=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\peQw0JQg2VEVaeH-oGxOj-J2+GEVZS6kTKaEHPUODo4=
+    31536000.1783706335263.GVsYq47dkd4gCOqaqr5A3FFJD3aOpYkc0c9SaL9QtOQ=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\PFhyqgcGI6GNx+iKI9misYsvQpMJ-uUuyldzkW6Msdo=
+    31536000.1783705870199.2mQnxwzDgcoVrVtoZM+hH22gHD+9GHjytP9wCZ5AVnE=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\PflxxfTp2i2CAksd5xAURZcGhZbrN9tStbx-MXht5zA=
+    31536000.1783630159127.MqcZ4bStoNIMwy8ybi4SBInUHMINOuozcPnut82XTJ0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\PMz3zSIn-H1npAEzikEcCzUxWS1vo0qrpTnZLd6NyG0=
+    31536000.1783643003050.Tz-G9T6sFf6t0rqHFg+nwH2q-Cn6wgj3n2HgIKyRgx4=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\psiwR4e9c4bs5WTUxuALFVX7Bs9FFmAQXS79QeVcAXM=
+    31536000.1783643685515.Q5grL+dpl-kPnB-8mOZxawpXVsT3duS2UqjOZp79VJc=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Q+HjJ0fgKV6wiZDE1fTWC-LDlvCjOifuby72igX3U28=
+    31536000.1783630124652.w94XUxRIGX2DLcJie0PtXIc50y9pSW9auLT7UcXThQI=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Q3g9wLic9mbtDATSACP1c6JnfTNJHNiCVeBxXH9IDeo=
+    31536000.1783706335659.u++5yA3wZ5qM+GjguaAfBnHzfs4UUlPF-iTTXbO5rEI=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\q7N1rErlwvJO7fu-e7urEXB6IyB-CTtg1eSvwGbzBHE=
+    31536000.1783630127385.omkBKwEP4F62XHjepfFspR8BxOoE1wNjohT-wkPAYEk=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\qACDMR+9RnoK8zNpES7qfv7WMMsHZoZ7nHTj+ZHMic8=
+    31536000.1783645029999.qo7qN+c8OW0QT-RNgt5vJPmqdVXga8YaBAqHgD7Itl0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\QBCH7S50vQq2W5XX82aYzJt8mMcRUuWhLikUHLeHjVE=
+    31536000.1783630159665.Ywpr-5XIc7Aat+QZS3+J5EVbFSQvZwcMTQv7yTfZe60=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\QoOgRTzV-cBHaLUeSiw4KYMUvCNjYeCkB6ldAvzTSFE=
+    315360000.2067465689377.IJ9OIWgsJ16F0MXJS9yUK06QFryPB1nP915J4MIvH0A=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\qSbOlUo9lG-X5PUwifwBMgivbnA647Tt+m8OgRAKgyY=
+    60.1752261786232.IgXCl9ttCEfS3JQRwQbKPNh-OsKwBZyv-v5962Np4H0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\qzJgJio3xKBwnXWkTOfTgMf8WQEad4JrwIAa-7faNoY=
+    31536000.1783643685576.xbJtmSoV9Aw+BbWl-w0s5svyNf2sQKEBT2ii9bmt3QM=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\rgnt6I8vYkptDIB3B4dTCyXMVW4P4M8qYNeg87JVFIU=
+    630720000.2382890309282.VrA7m4Tgsy+CilutLUYBdp1ES-fXgnwQYMi6gQZnT6M=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\RjGSYixhEjHTK-8BPYTbcFChaj1hVs1qbqChzXZwdEo=
+    315360000.2067467003258.+1RGG7GQnylQqKQvpEGI48M4JI5hE-56fvixj8zHOx0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\RLMtuSy97CW9eahIGj7LFLi8TkXhYdh0EH6B1TiqgiY=
+    31536000.1783630124814.E0ji04yQVFfH70NODyBJiBSdyy-79RZKFd0wsx20AU0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\rRXV5vagGNi5NWESFsO2zyJyC1PQngs+QQEYHp0oPjE=
+    31536000.1783630151618.h0rsKJ9xFUm8Cvi6nNgPaLKB-AsUCYTBtBSJJvaD6Oc=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\S-cq8Q5KeaYg1dtdyUwImc-Srv+fvgTauo2uiSX5S7g=
+    31536000.1783643002817.FC+s+nO5tVaBQVCMd74zQDLNSoa9zFTXjnmmpwp6dKo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\SfBqhAh4dcPApsTZWL-KMxxfeYN-CWM87Gp328RDLWE=
+    31536000.1783630146243.jxCbspM8yW0Sx0ab-jTV03u8jb3E73T+sJ7w6MbMsAY=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\SGlAsLg1f5Fu2Ek9-fpLucVNnZzUCqlCRiKu2scO-nQ=
+    31536000.1783643003269.4QnpojprPFbuWSH77WY8JOUxg04k0cy5IOdUecH9vTI=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\sSmsqpQsn9IJeawMUUBIzcHrfP8Ou9cW+E9wjqrCywo=
+    31536000.1783705870204.0b4pHF7+JyE2xqPSTzHAosEmStFU992tBUdawB022i8=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Tng2OIbhvNLMeTpj6q20eL7upDUB9acICLY9EyC+z1M=
+    315360000.2067467001929.6dv0oZx98zrsFv0JOjKlK2qSG1bTHmhPgoG5uyCB3+M=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\tQRCoW8nZN--nS5RtW0WcJJVNxxsVRpqb6lUBM+NZN4=
+    31536000.1783630125376.LzCE0zMw7ptZ1r0AP7ahKZa3kc7UGcaHzkXfU1cThFo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\uo0ZqeyhY41nkprRuJVZjOdlIl0IKOVGtEZTqvRNhg8=
+    31536000.1783630155803.MCFO-xYkUb-KkWmum-KyBFFiOnQJlUCbSNFB12X+Ubo=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\uwPBkmMHFwf4x7FFfmJ3lcAATymPSLvHnaQisKLe6SU=
+    31536000.1783643685530.eE0X905REP39qJQvkdVlIuIn+tHbIL-0gtXVhewmRoQ=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\VbPC5LTVymc50CxOZYFDMxAbcXYyjmpIdNaqgbzsl98=
+    31536000.1783643003037.XTw412tA5MLRzWVVk+UlDuXx3phLZd61EA5OjXVpJ9Q=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\VoNmhLXO7wlOnle7dCH6L+KACh39e2N28wCPHXok8H8=
+    43200.1752275857242.vFmZUlQzbkumGUpvf40vb0sog7pNLtWMa9TlBqX4Zog=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\W9eZnkXCrKFBOxelSenlZgiYr0xKnonm4lciUUcQSpY=
+    60.1752261786216.WWI9AXq0sRhsaLqGcEd0f0nKN8ZklgUWCcwbuRWBT4o=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\wDxOjWOYzQl3f+YPw8Q5PWXo+hbHskXGR+yi6tsiUoI=
+    31536000.1783630125417.d2CFeR+Q2zaAGfsgUlvF5k64Vy75lcNhORJ70Fsa-zI=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\wqqcIhgAMrgbX7CebgGI536949tuXAMAMZxBqZsUFdw=
+    31536000.1783630145984.6URgu7kwtczzNO2YUraXjQ7DEJxv5HRK6HU98FvGpX0=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Xc5nAMspmf3S-zxlDTbEpnvryVl-yjYRhK4egkImfbo=
+    31536000.1783643003070.aDrSBUplGQKb9srCs1N3dvkJvLV5Bwu-t8qVOkP8CyE=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\xCxhWDZRugk+98vQ5a01oz61FD+PBPhRZgybq5XPL5o=
+    60.1752261786444.Sgme67JZQxZJPtrm02orWEAaLzXeMI0XT1J7qR+utS4=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\xoA0AvWbavjyaIC6jWVLqKMniKhDU6BlHHvEqosRXDM=
+    15552000.1767646160008.IzX+xwowuikvBWPq5sDE67XB2UaRyIL+Bl-ITC64hYg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\y6GJLDZx2G7cLc1i1rpsNNzWov-yMGKWowZ1x0EvEds=
+    31536000.1783643003074.2A9C8m0UIMJRI0bBnSyKtRt8QD1Cqn9A1nY-tZz6Weg=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\YHg+OhPgqU8rCoeZp7UJn+Ctnk9UOiCDfAOCI-2Gws8=
+    31536000.1783706335142.YR1sJuRGcWl9IWHIthNLJZ5iBawpAfRNjPNozUkcG5g=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\Yn4KjnX1mSU09czY0Bga38WYimiWTWZE6Z9Zjj74StQ=
+    31536000.1783630125457.C8egbwcutver-ePX0auvbGl22JJNk9Ak1HYFZlsNriM=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\images\z+dg9MUJoxpj3jj423H38u41u6Jvc0XvisPAhnA9CVg=
+    31536000.1783645029925.B5IVTL2LF1p6D-xxkqmqhXQZGSr4iknCF91wD+rlZkE=.webp
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\swc\plugins
+    v7_windows_x86_64_0.104.14
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\swc\plugins\v7_windows_x86_64_0.104.14
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\webpack\client-development
+    0.pack.gz
+    1.pack.gz
+    2.pack.gz
+    3.pack.gz
+    index.pack.gz
+    index.pack.gz.old
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\cache\webpack\server-development
+    0.pack.gz
+    1.pack.gz
+    2.pack.gz
+    3.pack.gz
+    4.pack.gz
+    index.pack.gz
+    index.pack.gz.old
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\server\app
+    not-found.js
+    not-found_client-reference-manifest.js
+    page.js
+    page_client-reference-manifest.js
+    _not-found_client-reference-manifest.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\server\vendor-chunks
+    @automotive.js
+    @floating-ui.js
+    @radix-ui.js
+    @swc.js
+    aria-hidden.js
+    class-variance-authority.js
+    clsx.js
+    embla-carousel-react.js
+    embla-carousel-reactive-utils.js
+    embla-carousel.js
+    get-nonce.js
+    lucide-react.js
+    next.js
+    react-remove-scroll-bar.js
+    react-remove-scroll.js
+    react-style-singleton.js
+    tailwind-merge.js
+    tslib.js
+    use-callback-ref.js
+    use-sidecar.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\chunks
+    app
+    app-pages-internals.js
+    main-app.js
+    polyfills.js
+    webpack.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\css
+    app
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\development
+    _buildManifest.js
+    _ssgManifest.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\webpack
+    app
+    142004d410b05268.webpack.hot-update.json
+    512aefd36d5ceb49.webpack.hot-update.json
+    633457081244afec._.hot-update.json
+    971c6844aa65ae19.webpack.hot-update.json
+    97305e36b11643eb.webpack.hot-update.json
+    webpack.142004d410b05268.hot-update.js
+    webpack.512aefd36d5ceb49.hot-update.js
+    webpack.971c6844aa65ae19.hot-update.js
+    webpack.97305e36b11643eb.hot-update.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\chunks\app
+    layout.js
+    loading.js
+    not-found.js
+    page.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\css\app
+    layout.css
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\static\webpack\app
+    layout.142004d410b05268.hot-update.js
+    layout.512aefd36d5ceb49.hot-update.js
+    layout.971c6844aa65ae19.hot-update.js
+    layout.97305e36b11643eb.hot-update.js
+    page.142004d410b05268.hot-update.js
+    page.971c6844aa65ae19.hot-update.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\.next\types\app
+    layout.ts
+    page.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(account)
     dashboard
     orders
     profile
     layout.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(auth)
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(auth)
     login
     register
     layout.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)
     cart
     categories
     checkout
     products
     layout.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\api
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\api
     auth
     trpc
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\dashboard
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(account)\dashboard
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\orders
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(account)\orders
     [orderId]
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\profile
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(account)\profile
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(account)\orders\[orderId]
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(auth)\login
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(account)\orders\[orderId]
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(auth)\login
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(auth)\register
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(auth)\register
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\cart
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)\cart
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\categories
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)\categories
     [category]
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\checkout
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)\checkout
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\products
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)\products
     [slug]
     page.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\categories\[category]
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\(shop)\products\[slug]
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\api\auth
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)\categories\[category]
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\(shop)\products\[slug]
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\api\auth
     [...nextauth].ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\app\api\trpc
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\app\api\trpc
     [trpc].ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components\auth
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\components\auth
     LoginForm.tsx
     RegisterForm.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components\checkout
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\components\checkout
     PaymentForm.tsx
     ShippingForm.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\components\product
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\apps\web\components\product
     ProductDetail.tsx
     ProductReviews.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\public\icons
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\apps\web\public\images
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment\docker
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\deployment\docker
     docker-compose.prod.yml
     docker-compose.yml
     Dockerfile.admin
     Dockerfile.api
     Dockerfile.web
     nginx.conf
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment\scripts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\deployment\scripts
     backup.ps1
     restore.ps1
     update.ps1
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\deployment\windows-server
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\deployment\windows-server
     deploy.ps1
     install-docker.ps1
     setup-iis.ps1
     ssl-setup.ps1
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\auth
-    src
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\auth
     package.json
-    tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\config
-    src
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\config
     package.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database
+    backups
     prisma
     src
+    .env
+    .env.example
     package.json
-    tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\trpc
-    src
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\trpc
     package.json
-    tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\types
-    src
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\types
     package.json
-    tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui
     components
     hooks
-    styles
-    utils
-    components.json
+    lib
     index.ts
     package.json
-    tailwind.config.ts
     tsconfig.json
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\auth\src
-    hash.ts
-    index.ts
-    jwt.ts
-    validation.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\config\src
-    index.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database\prisma
-    migrations
+    tsconfig.tsbuildinfo
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\backups
+    backup-
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\prisma
+    empty-db.ts
+    reset-and-seed.ts
     schema.prisma
     seed.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database\src
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\src
+    generated
     client.ts
     index.ts
-    queries.ts
     types.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\database\prisma\migrations
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\trpc\src
-    client.ts
-    index.ts
-    server.ts
-    types.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\types\src
-    index.ts
-    order.ts
-    product.ts
-    user.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components
-    forms
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\backups\backup-
+    automotive-locksmith
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\backups\backup-\automotive-locksmith
+    addresses.bson
+    addresses.metadata.json
+    categories.bson
+    categories.metadata.json
+    orders.bson
+    orders.metadata.json
+    order_items.bson
+    order_items.metadata.json
+    prelude.json
+    products.bson
+    products.metadata.json
+    product_reviews.bson
+    product_reviews.metadata.json
+    users.bson
+    users.metadata.json
+    vehicle_compatibility.bson
+    vehicle_compatibility.metadata.json
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\src\generated
+    runtime
+    default.d.ts
+    default.js
+    edge.d.ts
+    edge.js
+    index-browser.js
+    index.d.ts
+    index.js
+    package.json
+    query_engine-windows.dll.node
+    schema.prisma
+    wasm.d.ts
+    wasm.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\database\src\generated\runtime
+    edge-esm.js
+    edge.js
+    index-browser.d.ts
+    index-browser.js
+    library.d.ts
+    library.js
+    react-native.js
+    wasm.js
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\components
     layout
     marketing
     products
     ui
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\hooks
-    useDebounce.ts
-    useLocalStorage.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\styles
-    components.css
-    globals.css
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\utils
-    cn.ts
-    formatters.ts
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\forms
-    Button.tsx
-    Input.tsx
-    Select.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\layout
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\hooks
+    use-mobile.tsx
+    use-toast.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\lib
+    utils.ts
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\components\layout
     footer.tsx
     HeaderMenu.tsx
     VehicleSearch.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\marketing
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\components\marketing
     BatteryPromo.tsx
     HeroSlider.tsx
     ManufacturerLogos.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\products
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\components\products
     BackInStock.tsx
     CategoryGrid.tsx
     FeaturedProducts.tsx
     NewProductsSection.tsx
     OnSale.tsx
     ProductCard.tsx
-E:\Storage\Downloads\Zen\Dev\automotive-locksmith-platform\packages\ui\components\ui
+E:\Storage\Downloads\Zen\1-Dev projects\automotive-locksmith-platform\test\automotive-salah\packages\ui\components\ui
     accordion.tsx
     alert-dialog.tsx
     alert.tsx

@@ -1,24 +1,42 @@
 {
   "name": "@automotive/database",
   "version": "0.1.0",
+  "description": "Database package for automotive locksmith platform with Prisma ORM",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist .turbo node_modules/.prisma",
+    
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:pull": "prisma db pull",
+    "db:studio": "prisma studio",
+    
+    "db:setup": "tsx prisma/setup-database.ts",
+    "db:setup:fresh": "tsx prisma/setup-database.ts --recreate",
+    "db:setup:no-seed": "tsx prisma/setup-database.ts --no-seed",
+    
     "db:seed": "tsx prisma/seed.ts",
     "db:reset-seed": "tsx prisma/reset-and-seed.ts",
     "db:reset": "tsx prisma/empty-db.ts",
+    
+    "db:backup": "tsx scripts/backup.ts",
+    "db:restore": "tsx scripts/restore.ts",
+    
     "db:migrate-admin": "tsx prisma/migrate-to-admin-schema.ts",
     "db:complete-migration": "tsx prisma/complete-migration-fixed.ts",
     "db:repair-data": "tsx prisma/repair-product-data.ts",
-    "db:studio": "prisma studio",
-    "db:backup": "tsx scripts/backup.ts",
-    "db:restore": "tsx scripts/restore.ts",
-    "clean": "rm -rf .next",
-    "dev": "tsc --watch",
-    "build": "tsc"
+    
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
@@ -30,8 +48,60 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.10.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
     "prisma": "^5.7.0",
     "tsx": "^4.6.0",
-    "typescript": "^5.3.0"
+    "typescript": "^5.3.0",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    },
+    "./client": {
+      "import": "./src/client.ts",
+      "require": "./src/client.ts"
+    },
+    "./types": {
+      "import": "./src/types.ts",
+      "require": "./src/types.ts"
+    },
+    "./queries": {
+      "import": "./src/queries.ts",
+      "require": "./src/queries.ts"
+    }
+  },
+  "files": [
+    "src/**/*",
+    "dist/**/*",
+    "prisma/schema.prisma"
+  ],
+  "keywords": [
+    "database",
+    "prisma",
+    "mongodb",
+    "automotive",
+    "locksmith",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/automotive-locksmith-platform.git",
+    "directory": "packages/database"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/automotive-locksmith-platform/issues"
+  },
+  "homepage": "https://github.com/your-org/automotive-locksmith-platform#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

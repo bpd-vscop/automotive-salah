@@ -122,6 +122,7 @@ exports.Prisma.RoleScalarFieldEnum = {
   permissions: 'permissions',
   description: 'description',
   isActive: 'isActive',
+  maxUsers: 'maxUsers',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -129,48 +130,156 @@ exports.Prisma.RoleScalarFieldEnum = {
 exports.Prisma.StaffUserScalarFieldEnum = {
   id: 'id',
   roleId: 'roleId',
-  name: 'name',
-  email: 'email',
-  passwordHash: 'passwordHash',
-  status: 'status',
-  lastLoginAt: 'lastLoginAt',
-  loginCount: 'loginCount',
-  avatar: 'avatar',
-  phone: 'phone',
-  timezone: 'timezone',
-  emailVerified: 'emailVerified',
-  twoFactorEnabled: 'twoFactorEnabled',
-  passwordChangedAt: 'passwordChangedAt',
-  createdBy: 'createdBy',
-  updatedBy: 'updatedBy',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.CustomerScalarFieldEnum = {
-  id: 'id',
   firstName: 'firstName',
   lastName: 'lastName',
   email: 'email',
   phone: 'phone',
   passwordHash: 'passwordHash',
-  emailVerified: 'emailVerified',
   isActive: 'isActive',
-  accountType: 'accountType',
-  professionalTier: 'professionalTier',
-  discountRate: 'discountRate',
-  newsletter: 'newsletter',
-  smsNotifications: 'smsNotifications',
-  marketingOptIn: 'marketingOptIn',
-  preferredCurrency: 'preferredCurrency',
-  preferredLanguage: 'preferredLanguage',
-  totalOrders: 'totalOrders',
-  totalSpent: 'totalSpent',
-  lifetimeValue: 'lifetimeValue',
+  emailVerified: 'emailVerified',
+  twoFactorEnabled: 'twoFactorEnabled',
+  twoFactorSecret: 'twoFactorSecret',
+  lastLogin: 'lastLogin',
+  lastLoginIp: 'lastLoginIp',
+  loginAttempts: 'loginAttempts',
+  lockedUntil: 'lockedUntil',
+  passwordChangedAt: 'passwordChangedAt',
+  mustChangePassword: 'mustChangePassword',
+  avatar: 'avatar',
+  timezone: 'timezone',
+  language: 'language',
+  canAccessAdmin: 'canAccessAdmin',
+  departmentAccess: 'departmentAccess',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  lastLoginAt: 'lastLoginAt',
-  lastOrderAt: 'lastOrderAt'
+  createdBy: 'createdBy',
+  lastModifiedBy: 'lastModifiedBy'
+};
+
+exports.Prisma.SettingScalarFieldEnum = {
+  id: 'id',
+  settingKey: 'settingKey',
+  settingValue: 'settingValue',
+  category: 'category',
+  subcategory: 'subcategory',
+  dataType: 'dataType',
+  isEncrypted: 'isEncrypted',
+  isPublic: 'isPublic',
+  displayName: 'displayName',
+  description: 'description',
+  defaultValue: 'defaultValue',
+  validation: 'validation',
+  sortOrder: 'sortOrder',
+  isVisible: 'isVisible',
+  isEditable: 'isEditable',
+  updatedBy: 'updatedBy',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.BannerScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  subtitle: 'subtitle',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  videoUrl: 'videoUrl',
+  altText: 'altText',
+  buttonText: 'buttonText',
+  buttonUrl: 'buttonUrl',
+  linkTarget: 'linkTarget',
+  position: 'position',
+  displayType: 'displayType',
+  priority: 'priority',
+  showOnMobile: 'showOnMobile',
+  showOnTablet: 'showOnTablet',
+  showOnDesktop: 'showOnDesktop',
+  backgroundColor: 'backgroundColor',
+  textColor: 'textColor',
+  borderColor: 'borderColor',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  isActive: 'isActive',
+  clickCount: 'clickCount',
+  viewCount: 'viewCount',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  createdBy: 'createdBy'
+};
+
+exports.Prisma.HeroSlideScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  subtitle: 'subtitle',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  mobileImageUrl: 'mobileImageUrl',
+  altText: 'altText',
+  primaryButtonText: 'primaryButtonText',
+  primaryButtonUrl: 'primaryButtonUrl',
+  secondaryButtonText: 'secondaryButtonText',
+  secondaryButtonUrl: 'secondaryButtonUrl',
+  textPosition: 'textPosition',
+  overlayOpacity: 'overlayOpacity',
+  textColor: 'textColor',
+  animationType: 'animationType',
+  displayDuration: 'displayDuration',
+  sortOrder: 'sortOrder',
+  isActive: 'isActive',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  showOnMobile: 'showOnMobile',
+  showOnTablet: 'showOnTablet',
+  showOnDesktop: 'showOnDesktop',
+  clickCount: 'clickCount',
+  viewCount: 'viewCount',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  createdBy: 'createdBy'
+};
+
+exports.Prisma.SiteCustomizationScalarFieldEnum = {
+  id: 'id',
+  siteName: 'siteName',
+  siteDescription: 'siteDescription',
+  logoUrl: 'logoUrl',
+  faviconUrl: 'faviconUrl',
+  primaryColor: 'primaryColor',
+  secondaryColor: 'secondaryColor',
+  accentColor: 'accentColor',
+  backgroundColor: 'backgroundColor',
+  textColor: 'textColor',
+  linkColor: 'linkColor',
+  primaryFont: 'primaryFont',
+  secondaryFont: 'secondaryFont',
+  fontSize: 'fontSize',
+  headerStyle: 'headerStyle',
+  footerStyle: 'footerStyle',
+  borderRadius: 'borderRadius',
+  showSearch: 'showSearch',
+  showWishlist: 'showWishlist',
+  showCompare: 'showCompare',
+  showReviews: 'showReviews',
+  enableChat: 'enableChat',
+  enableNewsletter: 'enableNewsletter',
+  contactEmail: 'contactEmail',
+  contactPhone: 'contactPhone',
+  contactAddress: 'contactAddress',
+  businessHours: 'businessHours',
+  socialMedia: 'socialMedia',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  metaKeywords: 'metaKeywords',
+  googleAnalytics: 'googleAnalytics',
+  privacyPolicyUrl: 'privacyPolicyUrl',
+  termsOfServiceUrl: 'termsOfServiceUrl',
+  isActive: 'isActive',
+  updatedAt: 'updatedAt',
+  updatedBy: 'updatedBy'
 };
 
 exports.Prisma.ActivityLogScalarFieldEnum = {
@@ -188,157 +297,48 @@ exports.Prisma.ActivityLogScalarFieldEnum = {
   timestamp: 'timestamp'
 };
 
-exports.Prisma.SettingScalarFieldEnum = {
+exports.Prisma.CustomerScalarFieldEnum = {
   id: 'id',
-  settingKey: 'settingKey',
-  settingValue: 'settingValue',
-  category: 'category',
-  dataType: 'dataType',
-  isEncrypted: 'isEncrypted',
-  isPublic: 'isPublic',
-  description: 'description',
-  updatedBy: 'updatedBy',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.ProductScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  description: 'description',
-  shortDescription: 'shortDescription',
-  regularPrice: 'regularPrice',
-  salePrice: 'salePrice',
-  costPrice: 'costPrice',
-  sku: 'sku',
-  partNumber: 'partNumber',
-  upc: 'upc',
-  manufacturerPartNumber: 'manufacturerPartNumber',
-  images: 'images',
-  thumbnailImage: 'thumbnailImage',
-  categoryId: 'categoryId',
-  subCategory: 'subCategory',
-  brand: 'brand',
-  tags: 'tags',
-  stockQuantity: 'stockQuantity',
-  lowStockThreshold: 'lowStockThreshold',
-  trackInventory: 'trackInventory',
-  allowBackorder: 'allowBackorder',
-  status: 'status',
-  approvalStatus: 'approvalStatus',
-  publishedAt: 'publishedAt',
-  professionalOnly: 'professionalOnly',
-  minimumOrderQuantity: 'minimumOrderQuantity',
-  maximumOrderQuantity: 'maximumOrderQuantity',
-  slug: 'slug',
-  metaTitle: 'metaTitle',
-  metaDescription: 'metaDescription',
-  featured: 'featured',
-  onSale: 'onSale',
-  newProduct: 'newProduct',
-  weight: 'weight',
-  shippingClass: 'shippingClass',
-  adminNotes: 'adminNotes',
-  createdBy: 'createdBy',
-  lastModifiedBy: 'lastModifiedBy',
-  version: 'version',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.VehicleCompatibilityScalarFieldEnum = {
-  id: 'id',
-  productId: 'productId',
-  year: 'year',
-  make: 'make',
-  model: 'model',
-  trim: 'trim',
-  engine: 'engine',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  phone: 'phone',
+  passwordHash: 'passwordHash',
+  emailVerified: 'emailVerified',
+  isActive: 'isActive',
+  professionalTier: 'professionalTier',
+  discountRate: 'discountRate',
+  totalOrders: 'totalOrders',
+  totalSpent: 'totalSpent',
+  lifetimeValue: 'lifetimeValue',
+  averageOrderValue: 'averageOrderValue',
+  preferredPaymentMethod: 'preferredPaymentMethod',
+  communicationPrefs: 'communicationPrefs',
+  timezone: 'timezone',
+  customerType: 'customerType',
+  riskLevel: 'riskLevel',
   notes: 'notes',
-  verified: 'verified'
-};
-
-exports.Prisma.OrderScalarFieldEnum = {
-  id: 'id',
-  orderNumber: 'orderNumber',
-  customerId: 'customerId',
-  customerEmail: 'customerEmail',
-  customerPhone: 'customerPhone',
-  status: 'status',
-  paymentStatus: 'paymentStatus',
-  priorityLevel: 'priorityLevel',
-  subtotal: 'subtotal',
-  taxAmount: 'taxAmount',
-  shippingAmount: 'shippingAmount',
-  discountAmount: 'discountAmount',
-  totalAmount: 'totalAmount',
-  shippingAddress: 'shippingAddress',
-  billingAddress: 'billingAddress',
-  shippingMethod: 'shippingMethod',
-  shippingCarrier: 'shippingCarrier',
-  trackingNumber: 'trackingNumber',
-  estimatedDelivery: 'estimatedDelivery',
-  paymentMethod: 'paymentMethod',
-  paymentIntentId: 'paymentIntentId',
-  paymentReference: 'paymentReference',
-  assignedToStaffId: 'assignedToStaffId',
-  internalNotes: 'internalNotes',
-  customerNotes: 'customerNotes',
-  cancellationReason: 'cancellationReason',
-  refundAmount: 'refundAmount',
-  lastModifiedBy: 'lastModifiedBy',
-  processedAt: 'processedAt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  shippedAt: 'shippedAt',
-  deliveredAt: 'deliveredAt',
-  cancelledAt: 'cancelledAt'
-};
-
-exports.Prisma.OrderItemScalarFieldEnum = {
-  id: 'id',
-  orderId: 'orderId',
-  productId: 'productId',
-  productName: 'productName',
-  productSku: 'productSku',
-  unitPrice: 'unitPrice',
-  quantity: 'quantity',
-  totalPrice: 'totalPrice',
-  productImage: 'productImage',
-  productOptions: 'productOptions'
+  lastLogin: 'lastLogin'
 };
 
 exports.Prisma.AddressScalarFieldEnum = {
   id: 'id',
+  customerId: 'customerId',
   firstName: 'firstName',
   lastName: 'lastName',
   company: 'company',
-  addressLine1: 'addressLine1',
-  addressLine2: 'addressLine2',
+  address1: 'address1',
+  address2: 'address2',
   city: 'city',
   state: 'state',
-  zipCode: 'zipCode',
+  postalCode: 'postalCode',
   country: 'country',
+  phone: 'phone',
   type: 'type',
   isDefault: 'isDefault',
-  isVerified: 'isVerified',
-  customerId: 'customerId',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.ProductReviewScalarFieldEnum = {
-  id: 'id',
-  rating: 'rating',
-  title: 'title',
-  content: 'content',
-  verified: 'verified',
-  helpful: 'helpful',
-  status: 'status',
-  moderatedBy: 'moderatedBy',
-  moderatedAt: 'moderatedAt',
-  productId: 'productId',
-  customerId: 'customerId',
+  isValidated: 'isValidated',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -361,6 +361,105 @@ exports.Prisma.CategoryScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  categoryId: 'categoryId',
+  name: 'name',
+  description: 'description',
+  shortDescription: 'shortDescription',
+  regularPrice: 'regularPrice',
+  salePrice: 'salePrice',
+  costPrice: 'costPrice',
+  sku: 'sku',
+  partNumber: 'partNumber',
+  upc: 'upc',
+  stockQuantity: 'stockQuantity',
+  lowStockThreshold: 'lowStockThreshold',
+  trackInventory: 'trackInventory',
+  allowBackorders: 'allowBackorders',
+  professionalOnly: 'professionalOnly',
+  minimumOrderQuantity: 'minimumOrderQuantity',
+  status: 'status',
+  approvalStatus: 'approvalStatus',
+  featured: 'featured',
+  onSale: 'onSale',
+  newProduct: 'newProduct',
+  metaTitle: 'metaTitle',
+  metaDescription: 'metaDescription',
+  tags: 'tags',
+  weight: 'weight',
+  dimensions: 'dimensions',
+  requiresShipping: 'requiresShipping',
+  shippingClass: 'shippingClass',
+  version: 'version',
+  createdBy: 'createdBy',
+  lastModifiedBy: 'lastModifiedBy',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ProductReviewScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  customerId: 'customerId',
+  rating: 'rating',
+  title: 'title',
+  content: 'content',
+  verified: 'verified',
+  helpful: 'helpful',
+  status: 'status',
+  moderatedBy: 'moderatedBy',
+  moderatedAt: 'moderatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.OrderScalarFieldEnum = {
+  id: 'id',
+  customerId: 'customerId',
+  orderNumber: 'orderNumber',
+  status: 'status',
+  paymentStatus: 'paymentStatus',
+  fulfillmentStatus: 'fulfillmentStatus',
+  priorityLevel: 'priorityLevel',
+  subtotal: 'subtotal',
+  taxAmount: 'taxAmount',
+  shippingAmount: 'shippingAmount',
+  discountAmount: 'discountAmount',
+  totalAmount: 'totalAmount',
+  paymentMethod: 'paymentMethod',
+  paymentReference: 'paymentReference',
+  shippingAddress: 'shippingAddress',
+  billingAddress: 'billingAddress',
+  shippingCarrier: 'shippingCarrier',
+  shippingMethod: 'shippingMethod',
+  trackingNumber: 'trackingNumber',
+  estimatedDelivery: 'estimatedDelivery',
+  actualDelivery: 'actualDelivery',
+  assignedToStaffId: 'assignedToStaffId',
+  internalNotes: 'internalNotes',
+  customerNotes: 'customerNotes',
+  cancellationReason: 'cancellationReason',
+  cancelledAt: 'cancelledAt',
+  refundAmount: 'refundAmount',
+  refundReason: 'refundReason',
+  refundedAt: 'refundedAt',
+  orderDate: 'orderDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.OrderItemScalarFieldEnum = {
+  id: 'id',
+  orderId: 'orderId',
+  productId: 'productId',
+  quantity: 'quantity',
+  priceAtPurchase: 'priceAtPurchase',
+  productNameAtPurchase: 'productNameAtPurchase',
+  quantityShipped: 'quantityShipped',
+  quantityRefunded: 'quantityRefunded'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -370,17 +469,54 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
-exports.StaffStatus = exports.$Enums.StaffStatus = {
-  ACTIVE: 'ACTIVE',
-  INACTIVE: 'INACTIVE',
-  SUSPENDED: 'SUSPENDED',
-  PENDING_VERIFICATION: 'PENDING_VERIFICATION'
+exports.SettingDataType = exports.$Enums.SettingDataType = {
+  STRING: 'STRING',
+  NUMBER: 'NUMBER',
+  BOOLEAN: 'BOOLEAN',
+  JSON: 'JSON',
+  EMAIL: 'EMAIL',
+  URL: 'URL',
+  PASSWORD: 'PASSWORD',
+  COLOR: 'COLOR',
+  IMAGE: 'IMAGE'
 };
 
-exports.CustomerType = exports.$Enums.CustomerType = {
-  INDIVIDUAL: 'INDIVIDUAL',
-  BUSINESS: 'BUSINESS',
-  PROFESSIONAL: 'PROFESSIONAL'
+exports.BannerPosition = exports.$Enums.BannerPosition = {
+  TOP: 'TOP',
+  HEADER: 'HEADER',
+  HERO: 'HERO',
+  SIDEBAR: 'SIDEBAR',
+  FOOTER: 'FOOTER',
+  FLOATING: 'FLOATING',
+  BETWEEN_CONTENT: 'BETWEEN_CONTENT'
+};
+
+exports.BannerType = exports.$Enums.BannerType = {
+  INFO: 'INFO',
+  PROMOTION: 'PROMOTION',
+  ALERT: 'ALERT',
+  ANNOUNCEMENT: 'ANNOUNCEMENT',
+  CTA: 'CTA'
+};
+
+exports.SlideTextPosition = exports.$Enums.SlideTextPosition = {
+  CENTER_LEFT: 'CENTER_LEFT',
+  CENTER_RIGHT: 'CENTER_RIGHT',
+  CENTER_CENTER: 'CENTER_CENTER',
+  TOP_LEFT: 'TOP_LEFT',
+  TOP_RIGHT: 'TOP_RIGHT',
+  BOTTOM_LEFT: 'BOTTOM_LEFT',
+  BOTTOM_RIGHT: 'BOTTOM_RIGHT'
+};
+
+exports.SlideAnimation = exports.$Enums.SlideAnimation = {
+  FADE: 'FADE',
+  SLIDE_LEFT: 'SLIDE_LEFT',
+  SLIDE_RIGHT: 'SLIDE_RIGHT',
+  SLIDE_UP: 'SLIDE_UP',
+  SLIDE_DOWN: 'SLIDE_DOWN',
+  ZOOM_IN: 'ZOOM_IN',
+  ZOOM_OUT: 'ZOOM_OUT'
 };
 
 exports.ProfessionalTier = exports.$Enums.ProfessionalTier = {
@@ -390,59 +526,41 @@ exports.ProfessionalTier = exports.$Enums.ProfessionalTier = {
   PLATINUM: 'PLATINUM'
 };
 
-exports.SettingDataType = exports.$Enums.SettingDataType = {
-  STRING: 'STRING',
-  NUMBER: 'NUMBER',
-  BOOLEAN: 'BOOLEAN',
-  JSON: 'JSON',
-  EMAIL: 'EMAIL',
-  URL: 'URL'
+exports.CustomerType = exports.$Enums.CustomerType = {
+  RETAIL: 'RETAIL',
+  BUSINESS: 'BUSINESS',
+  DISTRIBUTOR: 'DISTRIBUTOR',
+  GOVERNMENT: 'GOVERNMENT'
+};
+
+exports.RiskLevel = exports.$Enums.RiskLevel = {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH',
+  BLOCKED: 'BLOCKED'
+};
+
+exports.AddressType = exports.$Enums.AddressType = {
+  BILLING: 'BILLING',
+  SHIPPING: 'SHIPPING',
+  BOTH: 'BOTH'
 };
 
 exports.ProductStatus = exports.$Enums.ProductStatus = {
   DRAFT: 'DRAFT',
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
   ACTIVE: 'ACTIVE',
   INACTIVE: 'INACTIVE',
-  ARCHIVED: 'ARCHIVED',
-  LOW_STOCK: 'LOW_STOCK'
+  DISCONTINUED: 'DISCONTINUED',
+  OUT_OF_STOCK: 'OUT_OF_STOCK'
 };
 
 exports.ApprovalStatus = exports.$Enums.ApprovalStatus = {
   PENDING: 'PENDING',
   APPROVED: 'APPROVED',
   REJECTED: 'REJECTED',
-  REVIEW: 'REVIEW'
-};
-
-exports.OrderStatus = exports.$Enums.OrderStatus = {
-  PENDING: 'PENDING',
-  PROCESSING: 'PROCESSING',
-  SHIPPED: 'SHIPPED',
-  COMPLETED: 'COMPLETED',
-  CANCELLED: 'CANCELLED',
-  REFUNDED: 'REFUNDED'
-};
-
-exports.PaymentStatus = exports.$Enums.PaymentStatus = {
-  PENDING: 'PENDING',
-  PROCESSING: 'PROCESSING',
-  PAID: 'PAID',
-  FAILED: 'FAILED',
-  REFUNDED: 'REFUNDED',
-  CANCELLED: 'CANCELLED'
-};
-
-exports.OrderPriority = exports.$Enums.OrderPriority = {
-  LOW: 'LOW',
-  NORMAL: 'NORMAL',
-  HIGH: 'HIGH',
-  URGENT: 'URGENT'
-};
-
-exports.AddressType = exports.$Enums.AddressType = {
-  SHIPPING: 'SHIPPING',
-  BILLING: 'BILLING',
-  BOTH: 'BOTH'
+  CHANGES_REQUESTED: 'CHANGES_REQUESTED'
 };
 
 exports.ReviewStatus = exports.$Enums.ReviewStatus = {
@@ -452,19 +570,57 @@ exports.ReviewStatus = exports.$Enums.ReviewStatus = {
   SPAM: 'SPAM'
 };
 
+exports.OrderStatus = exports.$Enums.OrderStatus = {
+  PENDING: 'PENDING',
+  CONFIRMED: 'CONFIRMED',
+  PROCESSING: 'PROCESSING',
+  SHIPPED: 'SHIPPED',
+  DELIVERED: 'DELIVERED',
+  CANCELLED: 'CANCELLED',
+  REFUNDED: 'REFUNDED',
+  ON_HOLD: 'ON_HOLD'
+};
+
+exports.PaymentStatus = exports.$Enums.PaymentStatus = {
+  PENDING: 'PENDING',
+  AUTHORIZED: 'AUTHORIZED',
+  PAID: 'PAID',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+  PARTIALLY_REFUNDED: 'PARTIALLY_REFUNDED',
+  CANCELLED: 'CANCELLED'
+};
+
+exports.FulfillmentStatus = exports.$Enums.FulfillmentStatus = {
+  UNFULFILLED: 'UNFULFILLED',
+  PARTIALLY_FULFILLED: 'PARTIALLY_FULFILLED',
+  FULFILLED: 'FULFILLED',
+  CANCELLED: 'CANCELLED',
+  RETURNED: 'RETURNED'
+};
+
+exports.OrderPriority = exports.$Enums.OrderPriority = {
+  LOW: 'LOW',
+  NORMAL: 'NORMAL',
+  HIGH: 'HIGH',
+  URGENT: 'URGENT'
+};
+
 exports.Prisma.ModelName = {
   Role: 'Role',
   StaffUser: 'StaffUser',
-  Customer: 'Customer',
-  ActivityLog: 'ActivityLog',
   Setting: 'Setting',
-  Product: 'Product',
-  VehicleCompatibility: 'VehicleCompatibility',
-  Order: 'Order',
-  OrderItem: 'OrderItem',
+  Banner: 'Banner',
+  HeroSlide: 'HeroSlide',
+  SiteCustomization: 'SiteCustomization',
+  ActivityLog: 'ActivityLog',
+  Customer: 'Customer',
   Address: 'Address',
+  Category: 'Category',
+  Product: 'Product',
   ProductReview: 'ProductReview',
-  Category: 'Category'
+  Order: 'Order',
+  OrderItem: 'OrderItem'
 };
 
 /**
