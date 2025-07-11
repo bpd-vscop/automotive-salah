@@ -1,6 +1,6 @@
 // filepath: packages/database/prisma/schema.prisma
-// Prisma Schema for Automotive Locksmith Platform
-// This defines your database structure - MongoDB with type safety
+// ULKS E-commerce Platform - Complete Database Schema
+// Updated to support full admin dashboard with 4-tier RBAC system
 
 generator client {
   provider = "prisma-client-js"
@@ -12,8 +12,224 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ======================== RBAC SYSTEM ========================
+// Role-based access control with 4-tier hierarchy
+
+model Role {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  roleName       String   @unique // "Super Admin", "Admin", "Store Manager", "Editor"
+  hierarchyLevel Int      @unique // 1=Super Admin, 2=Admin, 3=Store Manager, 4=Editor
+  permissions    Json // Detailed permissions object
+  description    String?
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  staffUsers StaffUser[]
+
+  @@map("roles")
+}
+
+// ======================== STAFF USERS (Admin Dashboard Users) ========================
+// Separate from customers for security and clarity
+
+model StaffUser {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  roleId String @db.ObjectId
+
+  // Basic Info
+  name         String
+  email        String      @unique
+  passwordHash String
+  status       StaffStatus @default(ACTIVE)
+
+  // Login tracking
+  lastLoginAt DateTime?
+  loginCount  Int       @default(0)
+
+  // Profile info
+  avatar   String?
+  phone    String?
+  timezone String  @default("UTC")
+
+  // Security
+  emailVerified     Boolean  @default(false)
+  twoFactorEnabled  Boolean  @default(false)
+  passwordChangedAt DateTime @default(now())
+
+  // Audit fields
+  createdBy String?  @db.ObjectId
+  updatedBy String?  @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  role          Role        @relation(fields: [roleId], references: [id])
+  createdByUser StaffUser?  @relation("StaffUserCreations", fields: [createdBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  createdUsers  StaffUser[] @relation("StaffUserCreations")
+  updatedByUser StaffUser?  @relation("StaffUserUpdates", fields: [updatedBy], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  updatedUsers  StaffUser[] @relation("StaffUserUpdates")
+
+  // Activity tracking
+  activityLogs     ActivityLog[]
+  productCreations Product[]     @relation("ProductCreations")
+  productUpdates   Product[]     @relation("ProductUpdates")
+  orderAssignments Order[]       @relation("OrderAssignments")
+  orderUpdates     Order[]       @relation("OrderUpdates")
+
+  @@map("staff_users")
+}
+
+enum StaffStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  PENDING_VERIFICATION
+}
+
+// ======================== CUSTOMERS (E-commerce Users) ========================
+// Separate from staff for security and clarity
+
+model Customer {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Basic Info
+  firstName    String
+  lastName     String
+  email        String  @unique
+  phone        String?
+  passwordHash String
+
+  // Account Status
+  emailVerified DateTime?
+  isActive      Boolean      @default(true)
+  accountType   CustomerType @default(INDIVIDUAL)
+
+  // Business Information (B2B)
+  businessInfo BusinessInfo?
+
+  // Professional Tier (Bronze, Silver, Gold, Platinum)
+  professionalTier ProfessionalTier @default(BRONZE)
+  discountRate     Float            @default(0) // Percentage discount
+
+  // Preferences
+  newsletter        Boolean @default(false)
+  smsNotifications  Boolean @default(false)
+  marketingOptIn    Boolean @default(false)
+  preferredCurrency String  @default("USD")
+  preferredLanguage String  @default("en")
+
+  // Statistics (computed fields)
+  totalOrders   Int   @default(0)
+  totalSpent    Float @default(0)
+  lifetimeValue Float @default(0)
+
+  // Timestamps
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastLoginAt DateTime?
+  lastOrderAt DateTime?
+
+  // Relations
+  orders    Order[]
+  addresses Address[]
+  reviews   ProductReview[]
+
+  @@map("customers")
+}
+
+enum CustomerType {
+  INDIVIDUAL
+  BUSINESS
+  PROFESSIONAL
+}
+
+// Business information for B2B customers
+type BusinessInfo {
+  businessName     String
+  businessType     String // "Locksmith", "Dealer", "Repair Shop"
+  taxId            String? // Business tax ID
+  licenseNumber    String? // Professional license
+  website          String?
+  verified         Boolean  @default(false)
+  verificationDocs String[] // Document URLs
+  yearEstablished  Int?
+  employeeCount    String? // "1-10", "11-50", etc.
+}
+
+// Professional pricing tiers (like Key4.com)
+enum ProfessionalTier {
+  BRONZE // Basic discount
+  SILVER // Better discount
+  GOLD // Great discount  
+  PLATINUM // Best discount
+}
+
+// ======================== ACTIVITY LOGGING ========================
+// Comprehensive audit trail for all admin actions
+
+model ActivityLog {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  staffUserId String @db.ObjectId
+
+  // Action details
+  actionType  String // "PRODUCT_CREATE", "ORDER_UPDATE", "USER_DELETE", etc.
+  description String // Human-readable description
+  entityType  String? // "Product", "Order", "Customer", "User"
+  entityId    String? // ID of the affected entity
+
+  // Context
+  ipAddress String?
+  userAgent String?
+  metadata  Json? // Additional context data
+
+  // Results
+  success      Boolean @default(true)
+  errorMessage String?
+
+  // Timestamp
+  timestamp DateTime @default(now())
+
+  // Relations
+  staffUser StaffUser @relation(fields: [staffUserId], references: [id])
+
+  @@map("activity_logs")
+}
+
+// ======================== SETTINGS MANAGEMENT ========================
+// Global application configuration
+
+model Setting {
+  id           String          @id @default(auto()) @map("_id") @db.ObjectId
+  settingKey   String          @unique // "store_name", "stripe_api_key", "default_currency"
+  settingValue Json // Flexible value storage
+  category     String // "general", "payment", "shipping", "email", "security"
+  dataType     SettingDataType @default(STRING)
+  isEncrypted  Boolean         @default(false) // For sensitive data like API keys
+  isPublic     Boolean         @default(false) // Can be exposed to frontend
+  description  String?
+
+  // Audit
+  updatedBy String?  @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("settings")
+}
+
+enum SettingDataType {
+  STRING
+  NUMBER
+  BOOLEAN
+  JSON
+  EMAIL
+  URL
+}
+
 // ======================== PRODUCTS ========================
-// Main product catalog - this replaces your placeholder data
+// Enhanced product catalog with admin features
+
 model Product {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
@@ -23,61 +239,72 @@ model Product {
   shortDescription String? // Brief description for cards
 
   // Pricing
-  price     Float // Regular price
-  salePrice Float? // Sale price (optional)
-  costPrice Float? // Your cost (for profit calculation)
+  regularPrice Float // Regular price (renamed from price)
+  salePrice    Float? // Sale price (optional)
+  costPrice    Float? // Your cost (for profit calculation)
+
+  // Product Codes
+  sku                    String  @unique // Stock keeping unit
+  partNumber             String? // Your internal part number
+  upc                    String? // Universal product code
+  manufacturerPartNumber String? // Manufacturer's part number
 
   // Product Images
   images         String[] // Array of image URLs ["image1.jpg", "image2.jpg"]
   thumbnailImage String? // Main thumbnail for cards
 
   // Categorization
-  category    String // Main category (e.g., "Programming Tools")
+  categoryId  String?  @db.ObjectId
   subCategory String? // Sub category (e.g., "BMW Tools")
   brand       String // Manufacturer (e.g., "Autel", "Launch")
   tags        String[] // Search tags ["bmw", "programming", "obd"]
 
-  // Product Codes
-  partNumber             String  @unique // Your internal part number
-  sku                    String? @unique // Stock keeping unit
-  upc                    String? // Universal product code
-  manufacturerPartNumber String? // Manufacturer's part number
+  // Inventory Management
+  stockQuantity     Int     @default(0)
+  lowStockThreshold Int     @default(5) // When to alert for low stock
+  trackInventory    Boolean @default(true)
+  allowBackorder    Boolean @default(false)
 
-  // Inventory
-  inStock       Boolean @default(true)
-  stockQuantity Int     @default(0)
-  lowStockAlert Int     @default(5) // Alert when stock below this
-
-  // Vehicle Compatibility (Key4.com feature)
-  compatibility VehicleCompatibility[] // Which cars this works with
-
-  // Product Status Flags
-  featured     Boolean @default(false) // Show in featured section
-  onSale       Boolean @default(false) // Show in sale section  
-  newProduct   Boolean @default(false) // Show in new products
-  discontinued Boolean @default(false) // No longer available
+  // Product Status & Workflow
+  status         ProductStatus  @default(DRAFT)
+  approvalStatus ApprovalStatus @default(PENDING)
+  publishedAt    DateTime?
 
   // Business Features
   professionalOnly     Boolean @default(false) // B2B customers only
   minimumOrderQuantity Int     @default(1) // Minimum order qty
+  maximumOrderQuantity Int? // Maximum order qty (if applicable)
 
   // SEO & Marketing
   slug            String  @unique // URL slug (e.g., "bmw-key-programmer")
   metaTitle       String? // SEO title
   metaDescription String? // SEO description
+  featured        Boolean @default(false) // Show in featured section
+  onSale          Boolean @default(false) // Show in sale section  
+  newProduct      Boolean @default(false) // Show in new products
 
-  // Weight & Shipping
+  // Physical Properties
   weight        Float? // Product weight in lbs
   dimensions    ProductDimensions? // L x W x H
   shippingClass String? // Shipping category
+
+  // Admin & Audit Fields
+  adminNotes     String? // Internal product notes
+  createdBy      String? @db.ObjectId
+  lastModifiedBy String? @db.ObjectId
+  version        Int     @default(1) // For optimistic locking
 
   // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Relations
-  orderItems OrderItem[]
-  reviews    ProductReview[]
+  category       Category?              @relation(fields: [categoryId], references: [id])
+  compatibility  VehicleCompatibility[] // Which cars this works with
+  orderItems     OrderItem[]
+  reviews        ProductReview[]
+  createdByUser  StaffUser?             @relation("ProductCreations", fields: [createdBy], references: [id])
+  modifiedByUser StaffUser?             @relation("ProductUpdates", fields: [lastModifiedBy], references: [id])
 
   @@map("products")
 }
@@ -87,6 +314,21 @@ type ProductDimensions {
   length Float // inches
   width  Float // inches  
   height Float // inches
+}
+
+enum ProductStatus {
+  DRAFT // Not published yet
+  ACTIVE // Live on store (renamed from in_stock)
+  INACTIVE // Hidden from store (renamed from out_of_stock)
+  ARCHIVED // Discontinued
+  LOW_STOCK // Low inventory warning
+}
+
+enum ApprovalStatus {
+  PENDING // Awaiting approval
+  APPROVED // Approved for publishing
+  REJECTED // Rejected, needs changes
+  REVIEW // Under review
 }
 
 // Vehicle compatibility - matches your VehicleSearch component
@@ -111,88 +353,22 @@ model VehicleCompatibility {
   @@map("vehicle_compatibility")
 }
 
-// ======================== USERS & AUTHENTICATION ========================
-// User management for B2B customers and admins
-model User {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
-  // Basic Info
-  email     String  @unique
-  password  String // Hashed password
-  firstName String
-  lastName  String
-  phone     String?
-
-  // Account Status
-  emailVerified DateTime?
-  isActive      Boolean   @default(true)
-  role          UserRole  @default(CUSTOMER)
-
-  // Business Information (B2B)
-  businessInfo BusinessInfo?
-
-  // Professional Tier (Bronze, Silver, Gold, Platinum)
-  professionalTier ProfessionalTier @default(BRONZE)
-  discountRate     Float            @default(0) // Percentage discount
-
-  // Preferences
-  newsletter       Boolean @default(false)
-  smsNotifications Boolean @default(false)
-
-  // Timestamps
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  lastLoginAt DateTime?
-
-  // Relations
-  orders    Order[]
-  addresses Address[]
-  reviews   ProductReview[]
-
-  @@map("users")
-}
-
-// Business information for B2B customers
-type BusinessInfo {
-  businessName     String
-  businessType     String // "Locksmith", "Dealer", "Repair Shop"
-  taxId            String? // Business tax ID
-  licenseNumber    String? // Professional license
-  website          String?
-  verified         Boolean  @default(false)
-  verificationDocs String[] // Document URLs
-}
-
-// User roles
-enum UserRole {
-  ADMIN
-  MANAGER
-  CUSTOMER
-  PROFESSIONAL
-}
-
-// Professional pricing tiers (like Key4.com)
-enum ProfessionalTier {
-  BRONZE // Basic discount
-  SILVER // Better discount
-  GOLD // Great discount  
-  PLATINUM // Best discount
-}
-
 // ======================== ORDERS & CHECKOUT ========================
-// Order management system
+// Enhanced order management system
+
 model Order {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   orderNumber String @unique // Human-readable order number
 
   // Customer Info
-  userId        String  @db.ObjectId
+  customerId    String  @db.ObjectId
   customerEmail String
   customerPhone String?
 
-  // Order Status
+  // Order Status & Priority
   status        OrderStatus   @default(PENDING)
   paymentStatus PaymentStatus @default(PENDING)
+  priorityLevel OrderPriority @default(NORMAL)
 
   // Pricing
   subtotal       Float // Before tax and shipping
@@ -201,32 +377,44 @@ model Order {
   discountAmount Float @default(0) // Applied discounts
   totalAmount    Float // Final total
 
-  // Addresses (embedded documents, not relations)
+  // Addresses (embedded documents)
   shippingAddress Json // Embedded address object
   billingAddress  Json // Embedded address object
 
   // Shipping
   shippingMethod    String? // "Standard", "Express", "Overnight"
+  shippingCarrier   String? // Carrier name
   trackingNumber    String? // Shipping tracking
   estimatedDelivery DateTime?
 
   // Payment
-  paymentMethod   String? // "Credit Card", "PayPal", etc.
-  paymentIntentId String? // Stripe payment intent
+  paymentMethod    String? // "Credit Card", "PayPal", etc.
+  paymentIntentId  String? // Stripe payment intent
+  paymentReference String? // External payment reference
 
-  // Notes
-  customerNotes String?
-  internalNotes String?
+  // Admin Management
+  assignedToStaffId  String? @db.ObjectId
+  internalNotes      String? // Admin private notes
+  customerNotes      String? // Customer-provided notes
+  cancellationReason String? // Why order was cancelled
+  refundAmount       Float? // Partial refund tracking
+
+  // Workflow tracking
+  lastModifiedBy String?   @db.ObjectId
+  processedAt    DateTime?
 
   // Timestamps
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   shippedAt   DateTime?
   deliveredAt DateTime?
+  cancelledAt DateTime?
 
   // Relations
-  user  User        @relation(fields: [userId], references: [id])
-  items OrderItem[]
+  customer           Customer    @relation(fields: [customerId], references: [id])
+  items              OrderItem[]
+  assignedToStaff    StaffUser?  @relation("OrderAssignments", fields: [assignedToStaffId], references: [id])
+  lastModifiedByUser StaffUser?  @relation("OrderUpdates", fields: [lastModifiedBy], references: [id])
 
   @@map("orders")
 }
@@ -246,6 +434,10 @@ model OrderItem {
   quantity    Int // Quantity ordered
   totalPrice  Float // quantity * unitPrice
 
+  // Additional details
+  productImage   String? // Product image at time of order
+  productOptions Json? // Any product variations/options
+
   // Relations
   order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
   product Product @relation(fields: [productId], references: [id])
@@ -256,10 +448,9 @@ model OrderItem {
 // Order status tracking
 enum OrderStatus {
   PENDING // Order placed, payment pending
-  CONFIRMED // Payment confirmed, processing
-  PROCESSING // Picking and packing
+  PROCESSING // Payment confirmed, preparing for shipment
   SHIPPED // Shipped to customer
-  DELIVERED // Delivered to customer
+  COMPLETED // Delivered to customer
   CANCELLED // Order cancelled
   REFUNDED // Order refunded
 }
@@ -268,10 +459,17 @@ enum OrderStatus {
 enum PaymentStatus {
   PENDING // Payment not yet processed
   PROCESSING // Payment being processed
-  COMPLETED // Payment successful
+  PAID // Payment successful (renamed from COMPLETED)
   FAILED // Payment failed
   REFUNDED // Payment refunded
   CANCELLED // Payment cancelled
+}
+
+enum OrderPriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
 }
 
 // ======================== ADDRESSES ========================
@@ -290,13 +488,14 @@ model Address {
   zipCode      String
   country      String  @default("US")
 
-  // Address Type
-  type      AddressType @default(SHIPPING)
-  isDefault Boolean     @default(false)
+  // Address Type & Status
+  type       AddressType @default(SHIPPING)
+  isDefault  Boolean     @default(false)
+  isVerified Boolean     @default(false)
 
-  // User Relation
-  userId String @db.ObjectId
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // Customer Relation
+  customerId String   @db.ObjectId
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
 
   // Timestamps
   createdAt DateTime @default(now())
@@ -322,19 +521,32 @@ model ProductReview {
   title    String? // Review title
   content  String // Review text
   verified Boolean @default(false) // Verified purchase
+  helpful  Int     @default(0) // Helpful votes
+
+  // Status
+  status      ReviewStatus @default(PENDING)
+  moderatedBy String?      @db.ObjectId
+  moderatedAt DateTime?
 
   // Relations
-  productId String @db.ObjectId
-  userId    String @db.ObjectId
+  productId  String @db.ObjectId
+  customerId String @db.ObjectId
 
-  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product  Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  customer Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
 
   // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("product_reviews")
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SPAM
 }
 
 // ======================== CATEGORIES ========================
@@ -346,25 +558,32 @@ model Category {
   name        String  @unique // "Programming Tools"
   slug        String  @unique // "programming-tools"
   description String?
+  iconClass   String? // FontAwesome icon class
 
   // Hierarchy
   parentId String?    @db.ObjectId
   parent   Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   children Category[] @relation("CategoryHierarchy")
 
-  // Display
-  image     String? // Category image
-  icon      String? // Category icon
-  sortOrder Int     @default(0)
-  isActive  Boolean @default(true)
+  // Display & Status
+  image      String? // Category image
+  sortOrder  Int     @default(0)
+  isActive   Boolean @default(true)
+  isFeatured Boolean @default(false)
 
   // SEO
   metaTitle       String?
   metaDescription String?
 
+  // Statistics
+  productCount Int @default(0) // Computed field
+
   // Timestamps
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  // Relations
+  products Product[]
 
   @@map("categories")
 }

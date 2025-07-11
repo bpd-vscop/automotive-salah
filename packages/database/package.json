@@ -9,19 +9,26 @@
     "db:pull": "prisma db pull",
     "db:seed": "tsx prisma/seed.ts",
     "db:reset-seed": "tsx prisma/reset-and-seed.ts",
+    "db:migrate-admin": "tsx prisma/migrate-to-admin-schema.ts",
+    "db:complete-migration": "tsx prisma/complete-migration-fixed.ts",
+    "db:repair-data": "tsx prisma/repair-product-data.ts",
     "db:studio": "prisma studio",
     "db:reset": "prisma migrate reset",
+    "db:backup": "tsx scripts/backup.ts",
+    "db:restore": "tsx scripts/restore.ts",
     "clean": "rm -rf .next",
     "dev": "tsc --watch",
     "build": "tsc"
   },
   "dependencies": {
-    "@prisma/client": "^5.7.0"
+    "@prisma/client": "^5.7.0",
+    "bcryptjs": "^2.4.3"
   },
   "devDependencies": {
     "prisma": "^5.7.0",
     "tsx": "^4.6.0",
     "typescript": "^5.3.0",
-    "@types/node": "^20.10.0"
+    "@types/node": "^20.10.0",
+    "@types/bcryptjs": "^2.4.6"
   }
 }
