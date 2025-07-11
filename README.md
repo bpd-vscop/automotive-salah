@@ -53,25 +53,30 @@ A professional B2B e-commerce platform for automotive locksmith supplies, built 
 
 ## Tech Stack
 
-
-
-
-
-
-
-- **Frontend**: Next.js 15, TypeScript, Tailwind CSS
-
-
-
-- **Backend**: Fastify, tRPC, Prisma
-
-
-
-- **Database**: MongoDB, Redis
-
-
-
-- **Deployment**: Docker, Windows Server, IIS
+- **FRONT-END**
+    - **React 18** – UI library
+    - **Vite** – Lightning-fast dev/build tool
+    - **Tailwind CSS** – Utility-first styling
+    - **TypeScript** – Type-safe development
+    - **Zustand** – Lightweight global state management
+    - **API Communication**
+        - **tRPC** – End-to-end type-safe API calls (no REST or GraphQL)
+- **BACK-END**
+    - **Node.js** – JavaScript runtime
+    - **Fastify** – High-performance web framework (replaces Express)
+    - **TypeScript** – Full type safety
+    - **Prisma** – Type-safe ORM (replaces Mongoose)
+    - **MongoDB** – NoSQL database
+- **DEPLOYMENT**
+    
+    > Windows Server 2022 (NovaVPS)
+    **├── Docker Desktop for Windows**
+    ├── Container 1: React Frontend (Nginx)
+    ├── Container 2: Fastify API
+    ├── Container 3: MongoDB Database
+    ├── Container 4: Redis Cache
+    **└── IIS (for SSL and domain management)**
+    >
 
 
 

@@ -1,12 +1,26 @@
-// filepath: packages/database/prisma/seed.ts
-// Database seeding script - creates initial data for development
-// This will replace your placeholder data with real automotive locksmith products
+// filepath: packages/database/prisma/reset-and-seed.ts
+// DANGEROUS: This script DELETES ALL DATA in the database and then reseeds it.
+// Used for resetting the development environment from a clean slate.
+// DO NOT RUN THIS ON A PRODUCTION DATABASE.
 
 import { PrismaClient, ProfessionalTier, OrderStatus, PaymentStatus } from '../src/generated'
 
 const prisma = new PrismaClient()
 
 async function main() {
+  console.log('🔥 DANGER: Deleting all data from the database...')
+  
+  // Deletion order matters to avoid foreign key constraint errors
+  await prisma.orderItem.deleteMany({})
+  await prisma.order.deleteMany({})
+  await prisma.productReview.deleteMany({})
+  await prisma.vehicleCompatibility.deleteMany({})
+  await prisma.product.deleteMany({})
+  await prisma.category.deleteMany({})
+  await prisma.customer.deleteMany({})
+  await prisma.address.deleteMany({})
+  
+  console.log('✅ All data deleted.')
   console.log('🌱 Starting database seed...')
 
   // ======================== CATEGORIES ========================
