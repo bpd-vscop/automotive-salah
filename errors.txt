@@ -1,0 +1,719 @@
+
+234 export default function NewProductsSection() {
+                            ~~~~~~~~~~~~~~~~~~
+
+apps/admin/app/page.tsx:234:25 - error TS2393: Duplicate function implementation.
+
+234 export default function NewProductsSection() {
+                            ~~~~~~~~~~~~~~~~~~
+
+apps/admin/app/page.tsx:234:25 - error TS2652: Merged declaration 'NewProductsSection' cannot include a default export declaration. Consider adding a separate 'export default NewProductsSection' declaration instead.
+
+234 export default function NewProductsSection() {
+                            ~~~~~~~~~~~~~~~~~~
+
+apps/admin/app/page.tsx:274:24 - error TS7006: Parameter 'product' implicitly has an 'any' type.
+
+274         {products.map((product) => (
+                           ~~~~~~~
+
+apps/admin/app/page.tsx:299:8 - error TS2300: Duplicate identifier 'Link'.
+
+299 import Link from 'next/link'
+           ~~~~
+
+apps/admin/app/page.tsx:301:10 - error TS2300: Duplicate identifier 'cn'.
+
+301 import { cn } from '@automotive/ui/lib/utils'
+             ~~
+
+apps/admin/app/page.tsx:302:10 - error TS2300: Duplicate identifier 'Button'.
+
+302 import { Button } from '@automotive/ui/components/button'
+             ~~~~~~
+
+apps/admin/app/page.tsx:302:24 - error TS2307: Cannot find module '@automotive/ui/components/button' or its corresponding type declarations.  
+
+302 import { Button } from '@automotive/ui/components/button'
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/app/page.tsx:303:23 - error TS2307: Cannot find module '@automotive/ui/components/badge' or its corresponding type declarations.   
+
+303 import { Badge } from '@automotive/ui/components/badge'
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/app/page.tsx:330:25 - error TS2323: Cannot redeclare exported variable 'default'.
+
+330 export default function ProductCard({ product, className }: ProductCardProps) {
+                            ~~~~~~~~~~~
+
+apps/admin/app/page.tsx:330:25 - error TS2393: Duplicate function implementation.
+
+330 export default function ProductCard({ product, className }: ProductCardProps) {
+                            ~~~~~~~~~~~
+
+apps/admin/app/page.tsx:483:23 - error TS7006: Parameter 'e' implicitly has an 'any' type.
+
+483             onClick={(e) => {
+                          ~
+
+apps/admin/app/page.tsx:509:25 - error TS7006: Parameter 'e' implicitly has an 'any' type.
+
+509               onClick={(e) => {
+                            ~
+
+apps/admin/components/auth/LoginForm.tsx:10:29 - error TS2307: Cannot find module '@hookform/resolvers/zod' or its corresponding type declarations.
+
+10 import { zodResolver } from "@hookform/resolvers/zod";
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:13:24 - error TS2307: Cannot find module '@automotive/ui/components/button' or its corresponding type declarations.
+
+13 import { Button } from "@automotive/ui/components/button";
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:14:23 - error TS2307: Cannot find module '@automotive/ui/components/input' or its corresponding type declarations.
+
+14 import { Input } from "@automotive/ui/components/input";
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:15:26 - error TS2307: Cannot find module '@automotive/ui/components/checkbox' or its corresponding type declarations.
+
+15 import { Checkbox } from "@automotive/ui/components/checkbox";      
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+
+apps/admin/components/auth/LoginForm.tsx:16:41 - error TS2307: Cannot find module '@automotive/ui/components/alert' or its corresponding type declarations.
+
+16 import { Alert, AlertDescription } from "@automotive/ui/components/alert";
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:23:8 - error TS2307: Cannot find module '@automotive/ui/components/card' or its corresponding type declarations.
+
+23 } from "@automotive/ui/components/card";
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:24:22 - error TS2307: Cannot find module '@/lib/trpc' or its corresponding type declarations.        
+
+24 import { trpc } from "@/lib/trpc";
+                        ~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:25:30 - error TS2307: Cannot find module '@/hooks/useAdminAuth' or its corresponding type declarations.
+
+25 import { useAdminAuth } from "@/hooks/useAdminAuth";
+                                ~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/auth/LoginForm.tsx:58:17 - error TS7006: Parameter 'data' implicitly has an 'any' type.
+
+58     onSuccess: (data) => {
+                   ~~~~
+
+apps/admin/components/auth/LoginForm.tsx:72:15 - error TS7006: Parameter 'error' implicitly has an 'any' type.
+
+72     onError: (error) => {
+                 ~~~~~
+
+apps/admin/components/Layout/AdminLayout.tsx:28:24 - error TS2307: Cannot find module '@automotive/ui/components/button' or its corresponding type declarations.
+
+28 import { Button } from "@automotive/ui/components/button";
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/Layout/AdminLayout.tsx:29:23 - error TS2307: Cannot find module '@automotive/ui/components/input' or its corresponding type declarations.
+
+29 import { Input } from "@automotive/ui/components/input";
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/Layout/AdminLayout.tsx:30:23 - error TS2307: Cannot find module '@automotive/ui/components/badge' or its corresponding type declarations.
+
+30 import { Badge } from "@automotive/ui/components/badge";
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/Layout/AdminLayout.tsx:38:8 - error TS2307: Cannot find module '@automotive/ui/components/dropdown-menu' or its corresponding type declarations.
+
+38 } from "@automotive/ui/components/dropdown-menu";
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/Layout/AdminLayout.tsx:43:8 - error TS2307: Cannot find module '@automotive/ui/components/avatar' or its corresponding type declarations.
+
+43 } from "@automotive/ui/components/avatar";
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/admin/components/Layout/AdminLayout.tsx:44:46 - error TS2307: Cannot find module '@/hooks/useAdminAuth' or its corresponding type declarations.
+
+44 import { useAdminAuth, PermissionGate } from "@/hooks/useAdminAuth";
+                                                ~~~~~~~~~~~~~~~~~~~~~~ 
+
+apps/admin/components/Layout/AdminLayout.tsx:280:30 - error TS7006: Parameter 'e' implicitly has an 'any' type.
+
+280                   onChange={(e) => setSearchQuery(e.target.value)} 
+                                 ~
+
+apps/admin/hooks/useAdminAuth.tsx:15:22 - error TS2307: Cannot find module '@/lib/trpc' or its corresponding type declarations.
+
+15 import { trpc } from "@/lib/trpc";
+                        ~~~~~~~~~~~~
+
+apps/api/src/index.ts:7:10 - error TS2300: Duplicate identifier 'appRouter'.
+
+7 import { appRouter, createTRPCContext } from '@automotive/trpc'      
+           ~~~~~~~~~
+
+apps/api/src/index.ts:7:21 - error TS2300: Duplicate identifier 'createTRPCContext'.
+
+7 import { appRouter, createTRPCContext } from '@automotive/trpc'      
+                      ~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:7:21 - error TS2395: Individual declarations in merged declaration 'createTRPCContext' must be all exported or all local.
+
+7 import { appRouter, createTRPCContext } from '@automotive/trpc'      
+                      ~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:7:46 - error TS2307: Cannot find module '@automotive/trpc' or its corresponding type declarations.
+
+7 import { appRouter, createTRPCContext } from '@automotive/trpc'      
+                                               ~~~~~~~~~~~~~~~~~~      
+
+apps/api/src/index.ts:15:1 - error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+
+15 await server.register(cors, {
+   ~~~~~
+
+apps/api/src/index.ts:24:1 - error TS1378: Top-level 'await' expressions are only allowed when the 'module' option is set to 'es2022', 'esnext', 'system', 'node16', 'node18', 'nodenext', or 'preserve', and the 'target' option is set to 'es2017' or higher.
+
+24 await server.register(fastifyTRPCPlugin, {
+   ~~~~~
+
+apps/api/src/index.ts:28:20 - error TS2448: Block-scoped variable 'createTRPCContext' used before its declaration.
+
+28     createContext: createTRPCContext,
+                      ~~~~~~~~~~~~~~~~~
+
+  apps/api/src/index.ts:158:14
+    158 export const createTRPCContext = async (
+                     ~~~~~~~~~~~~~~~~~
+    'createTRPCContext' is declared here.
+
+apps/api/src/index.ts:28:20 - error TS2454: Variable 'createTRPCContext' is used before being assigned.
+
+28     createContext: createTRPCContext,
+                      ~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:88:30 - error TS2307: Cannot find module './generated' or its corresponding type declarations.
+
+88 import { PrismaClient } from './generated'
+                                ~~~~~~~~~~~~~
+
+apps/api/src/index.ts:94:14 - error TS2395: Individual declarations in merged declaration 'prisma' must be all exported or all local.
+
+94 export const prisma = globalForPrisma.prisma ?? new PrismaClient({  
+                ~~~~~~
+
+apps/api/src/index.ts:147:10 - error TS2395: Individual declarations in merged declaration 'prisma' must be all exported or all local.        
+
+147 import { prisma } from '@automotive/database'
+             ~~~~~~
+
+apps/api/src/index.ts:147:10 - error TS2440: Import declaration conflicts with local declaration of 'prisma'.
+
+147 import { prisma } from '@automotive/database'
+             ~~~~~~
+
+apps/api/src/index.ts:158:14 - error TS2300: Duplicate identifier 'createTRPCContext'.
+
+158 export const createTRPCContext = async (
+                 ~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:158:14 - error TS2395: Individual declarations in merged declaration 'createTRPCContext' must be all exported or all local.
+
+158 export const createTRPCContext = async (
+                 ~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:173:10 - error TS2300: Duplicate identifier 'appRouter'.
+
+173 import { appRouter, createTRPCContext } from '@automotive/trpc'    
+             ~~~~~~~~~
+
+apps/api/src/index.ts:173:21 - error TS2300: Duplicate identifier 'createTRPCContext'.
+
+173 import { appRouter, createTRPCContext } from '@automotive/trpc'    
+                        ~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:173:46 - error TS2307: Cannot find module '@automotive/trpc' or its corresponding type declarations.
+
+173 import { appRouter, createTRPCContext } from '@automotive/trpc'    
+                                                 ~~~~~~~~~~~~~~~~~~    
+
+apps/api/src/index.ts:190:3 - error TS2323: Cannot redeclare exported variable 'hashPassword'.
+
+190   hashPassword,
+      ~~~~~~~~~~~~
+
+apps/api/src/index.ts:191:3 - error TS2323: Cannot redeclare exported variable 'verifyPassword'.
+
+191   verifyPassword,
+      ~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:192:3 - error TS2323: Cannot redeclare exported variable 'generateAdminToken'.
+
+192   generateAdminToken,
+      ~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:193:3 - error TS2323: Cannot redeclare exported variable 'generateRefreshToken'.
+
+193   generateRefreshToken,
+      ~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:194:3 - error TS2323: Cannot redeclare exported variable 'verifyAdminToken'.
+
+194   verifyAdminToken,
+      ~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:195:3 - error TS2323: Cannot redeclare exported variable 'verifyRefreshToken'.
+
+195   verifyRefreshToken,
+      ~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:196:3 - error TS2323: Cannot redeclare exported variable 'hasPermission'.
+
+196   hasPermission,
+      ~~~~~~~~~~~~~
+
+apps/api/src/index.ts:197:3 - error TS2323: Cannot redeclare exported variable 'hasMinimumHierarchy'.
+
+197   hasMinimumHierarchy,
+      ~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:198:3 - error TS2323: Cannot redeclare exported variable 'validatePasswordStrength'.
+
+198   validatePasswordStrength,
+      ~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:199:3 - error TS2323: Cannot redeclare exported variable 'generateSecurePassword'.
+
+199   generateSecurePassword,
+      ~~~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:200:3 - error TS2323: Cannot redeclare exported variable 'loginRateLimiter'.
+
+200   loginRateLimiter,
+      ~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:201:3 - error TS2323: Cannot redeclare exported variable 'LoginRateLimiter'.
+
+201   LoginRateLimiter,
+      ~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:202:3 - error TS2323: Cannot redeclare exported variable 'ADMIN_SECURITY_HEADERS'.
+
+202   ADMIN_SECURITY_HEADERS
+      ~~~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:203:8 - error TS2307: Cannot find module './admin-auth' or its corresponding type declarations.
+
+203 } from './admin-auth'
+           ~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:208:8 - error TS2307: Cannot find module './admin-auth' or its corresponding type declarations.
+
+208 } from './admin-auth'
+           ~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:244:23 - error TS2323: Cannot redeclare exported variable 'hashPassword'.
+
+244 export async function hashPassword(password: string): Promise<string> {
+                          ~~~~~~~~~~~~
+
+apps/api/src/index.ts:252:23 - error TS2323: Cannot redeclare exported variable 'verifyPassword'.
+
+252 export async function verifyPassword(password: string, hash: string): Promise<boolean> {
+                          ~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:259:17 - error TS2323: Cannot redeclare exported variable 'generateAdminToken'.
+
+259 export function generateAdminToken(user: any): string {
+                    ~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:269:14 - error TS2769: No overload matches this call.
+  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'null'.
+  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.
+    Type 'string' is not assignable to type 'number | StringValue | undefined'.
+  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.
+    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.
+
+269   return jwt.sign(payload, JWT_SECRET, {
+                 ~~~~
+
+
+apps/api/src/index.ts:279:17 - error TS2323: Cannot redeclare exported variable 'generateRefreshToken'.
+
+279 export function generateRefreshToken(userId: string): string {     
+                    ~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:280:14 - error TS2769: No overload matches this call.
+  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'null'.
+  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.
+    Type 'string' is not assignable to type 'number | StringValue | undefined'.
+  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.
+    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.
+
+280   return jwt.sign(
+                 ~~~~
+
+
+apps/api/src/index.ts:294:17 - error TS2323: Cannot redeclare exported variable 'verifyAdminToken'.
+
+294 export function verifyAdminToken(token: string): AdminJWTPayload { 
+                    ~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:323:17 - error TS2323: Cannot redeclare exported variable 'verifyRefreshToken'.
+
+323 export function verifyRefreshToken(token: string): { userId: string } {
+                    ~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:346:17 - error TS2323: Cannot redeclare exported variable 'hasPermission'.
+
+346 export function hasPermission(
+                    ~~~~~~~~~~~~~
+
+apps/api/src/index.ts:361:17 - error TS2323: Cannot redeclare exported variable 'hasMinimumHierarchy'.
+
+361 export function hasMinimumHierarchy(userLevel: number, requiredLevel: number): boolean {
+                    ~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:369:17 - error TS2323: Cannot redeclare exported variable 'validatePasswordStrength'.
+
+369 export function validatePasswordStrength(password: string): {      
+                    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:404:17 - error TS2323: Cannot redeclare exported variable 'generateSecurePassword'.
+
+404 export function generateSecurePassword(length: number = 12): string {
+                    ~~~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:431:14 - error TS2323: Cannot redeclare exported variable 'LoginRateLimiter'.
+
+431 export class LoginRateLimiter {
+                 ~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:484:14 - error TS2323: Cannot redeclare exported variable 'loginRateLimiter'.
+
+484 export const loginRateLimiter = new LoginRateLimiter()
+                 ~~~~~~~~~~~~~~~~
+
+apps/api/src/index.ts:489:14 - error TS2323: Cannot redeclare exported variable 'ADMIN_SECURITY_HEADERS'.
+
+489 export const ADMIN_SECURITY_HEADERS = {
+                 ~~~~~~~~~~~~~~~~~~~~~~
+
+apps/api/src/trpc/context.ts:81:38 - error TS2339: Property 'status' does not exist on type '{ role: { id: string; description: string | null; createdAt: Date; updatedAt: Date; isActive: boolean; roleName: string; hierarchyLevel: number; permissions: JsonValue; maxUsers: number | null; }; } & { ...; }'.
+
+81       if (userDetails && userDetails.status === "ACTIVE") {
+                                        ~~~~~~
+
+apps/api/src/trpc/routers/products.ts:24:11 - error TS2353: Object literal may only specify known properties, and 'compatibility' does not exist in type 'ProductInclude<DefaultArgs>'.
+
+24           compatibility: {
+             ~~~~~~~~~~~~~
+
+apps/api/src/trpc/routers/products.ts:41:25 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.     
+
+41         images: product.images,
+                           ~~~~~~
+
+apps/api/src/trpc/routers/products.ts:42:33 - error TS2339: Property 'thumbnailImage' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.
+
+42         thumbnailImage: product.thumbnailImage || product.images[0],
+                                   ~~~~~~~~~~~~~~
+
+apps/api/src/trpc/routers/products.ts:42:59 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.     
+
+42         thumbnailImage: product.thumbnailImage || product.images[0],
+                                                             ~~~~~~    
+
+apps/api/src/trpc/routers/products.ts:43:24 - error TS2339: Property 'brand' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.      
+
+43         brand: product.brand,
+                          ~~~~~
+
+apps/api/src/trpc/routers/products.ts:44:23 - error TS2339: Property 'slug' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.       
+
+44         slug: product.slug,
+                         ~~~~
+
+apps/api/src/trpc/routers/products.ts:50:32 - error TS2339: Property 'compatibility' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.
+
+50         compatibility: product.compatibility.map((c) => ({
+                                  ~~~~~~~~~~~~~
+
+apps/api/src/trpc/routers/products.ts:50:51 - error TS7006: Parameter 'c' implicitly has an 'any' type.
+
+50         compatibility: product.compatibility.map((c) => ({
+                                                     ~
+
+apps/api/src/trpc/routers/products.ts:100:25 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.    
+
+100         images: product.images,
+                            ~~~~~~
+
+apps/api/src/trpc/routers/products.ts:101:33 - error TS2339: Property 'thumbnailImage' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.
+
+101         thumbnailImage: product.thumbnailImage || product.images[0],
+                                    ~~~~~~~~~~~~~~
+
+apps/api/src/trpc/routers/products.ts:101:59 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.    
+
+101         thumbnailImage: product.thumbnailImage || product.images[0],
+                                                              ~~~~~~   
+
+apps/api/src/trpc/routers/products.ts:102:24 - error TS2339: Property 'brand' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.     
+
+102         brand: product.brand,
+                           ~~~~~
+
+apps/api/src/trpc/routers/products.ts:103:23 - error TS2339: Property 'slug' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.      
+
+103         slug: product.slug,
+                          ~~~~
+
+apps/api/src/trpc/routers/products.ts:136:25 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.    
+
+136         images: product.images,
+                            ~~~~~~
+
+apps/api/src/trpc/routers/products.ts:137:33 - error TS2339: Property 'thumbnailImage' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.
+
+137         thumbnailImage: product.thumbnailImage || product.images[0],
+                                    ~~~~~~~~~~~~~~
+
+apps/api/src/trpc/routers/products.ts:137:59 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.    
+
+137         thumbnailImage: product.thumbnailImage || product.images[0],
+                                                              ~~~~~~   
+
+apps/api/src/trpc/routers/products.ts:138:24 - error TS2339: Property 'brand' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.     
+
+138         brand: product.brand,
+                           ~~~~~
+
+apps/api/src/trpc/routers/products.ts:139:23 - error TS2339: Property 'slug' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.      
+
+139         slug: product.slug,
+                          ~~~~
+
+apps/api/src/trpc/routers/products.ts:191:29 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.    
+
+191             images: product.images,
+                                ~~~~~~
+
+apps/api/src/trpc/routers/products.ts:192:37 - error TS2339: Property 'thumbnailImage' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.
+
+192             thumbnailImage: product.thumbnailImage || product.images[0],
+                                        ~~~~~~~~~~~~~~
+
+apps/api/src/trpc/routers/products.ts:192:63 - error TS2339: Property 'images' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.    
+
+192             thumbnailImage: product.thumbnailImage || product.images[0],
+                                                                  ~~~~~~
+
+apps/api/src/trpc/routers/products.ts:193:28 - error TS2339: Property 'brand' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.     
+
+193             brand: product.brand,
+                               ~~~~~
+
+apps/api/src/trpc/routers/products.ts:194:27 - error TS2339: Property 'slug' does not exist on type '{ name: string; id: string; categoryId: string; description: string; shortDescription: string | null; regularPrice: number; salePrice: number | null; costPrice: number | null; sku: string; ... 25 more ...; vehicleCompatibility: { ...; } | null; }'.      
+
+194             slug: product.slug,
+                              ~~~~
+
+apps/web/components/providers/TRPCProvider.tsx:8:50 - error TS2307: Cannot find module '@tanstack/react-query' or its corresponding type declarations.
+
+8 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+                                                   ~~~~~~~~~~~~~~~~~~~~~~~
+
+apps/web/components/providers/TRPCProvider.tsx:9:36 - error TS2307: Cannot find module '@tanstack/react-query-devtools' or its corresponding type declarations.
+
+9 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"; 
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+apps/web/components/providers/TRPCProvider.tsx:10:40 - error TS2307: Cannot find module '@/lib/trpc' or its corresponding type declarations.  
+
+10 import { trpc, trpcClientConfig } from "@/lib/trpc";
+                                          ~~~~~~~~~~~~
+
+apps/web/components/providers/TRPCProvider.tsx:49:30 - error TS2307: Cannot find module '@/components/providers/TRPCProvider' or its corresponding type declarations.
+
+49 import { TRPCProvider } from "@/components/providers/TRPCProvider"; 
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+packages/auth/src/admin-auth.ts:66:14 - error TS2769: No overload matches this call.
+  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'null'.
+  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, options?: SignOptions | undefined): string', gave the following error.
+    Type 'string' is not assignable to type 'number | StringValue | undefined'.
+  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, callback: SignCallback): void', gave the following error.
+    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.
+
+66   return jwt.sign(payload, JWT_SECRET, {
+                ~~~~
+
+
+packages/auth/src/admin-auth.ts:77:14 - error TS2769: No overload matches this call.
+  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'null'.
+  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, options?: SignOptions | undefined): string', gave the following error.
+    Type 'string' is not assignable to type 'number | StringValue | undefined'.
+  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Secret | Buffer<ArrayBufferLike> | JsonWebKeyInput | PrivateKeyInput, callback: SignCallback): void', gave the following error.
+    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.
+
+77   return jwt.sign({ userId, type: "refresh" }, JWT_SECRET, {        
+                ~~~~
+
+
+packages/trpc/src/admin-auth.ts:23:8 - error TS2307: Cannot find module '@automotive/auth' or its corresponding type declarations.
+
+23 } from "@automotive/auth";
+          ~~~~~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:4:20 - error TS2300: Duplicate identifier 'TRPCError'.
+
+4 import { initTRPC, TRPCError } from '@trpc/server'
+                     ~~~~~~~~~
+
+packages/trpc/src/trpc.ts:5:10 - error TS2300: Duplicate identifier 'z'.
+
+5 import { z } from 'zod'
+           ~
+
+packages/trpc/src/trpc.ts:6:30 - error TS2307: Cannot find module './context' or its corresponding type declarations.
+
+6 import type { Context } from './context'
+                               ~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:10:14 - error TS2300: Duplicate identifier 'router'.
+
+10 export const router = t.router
+                ~~~~~~
+
+packages/trpc/src/trpc.ts:10:14 - error TS2395: Individual declarations in merged declaration 'router' must be all exported or all local.     
+
+10 export const router = t.router
+                ~~~~~~
+
+packages/trpc/src/trpc.ts:11:14 - error TS2395: Individual declarations in merged declaration 'publicProcedure' must be all exported or all local.
+
+11 export const publicProcedure = t.procedure
+                ~~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:25:14 - error TS2395: Individual declarations in merged declaration 'adminProcedure' must be all exported or all local.
+
+25 export const adminProcedure = publicProcedure.use(adminMiddleware)  
+                ~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:42:14 - error TS2323: Cannot redeclare exported variable 'createTRPCContext'.
+
+42 export const createTRPCContext = async (opts: CreateNextContextOptions): Promise<Context> => {
+                ~~~~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:53:10 - error TS2300: Duplicate identifier 'z'.
+
+53 import { z } from 'zod'
+            ~
+
+packages/trpc/src/trpc.ts:54:10 - error TS2395: Individual declarations in merged declaration 'publicProcedure' must be all exported or all local.
+
+54 import { publicProcedure, router, adminProcedure } from '../trpc'   
+            ~~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:54:27 - error TS2300: Duplicate identifier 'router'.
+
+54 import { publicProcedure, router, adminProcedure } from '../trpc'   
+                             ~~~~~~
+
+packages/trpc/src/trpc.ts:54:27 - error TS2395: Individual declarations in merged declaration 'router' must be all exported or all local.     
+
+54 import { publicProcedure, router, adminProcedure } from '../trpc'   
+                             ~~~~~~
+
+packages/trpc/src/trpc.ts:54:35 - error TS2395: Individual declarations in merged declaration 'adminProcedure' must be all exported or all local.
+
+54 import { publicProcedure, router, adminProcedure } from '../trpc'   
+                                     ~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:54:57 - error TS2307: Cannot find module '../trpc' or its corresponding type declarations.
+
+54 import { publicProcedure, router, adminProcedure } from '../trpc'   
+                                                           ~~~~~~~~~   
+
+packages/trpc/src/trpc.ts:55:10 - error TS2300: Duplicate identifier 'TRPCError'.
+
+55 import { TRPCError } from '@trpc/server'
+            ~~~~~~~~~
+
+packages/trpc/src/trpc.ts:57:14 - error TS2395: Individual declarations in merged declaration 'productsRouter' must be all exported or all local.
+
+57 export const productsRouter = router({
+                ~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:109:34 - error TS7006: Parameter 'product' implicitly has an 'any' type.
+
+109           products: products.map(product => ({
+                                     ~~~~~~~
+
+packages/trpc/src/trpc.ts:166:29 - error TS7006: Parameter 'product' implicitly has an 'any' type.
+
+166         return products.map(product => ({
+                                ~~~~~~~
+
+packages/trpc/src/trpc.ts:220:29 - error TS7006: Parameter 'product' implicitly has an 'any' type.
+
+220         return products.map(product => ({
+                                ~~~~~~~
+
+packages/trpc/src/trpc.ts:272:29 - error TS7006: Parameter 'product' implicitly has an 'any' type.
+
+272         return products.map(product => ({
+                                ~~~~~~~
+
+packages/trpc/src/trpc.ts:301:10 - error TS2300: Duplicate identifier 'router'.
+
+301 import { router } from './trpc'
+             ~~~~~~
+
+packages/trpc/src/trpc.ts:302:10 - error TS2395: Individual declarations in merged declaration 'productsRouter' must be all exported or all local.
+
+302 import { productsRouter } from './routers/products'
+             ~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:302:32 - error TS2307: Cannot find module './routers/products' or its corresponding type declarations.
+
+302 import { productsRouter } from './routers/products'
+                                   ~~~~~~~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:309:10 - error TS2323: Cannot redeclare exported variable 'createTRPCContext'.
+
+309 export { createTRPCContext } from './context'
+             ~~~~~~~~~~~~~~~~~
+
+packages/trpc/src/trpc.ts:309:35 - error TS2307: Cannot find module './context' or its corresponding type declarations.
+
+309 export { createTRPCContext } from './context'
+                                      ~~~~~~~~~~~
+
+
+Found 200 errors in 13 files.
+
+Errors  Files
+    15  apps/admin/app/(dashboard)/products/page.tsx:24
+    19  apps/admin/app/not-found.tsx:4
+    45  apps/admin/app/page.tsx:7
+    10  apps/admin/components/auth/LoginForm.tsx:10
+     7  apps/admin/components/Layout/AdminLayout.tsx:28
+     1  apps/admin/hooks/useAdminAuth.tsx:15
+    47  apps/api/src/index.ts:7
+     1  apps/api/src/trpc/context.ts:81
+    23  apps/api/src/trpc/routers/products.ts:24
+     4  apps/web/components/providers/TRPCProvider.tsx:8
+     2  packages/auth/src/admin-auth.ts:66
+     1  packages/trpc/src/admin-auth.ts:23
+    25  packages/trpc/src/trpc.ts:4
