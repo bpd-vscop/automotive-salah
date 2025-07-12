@@ -2,12 +2,12 @@
 // Database query utilities and helper functions
 // Provides reusable queries and data access patterns
 
-import { prisma } from './client'
-import type { 
-  ProductFilters, 
-  OrderFilters, 
-  CustomerFilters, 
-  PaginationOptions, 
+import { prisma } from "./client";
+import type {
+  ProductFilters,
+  OrderFilters,
+  CustomerFilters,
+  PaginationOptions,
   PaginatedResult,
   ProductSummary,
   OrderSummary,
@@ -15,9 +15,9 @@ import type {
   DashboardStats,
   SalesChartData,
   CategoryPerformance,
-  InventoryAlert
-} from './types'
-import type { ApprovalStatus, Prisma, ProductStatus } from './generated';
+  InventoryAlert,
+} from "./types";
+import type { ApprovalStatus, Prisma, ProductStatus } from "./generated";
 
 // ======================== PRODUCT QUERIES ========================
 
@@ -27,61 +27,69 @@ export class ProductQueries {
    */
   static async getProducts(
     filters: ProductFilters = {},
-    pagination: PaginationOptions = {}
+    pagination: PaginationOptions = {},
   ): Promise<PaginatedResult<ProductSummary>> {
-    const { page = 1, limit = 20 } = pagination
-    const offset = (page - 1) * limit
+    const { page = 1, limit = 20 } = pagination;
+    const offset = (page - 1) * limit;
 
     // Build where clause
     const where: Prisma.ProductWhereInput = {
       ...(filters.search && {
         OR: [
-          { name: { contains: filters.search, mode: 'insensitive' } },
-          { description: { contains: filters.search, mode: 'insensitive' } },
-          { sku: { contains: filters.search, mode: 'insensitive' } },
-          { partNumber: { contains: filters.search, mode: 'insensitive' } },
-          { tags: { hasSome: [filters.search] } }
-        ]
+          { name: { contains: filters.search, mode: "insensitive" } },
+          { description: { contains: filters.search, mode: "insensitive" } },
+          { sku: { contains: filters.search, mode: "insensitive" } },
+          { partNumber: { contains: filters.search, mode: "insensitive" } },
+          { tags: { hasSome: [filters.search] } },
+        ],
       }),
       ...(filters.category && {
         category: {
-          slug: filters.category
-        }
+          slug: filters.category,
+        },
       }),
       ...(filters.minPrice && { regularPrice: { gte: filters.minPrice } }),
       ...(filters.maxPrice && { regularPrice: { lte: filters.maxPrice } }),
       ...(filters.inStock && { stockQuantity: { gt: 0 } }),
       ...(filters.featured !== undefined && { featured: filters.featured }),
       ...(filters.onSale !== undefined && { onSale: filters.onSale }),
-      ...(filters.newProduct !== undefined && { newProduct: filters.newProduct }),
-      ...(filters.professionalOnly !== undefined && { professionalOnly: filters.professionalOnly }),
-      ...(filters.status && { status: { in: filters.status as ProductStatus[] } }),
-      ...(filters.approvalStatus && { approvalStatus: { in: filters.approvalStatus as ApprovalStatus[] } }),
+      ...(filters.newProduct !== undefined && {
+        newProduct: filters.newProduct,
+      }),
+      ...(filters.professionalOnly !== undefined && {
+        professionalOnly: filters.professionalOnly,
+      }),
+      ...(filters.status && {
+        status: { in: filters.status as ProductStatus[] },
+      }),
+      ...(filters.approvalStatus && {
+        approvalStatus: { in: filters.approvalStatus as ApprovalStatus[] },
+      }),
       ...(filters.brands && {
         vehicleCompatibility: {
           is: {
             makes: {
-              hasSome: filters.brands
-            }
-          }
-        }
+              hasSome: filters.brands,
+            },
+          },
+        },
       }),
     };
 
     // Build order clause
     const orderBy: Prisma.ProductOrderByWithRelationInput = (() => {
       switch (filters.sortBy) {
-        case 'price':
-          return { regularPrice: filters.sortOrder || 'asc' }
-        case 'created':
-          return { createdAt: filters.sortOrder || 'desc' }
-        case 'updated':
-          return { updatedAt: filters.sortOrder || 'desc' }
-        case 'name':
+        case "price":
+          return { regularPrice: filters.sortOrder || "asc" };
+        case "created":
+          return { createdAt: filters.sortOrder || "desc" };
+        case "updated":
+          return { updatedAt: filters.sortOrder || "desc" };
+        case "name":
         default:
-          return { name: filters.sortOrder || 'asc' }
+          return { name: filters.sortOrder || "asc" };
       }
-    })()
+    })();
 
     const [products, total] = await Promise.all([
       prisma.product.findMany({
@@ -107,16 +115,16 @@ export class ProductQueries {
           category: {
             select: {
               name: true,
-              slug: true
-            }
+              slug: true,
+            },
           },
           vehicleCompatibility: true,
           tags: true,
-          createdAt: true
-        }
+          createdAt: true,
+        },
       }),
-      prisma.product.count({ where })
-    ])
+      prisma.product.count({ where }),
+    ]);
 
     return {
       data: products as unknown as ProductSummary[],
@@ -126,9 +134,9 @@ export class ProductQueries {
         pages: Math.ceil(total / limit),
         limit,
         hasNextPage: offset + limit < total,
-        hasPrevPage: page > 1
-      }
-    }
+        hasPrevPage: page > 1,
+      },
+    };
   }
 
   /**
@@ -138,10 +146,10 @@ export class ProductQueries {
     return prisma.product.findMany({
       where: {
         featured: true,
-        status: 'ACTIVE',
-        stockQuantity: { gt: 0 }
+        status: "ACTIVE",
+        stockQuantity: { gt: 0 },
       },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: "desc" },
       take: limit,
       select: {
         id: true,
@@ -151,11 +159,11 @@ export class ProductQueries {
         salePrice: true,
         sku: true,
         category: {
-          select: { name: true, slug: true }
+          select: { name: true, slug: true },
         },
-        tags: true
-      }
-    })
+        tags: true,
+      },
+    });
   }
 
   /**
@@ -166,10 +174,10 @@ export class ProductQueries {
       where: {
         onSale: true,
         salePrice: { not: null },
-        status: 'ACTIVE',
-        stockQuantity: { gt: 0 }
+        status: "ACTIVE",
+        stockQuantity: { gt: 0 },
       },
-      orderBy: { updatedAt: 'desc' },
+      orderBy: { updatedAt: "desc" },
       take: limit,
       select: {
         id: true,
@@ -178,10 +186,10 @@ export class ProductQueries {
         salePrice: true,
         sku: true,
         category: {
-          select: { name: true }
-        }
-      }
-    })
+          select: { name: true },
+        },
+      },
+    });
   }
 
   /**
@@ -190,7 +198,7 @@ export class ProductQueries {
   static async getLowStockProducts(): Promise<InventoryAlert[]> {
     const products = await prisma.product.findMany({
       where: {
-        status: 'ACTIVE',
+        status: "ACTIVE",
         trackInventory: true,
         OR: [
           {
@@ -218,20 +226,23 @@ export class ProductQueries {
         updatedAt: true,
       },
     });
-  
+
     const lowStockProducts = products.filter(
-      (p) => p.stockQuantity === 0 || (p.lowStockThreshold !== null && p.stockQuantity <= p.lowStockThreshold)
+      (p) =>
+        p.stockQuantity === 0 ||
+        (p.lowStockThreshold !== null &&
+          p.stockQuantity <= p.lowStockThreshold),
     );
 
-    return lowStockProducts.map(product => ({
+    return lowStockProducts.map((product) => ({
       productId: product.id,
       productName: product.name,
-      sku: product.sku ?? '',
+      sku: product.sku ?? "",
       currentStock: product.stockQuantity,
       lowStockThreshold: product.lowStockThreshold,
-      status: product.stockQuantity === 0 ? 'out_of_stock' : 'low_stock',
-      lastRestocked: product.updatedAt
-    }))
+      status: product.stockQuantity === 0 ? "out_of_stock" : "low_stock",
+      lastRestocked: product.updatedAt,
+    }));
   }
 }
 
@@ -243,49 +254,61 @@ export class OrderQueries {
    */
   static async getOrders(
     filters: OrderFilters = {},
-    pagination: PaginationOptions = {}
+    pagination: PaginationOptions = {},
   ): Promise<PaginatedResult<OrderSummary>> {
-    const { page = 1, limit = 20 } = pagination
-    const offset = (page - 1) * limit
+    const { page = 1, limit = 20 } = pagination;
+    const offset = (page - 1) * limit;
 
     const where: Prisma.OrderWhereInput = {
       ...(filters.status && { status: { in: filters.status } }),
-      ...(filters.paymentStatus && { paymentStatus: { in: filters.paymentStatus } }),
-      ...(filters.fulfillmentStatus && { fulfillmentStatus: { in: filters.fulfillmentStatus } }),
-      ...(filters.priorityLevel && { priorityLevel: { in: filters.priorityLevel } }),
+      ...(filters.paymentStatus && {
+        paymentStatus: { in: filters.paymentStatus },
+      }),
+      ...(filters.fulfillmentStatus && {
+        fulfillmentStatus: { in: filters.fulfillmentStatus },
+      }),
+      ...(filters.priorityLevel && {
+        priorityLevel: { in: filters.priorityLevel },
+      }),
       ...(filters.customerId && { customerId: filters.customerId }),
-      ...(filters.assignedToStaffId && { assignedToStaffId: filters.assignedToStaffId }),
+      ...(filters.assignedToStaffId && {
+        assignedToStaffId: filters.assignedToStaffId,
+      }),
       ...(filters.dateFrom && { orderDate: { gte: filters.dateFrom } }),
       ...(filters.dateTo && { orderDate: { lte: filters.dateTo } }),
       ...(filters.minAmount && { totalAmount: { gte: filters.minAmount } }),
       ...(filters.maxAmount && { totalAmount: { lte: filters.maxAmount } }),
       ...(filters.search && {
         OR: [
-          { orderNumber: { contains: filters.search, mode: 'insensitive' } },
-          { customer: { 
-            OR: [
-              { firstName: { contains: filters.search, mode: 'insensitive' } },
-              { lastName: { contains: filters.search, mode: 'insensitive' } },
-              { email: { contains: filters.search, mode: 'insensitive' } }
-            ]
-          }}
-        ]
-      })
-    }
+          { orderNumber: { contains: filters.search, mode: "insensitive" } },
+          {
+            customer: {
+              OR: [
+                {
+                  firstName: { contains: filters.search, mode: "insensitive" },
+                },
+                { lastName: { contains: filters.search, mode: "insensitive" } },
+                { email: { contains: filters.search, mode: "insensitive" } },
+              ],
+            },
+          },
+        ],
+      }),
+    };
 
     const orderBy: Prisma.OrderOrderByWithRelationInput = (() => {
       switch (filters.sortBy) {
-        case 'totalAmount':
-          return { totalAmount: filters.sortOrder || 'desc' }
-        case 'status':
-          return { status: filters.sortOrder || 'asc' }
-        case 'updated':
-          return { updatedAt: filters.sortOrder || 'desc' }
-        case 'orderDate':
+        case "totalAmount":
+          return { totalAmount: filters.sortOrder || "desc" };
+        case "status":
+          return { status: filters.sortOrder || "asc" };
+        case "updated":
+          return { updatedAt: filters.sortOrder || "desc" };
+        case "orderDate":
         default:
-          return { orderDate: filters.sortOrder || 'desc' }
+          return { orderDate: filters.sortOrder || "desc" };
       }
-    })()
+    })();
 
     const [orders, total] = await Promise.all([
       prisma.order.findMany({
@@ -307,23 +330,23 @@ export class OrderQueries {
               firstName: true,
               lastName: true,
               email: true,
-              professionalTier: true
-            }
+              professionalTier: true,
+            },
           },
           orderItems: {
             select: {
               quantity: true,
               product: {
                 select: {
-                  name: true
-                }
-              }
-            }
-          }
-        }
+                  name: true,
+                },
+              },
+            },
+          },
+        },
       }),
-      prisma.order.count({ where })
-    ])
+      prisma.order.count({ where }),
+    ]);
 
     return {
       data: orders as unknown as OrderSummary[],
@@ -333,9 +356,9 @@ export class OrderQueries {
         pages: Math.ceil(total / limit),
         limit,
         hasNextPage: offset + limit < total,
-        hasPrevPage: page > 1
-      }
-    }
+        hasPrevPage: page > 1,
+      },
+    };
   }
 
   /**
@@ -343,7 +366,7 @@ export class OrderQueries {
    */
   static async getRecentOrders(limit: number = 10) {
     return prisma.order.findMany({
-      orderBy: { orderDate: 'desc' },
+      orderBy: { orderDate: "desc" },
       take: limit,
       select: {
         id: true,
@@ -354,11 +377,11 @@ export class OrderQueries {
         customer: {
           select: {
             firstName: true,
-            lastName: true
-          }
-        }
-      }
-    })
+            lastName: true,
+          },
+        },
+      },
+    });
   }
 
   /**
@@ -367,35 +390,35 @@ export class OrderQueries {
   static async getOrderStats(dateFrom: Date, dateTo: Date) {
     const [orders, revenue] = await Promise.all([
       prisma.order.groupBy({
-        by: ['status'],
+        by: ["status"],
         where: {
           orderDate: {
             gte: dateFrom,
-            lte: dateTo
-          }
+            lte: dateTo,
+          },
         },
-        _count: { id: true }
+        _count: { id: true },
       }),
       prisma.order.aggregate({
         where: {
           orderDate: {
             gte: dateFrom,
-            lte: dateTo
+            lte: dateTo,
           },
-          paymentStatus: 'PAID'
+          paymentStatus: "PAID",
         },
         _sum: { totalAmount: true },
         _avg: { totalAmount: true },
-        _count: { id: true }
-      })
-    ])
+        _count: { id: true },
+      }),
+    ]);
 
     return {
       ordersByStatus: orders,
       totalRevenue: revenue._sum.totalAmount || 0,
       averageOrderValue: revenue._avg.totalAmount || 0,
-      totalOrders: revenue._count.id
-    }
+      totalOrders: revenue._count.id,
+    };
   }
 }
 
@@ -407,55 +430,61 @@ export class CustomerQueries {
    */
   static async getCustomers(
     filters: CustomerFilters = {},
-    pagination: PaginationOptions = {}
+    pagination: PaginationOptions = {},
   ): Promise<PaginatedResult<CustomerSummary>> {
-    const { page = 1, limit = 20 } = pagination
-    const offset = (page - 1) * limit
+    const { page = 1, limit = 20 } = pagination;
+    const offset = (page - 1) * limit;
 
     const where: Prisma.CustomerWhereInput = {
-      ...(filters.professionalTier && { professionalTier: { in: filters.professionalTier } }),
-      ...(filters.customerType && { customerType: { in: filters.customerType } }),
+      ...(filters.professionalTier && {
+        professionalTier: { in: filters.professionalTier },
+      }),
+      ...(filters.customerType && {
+        customerType: { in: filters.customerType },
+      }),
       ...(filters.riskLevel && { riskLevel: { in: filters.riskLevel } }),
       ...(filters.isActive !== undefined && { isActive: filters.isActive }),
       ...(filters.hasOrders && { totalOrders: { gt: 0 } }),
-      ...(filters.registeredFrom && { createdAt: { gte: filters.registeredFrom } }),
+      ...(filters.registeredFrom && {
+        createdAt: { gte: filters.registeredFrom },
+      }),
       ...(filters.registeredTo && { createdAt: { lte: filters.registeredTo } }),
       ...(filters.minSpent && { totalSpent: { gte: filters.minSpent } }),
       ...(filters.maxSpent && { totalSpent: { lte: filters.maxSpent } }),
       ...(filters.search && {
         OR: [
-          { firstName: { contains: filters.search, mode: 'insensitive' } },
-          { lastName: { contains: filters.search, mode: 'insensitive' } },
-          { email: { contains: filters.search, mode: 'insensitive' } },
+          { firstName: { contains: filters.search, mode: "insensitive" } },
+          { lastName: { contains: filters.search, mode: "insensitive" } },
+          { email: { contains: filters.search, mode: "insensitive" } },
           {
             businessInfo: {
               is: {
                 companyName: {
                   contains: filters.search,
-                  mode: 'insensitive'
-                }
-              }
-            }
+                  mode: "insensitive",
+                },
+              },
+            },
           },
-        ]
-      })
-    }
+        ],
+      }),
+    };
 
     const orderBy: Prisma.CustomerOrderByWithRelationInput = (() => {
       switch (filters.sortBy) {
-        case 'email':
-          return { email: filters.sortOrder || 'asc' }
-        case 'totalSpent':
-          return { totalSpent: filters.sortOrder || 'desc' }
-        case 'created':
-          return { createdAt: filters.sortOrder || 'desc' }
-        case 'lastLogin':
-          return { lastLogin: filters.sortOrder || 'desc' }
-        case 'name':
+        case "email":
+          return { email: filters.sortOrder || "asc" };
+        case "totalSpent":
+          return { totalSpent: filters.sortOrder || "desc" };
+        case "created":
+          return { createdAt: filters.sortOrder || "desc" };
+        case "lastLogin":
+          return { lastLogin: filters.sortOrder || "desc" };
+        case "name":
         default:
-          return { firstName: filters.sortOrder || 'asc' }
+          return { firstName: filters.sortOrder || "asc" };
       }
-    })()
+    })();
 
     const [customers, total] = await Promise.all([
       prisma.customer.findMany({
@@ -475,11 +504,11 @@ export class CustomerQueries {
           lifetimeValue: true,
           isActive: true,
           createdAt: true,
-          lastLogin: true
-        }
+          lastLogin: true,
+        },
       }),
-      prisma.customer.count({ where })
-    ])
+      prisma.customer.count({ where }),
+    ]);
 
     return {
       data: customers as unknown as CustomerSummary[],
@@ -489,9 +518,9 @@ export class CustomerQueries {
         pages: Math.ceil(total / limit),
         limit,
         hasNextPage: offset + limit < total,
-        hasPrevPage: page > 1
-      }
-    }
+        hasPrevPage: page > 1,
+      },
+    };
   }
 
   /**
@@ -502,39 +531,45 @@ export class CustomerQueries {
       prisma.customer.count(),
       prisma.customer.count({ where: { isActive: true } }),
       prisma.customer.groupBy({
-        by: ['professionalTier'],
-        _count: { id: true }
+        by: ["professionalTier"],
+        _count: { id: true },
       }),
       prisma.customer.groupBy({
-        by: ['customerType'],
-        _count: { id: true }
+        by: ["customerType"],
+        _count: { id: true },
       }),
       prisma.customer.count({
         where: {
           createdAt: {
-            gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) // Last 30 days
-          }
-        }
-      })
-    ])
+            gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000), // Last 30 days
+          },
+        },
+      }),
+    ]);
 
     return {
       total,
       active,
-      byTier: byTier.reduce((acc, item) => {
-        if (item.professionalTier) {
-          acc[item.professionalTier] = item._count.id;
-        }
-        return acc;
-      }, {} as Record<string, number>),
-      byType: byType.reduce((acc, item) => {
-        if (item.customerType) {
-          acc[item.customerType] = item._count.id;
-        }
-        return acc;
-      }, {} as Record<string, number>),
-      recentRegistrations: recent
-    }
+      byTier: byTier.reduce(
+        (acc, item) => {
+          if (item.professionalTier) {
+            acc[item.professionalTier] = item._count.id;
+          }
+          return acc;
+        },
+        {} as Record<string, number>,
+      ),
+      byType: byType.reduce(
+        (acc, item) => {
+          if (item.customerType) {
+            acc[item.customerType] = item._count.id;
+          }
+          return acc;
+        },
+        {} as Record<string, number>,
+      ),
+      recentRegistrations: recent,
+    };
   }
 }
 
@@ -545,12 +580,16 @@ export class AnalyticsQueries {
    * Get dashboard statistics
    */
   static async getDashboardStats(): Promise<DashboardStats> {
-    const now = new Date()
-    const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-    const startOfWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
-    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1)
-    const startOfLastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1)
-    const endOfLastMonth = new Date(now.getFullYear(), now.getMonth(), 0)
+    const now = new Date();
+    const startOfToday = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+    );
+    const startOfWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const startOfLastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+    const endOfLastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
 
     const [
       orderStats,
@@ -562,101 +601,106 @@ export class AnalyticsQueries {
       thisMonthRevenue,
       lastMonthRevenue,
       newCustomers,
-      lowStockCount
+      lowStockCount,
     ] = await Promise.all([
       // Order statistics
       prisma.order.groupBy({
-        by: ['status'],
-        _count: { id: true }
+        by: ["status"],
+        _count: { id: true },
       }),
-      
+
       // Revenue statistics
       prisma.order.aggregate({
-        where: { paymentStatus: 'PAID' },
+        where: { paymentStatus: "PAID" },
         _sum: { totalAmount: true },
         _avg: { totalAmount: true },
-        _count: { id: true }
+        _count: { id: true },
       }),
-      
+
       // Customer statistics
       prisma.customer.aggregate({
-        _count: { id: true }
+        _count: { id: true },
       }),
-      
+
       // Product statistics
       prisma.product.aggregate({
-        _count: { id: true }
+        _count: { id: true },
       }),
-      
+
       // Today's orders
       prisma.order.count({
         where: {
-          orderDate: { gte: startOfToday }
-        }
+          orderDate: { gte: startOfToday },
+        },
       }),
-      
+
       // Week's orders for growth calculation
       prisma.order.count({
         where: {
-          orderDate: { gte: startOfWeek }
-        }
+          orderDate: { gte: startOfWeek },
+        },
       }),
-      
+
       // This month's revenue
       prisma.order.aggregate({
         where: {
           orderDate: { gte: startOfMonth },
-          paymentStatus: 'PAID'
+          paymentStatus: "PAID",
         },
-        _sum: { totalAmount: true }
+        _sum: { totalAmount: true },
       }),
-      
+
       // Last month's revenue
       prisma.order.aggregate({
         where: {
           orderDate: { gte: startOfLastMonth, lte: endOfLastMonth },
-          paymentStatus: 'PAID'
+          paymentStatus: "PAID",
         },
-        _sum: { totalAmount: true }
+        _sum: { totalAmount: true },
       }),
-      
+
       // New customers this week
       prisma.customer.count({
         where: {
-          createdAt: { gte: startOfWeek }
-        }
+          createdAt: { gte: startOfWeek },
+        },
       }),
-      
+
       // Low stock products
       prisma.product.count({
         where: {
           stockQuantity: { lte: 5 },
-          status: 'ACTIVE'
-        }
-      })
-    ])
+          status: "ACTIVE",
+        },
+      }),
+    ]);
 
     // Calculate growth percentages
-    const thisMonthRev = thisMonthRevenue._sum.totalAmount || 0
-    const lastMonthRev = lastMonthRevenue._sum.totalAmount || 0
-    const monthGrowth = lastMonthRev > 0 ? ((thisMonthRev - lastMonthRev) / lastMonthRev) * 100 : 0
+    const thisMonthRev = thisMonthRevenue._sum.totalAmount || 0;
+    const lastMonthRev = lastMonthRevenue._sum.totalAmount || 0;
+    const monthGrowth =
+      lastMonthRev > 0
+        ? ((thisMonthRev - lastMonthRev) / lastMonthRev) * 100
+        : 0;
 
     return {
       orders: {
         total: revenueStats._count.id,
-        pending: orderStats.find(s => s.status === 'PENDING')?._count.id || 0,
-        shipped: orderStats.find(s => s.status === 'SHIPPED')?._count.id || 0,
-        delivered: orderStats.find(s => s.status === 'DELIVERED')?._count.id || 0,
-        cancelled: orderStats.find(s => s.status === 'CANCELLED')?._count.id || 0,
+        pending: orderStats.find((s) => s.status === "PENDING")?._count.id || 0,
+        shipped: orderStats.find((s) => s.status === "SHIPPED")?._count.id || 0,
+        delivered:
+          orderStats.find((s) => s.status === "DELIVERED")?._count.id || 0,
+        cancelled:
+          orderStats.find((s) => s.status === "CANCELLED")?._count.id || 0,
         todayCount: todayOrders,
-        weekGrowth: weekOrders > 0 ? (weekOrders / 7) : 0
+        weekGrowth: weekOrders > 0 ? weekOrders / 7 : 0,
       },
       revenue: {
         total: revenueStats._sum.totalAmount || 0,
         thisMonth: thisMonthRev,
         lastMonth: lastMonthRev,
         monthGrowth,
-        avgOrderValue: revenueStats._avg.totalAmount || 0
+        avgOrderValue: revenueStats._avg.totalAmount || 0,
       },
       customers: {
         total: customerStats._count.id,
@@ -664,65 +708,65 @@ export class AnalyticsQueries {
         new: newCustomers,
         returning: customerStats._count.id - newCustomers,
         professional: 0, // Will be calculated separately
-        weekGrowth: newCustomers
+        weekGrowth: newCustomers,
       },
       products: {
         total: productStats._count.id,
         active: productStats._count.id, // Simplified
         lowStock: lowStockCount,
         outOfStock: 0, // Will be calculated separately
-        featured: 0 // Will be calculated separately
+        featured: 0, // Will be calculated separately
       },
       inventory: {
         totalValue: 0, // Will be calculated separately
         lowStockAlerts: lowStockCount,
-        topSellingProducts: [] // Will be calculated separately
-      }
-    }
+        topSellingProducts: [], // Will be calculated separately
+      },
+    };
   }
 
   /**
    * Get sales chart data for the last 30 days
    */
   static async getSalesChartData(days: number = 30): Promise<SalesChartData[]> {
-    const endDate = new Date()
-    const startDate = new Date(endDate.getTime() - days * 24 * 60 * 60 * 1000)
+    const endDate = new Date();
+    const startDate = new Date(endDate.getTime() - days * 24 * 60 * 60 * 1000);
 
     const salesData = await prisma.order.groupBy({
-      by: ['orderDate'],
+      by: ["orderDate"],
       where: {
         orderDate: {
           gte: startDate,
-          lte: endDate
+          lte: endDate,
         },
-        paymentStatus: 'PAID'
+        paymentStatus: "PAID",
       },
       _sum: {
-        totalAmount: true
+        totalAmount: true,
       },
       _count: {
-        id: true
-      }
-    })
+        id: true,
+      },
+    });
 
     // Fill missing dates with zero values
-    const chartData: SalesChartData[] = []
+    const chartData: SalesChartData[] = [];
     for (let i = 0; i < days; i++) {
-      const date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000)
-      const dateStr = date.toISOString().split('T')[0]
-      
-      const dayData = salesData.find(d => 
-        d.orderDate.toISOString().split('T')[0] === dateStr
-      )
+      const date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
+      const dateStr = date.toISOString().split("T")[0];
+
+      const dayData = salesData.find(
+        (d) => d.orderDate.toISOString().split("T")[0] === dateStr,
+      );
 
       chartData.push({
         date: dateStr,
         sales: dayData?._sum.totalAmount || 0,
-        orders: dayData?._count.id || 0
-      })
+        orders: dayData?._count.id || 0,
+      });
     }
 
-    return chartData
+    return chartData;
   }
 
   /**
@@ -742,28 +786,29 @@ export class AnalyticsQueries {
                 priceAtPurchase: true,
                 order: {
                   select: {
-                    paymentStatus: true
-                  }
-                }
+                    paymentStatus: true,
+                  },
+                },
               },
               where: {
                 order: {
-                  paymentStatus: 'PAID'
-                }
-              }
-            }
-          }
-        }
-      }
-    })
+                  paymentStatus: "PAID",
+                },
+              },
+            },
+          },
+        },
+      },
+    });
 
-    return categoryData.map(category => {
-      const allOrderItems = category.products.flatMap(p => p.orderItems)
-      const totalSales = allOrderItems.reduce((sum, item) => 
-        sum + ((item.priceAtPurchase || 0) * item.quantity), 0
-      )
-      const orderCount = allOrderItems.length
-      const avgOrderValue = orderCount > 0 ? totalSales / orderCount : 0
+    return categoryData.map((category) => {
+      const allOrderItems = category.products.flatMap((p) => p.orderItems);
+      const totalSales = allOrderItems.reduce(
+        (sum, item) => sum + (item.priceAtPurchase || 0) * item.quantity,
+        0,
+      );
+      const orderCount = allOrderItems.length;
+      const avgOrderValue = orderCount > 0 ? totalSales / orderCount : 0;
 
       return {
         categoryId: category.id,
@@ -771,9 +816,9 @@ export class AnalyticsQueries {
         productCount: category.products.length,
         totalSales,
         orderCount,
-        avgOrderValue
-      }
-    })
+        avgOrderValue,
+      };
+    });
   }
 
   /**
@@ -781,52 +826,54 @@ export class AnalyticsQueries {
    */
   static async getTopSellingProducts(limit: number = 10) {
     const topProducts = await prisma.orderItem.groupBy({
-      by: ['productId'],
+      by: ["productId"],
       where: {
         order: {
-          paymentStatus: 'PAID'
-        }
+          paymentStatus: "PAID",
+        },
       },
       _sum: {
         quantity: true,
-        priceAtPurchase: true
+        priceAtPurchase: true,
       },
       _count: {
-        id: true
+        id: true,
       },
       orderBy: {
         _sum: {
-          quantity: 'desc'
-        }
+          quantity: "desc",
+        },
       },
-      take: limit
-    })
+      take: limit,
+    });
 
     // Get product details
-    const productIds = topProducts.map(p => p.productId).filter((p): p is string => p !== null);
+    const productIds = topProducts
+      .map((p) => p.productId)
+      .filter((p): p is string => p !== null);
     const products = await prisma.product.findMany({
       where: {
-        id: { in: productIds }
+        id: { in: productIds },
       },
       select: {
         id: true,
         name: true,
         sku: true,
-        regularPrice: true
-      }
-    })
+        regularPrice: true,
+      },
+    });
 
-    return topProducts.map(item => {
-      const product = products.find(p => p.id === item.productId)
+    return topProducts.map((item) => {
+      const product = products.find((p) => p.id === item.productId);
       return {
         id: item.productId,
-        name: product?.name || 'Unknown Product',
-        sku: product?.sku || '',
+        name: product?.name || "Unknown Product",
+        sku: product?.sku || "",
         totalSold: item._sum.quantity || 0,
         revenue: item._sum.priceAtPurchase || 0,
-        orderCount: item._count.id
-      }
-    })
+        orderCount: item._count.id,
+      };
+    });
   }
 }
 
@@ -839,29 +886,29 @@ export class CategoryQueries {
   static async getCategoriesWithHierarchy() {
     return prisma.category.findMany({
       where: { isActive: true },
-      orderBy: { sortOrder: 'asc' },
+      orderBy: { sortOrder: "asc" },
       include: {
         children: {
           where: { isActive: true },
-          orderBy: { sortOrder: 'asc' },
+          orderBy: { sortOrder: "asc" },
           include: {
             _count: {
-              select: { products: true }
-            }
-          }
+              select: { products: true },
+            },
+          },
         },
         parent: {
           select: {
             id: true,
             name: true,
-            slug: true
-          }
+            slug: true,
+          },
         },
         _count: {
-          select: { products: true }
-        }
-      }
-    })
+          select: { products: true },
+        },
+      },
+    });
   }
 
   /**
@@ -871,15 +918,15 @@ export class CategoryQueries {
     return prisma.category.findMany({
       where: {
         isFeatured: true,
-        isActive: true
+        isActive: true,
       },
-      orderBy: { sortOrder: 'asc' },
+      orderBy: { sortOrder: "asc" },
       include: {
         _count: {
-          select: { products: true }
-        }
-      }
-    })
+          select: { products: true },
+        },
+      },
+    });
   }
 }
 
@@ -894,32 +941,34 @@ export class SearchQueries {
       prisma.product.findMany({
         where: {
           OR: [
-            { name: { contains: query, mode: 'insensitive' } },
-            { sku: { contains: query, mode: 'insensitive' } },
-            { partNumber: { contains: query, mode: 'insensitive' } }
-          ]
+            { name: { contains: query, mode: "insensitive" } },
+            { sku: { contains: query, mode: "insensitive" } },
+            { partNumber: { contains: query, mode: "insensitive" } },
+          ],
         },
         take: limit,
         select: {
           id: true,
           name: true,
           sku: true,
-          regularPrice: true
-        }
+          regularPrice: true,
+        },
       }),
-      
+
       prisma.order.findMany({
         where: {
           OR: [
-            { orderNumber: { contains: query, mode: 'insensitive' } },
-            { customer: {
-              OR: [
-                { firstName: { contains: query, mode: 'insensitive' } },
-                { lastName: { contains: query, mode: 'insensitive' } },
-                { email: { contains: query, mode: 'insensitive' } }
-              ]
-            }}
-          ]
+            { orderNumber: { contains: query, mode: "insensitive" } },
+            {
+              customer: {
+                OR: [
+                  { firstName: { contains: query, mode: "insensitive" } },
+                  { lastName: { contains: query, mode: "insensitive" } },
+                  { email: { contains: query, mode: "insensitive" } },
+                ],
+              },
+            },
+          ],
         },
         take: limit,
         select: {
@@ -931,19 +980,19 @@ export class SearchQueries {
             select: {
               firstName: true,
               lastName: true,
-              email: true
-            }
-          }
-        }
+              email: true,
+            },
+          },
+        },
       }),
-      
+
       prisma.customer.findMany({
         where: {
           OR: [
-            { firstName: { contains: query, mode: 'insensitive' } },
-            { lastName: { contains: query, mode: 'insensitive' } },
-            { email: { contains: query, mode: 'insensitive' } }
-          ]
+            { firstName: { contains: query, mode: "insensitive" } },
+            { lastName: { contains: query, mode: "insensitive" } },
+            { email: { contains: query, mode: "insensitive" } },
+          ],
         },
         take: limit,
         select: {
@@ -951,17 +1000,17 @@ export class SearchQueries {
           firstName: true,
           lastName: true,
           email: true,
-          professionalTier: true
-        }
-      })
-    ])
+          professionalTier: true,
+        },
+      }),
+    ]);
 
     return {
       products,
       orders,
       customers,
-      total: products.length + orders.length + customers.length
-    }
+      total: products.length + orders.length + customers.length,
+    };
   }
 }
 
@@ -971,58 +1020,60 @@ export class SearchQueries {
  * Generate unique order number
  */
 export async function generateOrderNumber(): Promise<string> {
-  const year = new Date().getFullYear()
-  const today = new Date().toISOString().slice(0, 10).replace(/-/g, '')
-  
+  const year = new Date().getFullYear();
+  const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+
   // Get the count of orders today
-  const todayStart = new Date()
-  todayStart.setHours(0, 0, 0, 0)
-  
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+
   const todayCount = await prisma.order.count({
     where: {
-      orderDate: { gte: todayStart }
-    }
-  })
-  
-  const sequence = String(todayCount + 1).padStart(4, '0')
-  return `ORD-${year}-${sequence}`
+      orderDate: { gte: todayStart },
+    },
+  });
+
+  const sequence = String(todayCount + 1).padStart(4, "0");
+  return `ORD-${year}-${sequence}`;
 }
 
 /**
  * Calculate customer lifetime value
  */
-export async function calculateCustomerLTV(customerId: string): Promise<number> {
+export async function calculateCustomerLTV(
+  customerId: string,
+): Promise<number> {
   const result = await prisma.order.aggregate({
     where: {
       customerId,
-      paymentStatus: 'PAID'
+      paymentStatus: "PAID",
     },
     _sum: {
-      totalAmount: true
-    }
-  })
-  
-  return result._sum.totalAmount || 0
+      totalAmount: true,
+    },
+  });
+
+  return result._sum.totalAmount || 0;
 }
 
 /**
  * Update product inventory after order
  */
 export async function updateProductInventory(
-  productId: string, 
-  quantityChange: number, 
-  operation: 'add' | 'subtract' = 'subtract'
+  productId: string,
+  quantityChange: number,
+  operation: "add" | "subtract" = "subtract",
 ) {
-  const multiplier = operation === 'add' ? 1 : -1
-  
+  const multiplier = operation === "add" ? 1 : -1;
+
   return prisma.product.update({
     where: { id: productId },
     data: {
       stockQuantity: {
-        increment: quantityChange * multiplier
-      }
-    }
-  })
+        increment: quantityChange * multiplier,
+      },
+    },
+  });
 }
 
 /**
@@ -1032,20 +1083,20 @@ export async function updateCustomerStats(customerId: string) {
   const stats = await prisma.order.aggregate({
     where: {
       customerId,
-      paymentStatus: 'PAID'
+      paymentStatus: "PAID",
     },
     _count: { id: true },
     _sum: { totalAmount: true },
-    _avg: { totalAmount: true }
-  })
-  
+    _avg: { totalAmount: true },
+  });
+
   return prisma.customer.update({
     where: { id: customerId },
     data: {
       totalOrders: stats._count.id,
       totalSpent: stats._sum.totalAmount || 0,
       lifetimeValue: stats._sum.totalAmount || 0,
-      averageOrderValue: stats._avg.totalAmount || 0
-    }
-  })
+      averageOrderValue: stats._avg.totalAmount || 0,
+    },
+  });
 }

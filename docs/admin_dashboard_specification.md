@@ -9,21 +9,21 @@ This document outlines the complete functional requirements for the "ULKS" e-com
 This matrix is based directly on the provided information and serves as the source of truth for all permissions.
 **Hierarchy:** Super Admin (L1) > Admin (L2) > Store Manager (L3) > Editor (L4)
 
-| **Feature/Module** | **Super Admin (L1)** | **Admin (L2)** | **Store Manager (L3)** | **Editor (L4)** |
-|-------------------|----------------------|----------------|------------------------|-----------------|
-| **Dashboard** | Full View | Full View | Sales & Order View | Minimal Stat View |
-| **Products** | CRUD | CRUD | CRUD | Update Only (No Price/Delete) |
-| **Categories** | CRUD | CRUD | CRUD | View Only |
-| **Orders** | CRUD | CRUD | CRUD | No Access |
-| **Customers** | CRUD | CRUD | View/Edit | No Access |
-| **Analytics** | Full View | Full View | View Only | No Access |
-| **Users (Staff)** | CRUD (All) | View & Create (Own Level), CRUD (Lower Levels) | View (Own Level), CRUD (Lower Levels) | View Only (Own Level) |
-| **Settings** | Full Control | Full Control | No Access | No Access |
-| **Homepage Sliders** | Full CRUD | Full CRUD | CRUD | Update Only |
-| **Homepage Banners** | Full CRUD | Full CRUD | CRUD | Update Only |
-| **Logo Management** | Full Control | Full Control | No Access | No Access |
-| **Color Customization** | Full Control | Full Control | View Only | No Access |
-| **Canva Integration** | Full Access | Full Access | Limited Access | No Access |
+| **Feature/Module**      | **Super Admin (L1)** | **Admin (L2)**                                 | **Store Manager (L3)**                | **Editor (L4)**               |
+| ----------------------- | -------------------- | ---------------------------------------------- | ------------------------------------- | ----------------------------- |
+| **Dashboard**           | Full View            | Full View                                      | Sales & Order View                    | Minimal Stat View             |
+| **Products**            | CRUD                 | CRUD                                           | CRUD                                  | Update Only (No Price/Delete) |
+| **Categories**          | CRUD                 | CRUD                                           | CRUD                                  | View Only                     |
+| **Orders**              | CRUD                 | CRUD                                           | CRUD                                  | No Access                     |
+| **Customers**           | CRUD                 | CRUD                                           | View/Edit                             | No Access                     |
+| **Analytics**           | Full View            | Full View                                      | View Only                             | No Access                     |
+| **Users (Staff)**       | CRUD (All)           | View & Create (Own Level), CRUD (Lower Levels) | View (Own Level), CRUD (Lower Levels) | View Only (Own Level)         |
+| **Settings**            | Full Control         | Full Control                                   | No Access                             | No Access                     |
+| **Homepage Sliders**    | Full CRUD            | Full CRUD                                      | CRUD                                  | Update Only                   |
+| **Homepage Banners**    | Full CRUD            | Full CRUD                                      | CRUD                                  | Update Only                   |
+| **Logo Management**     | Full Control         | Full Control                                   | No Access                             | No Access                     |
+| **Color Customization** | Full Control         | Full Control                                   | View Only                             | No Access                     |
+| **Canva Integration**   | Full Access          | Full Access                                    | Limited Access                        | No Access                     |
 
 ## 2. Database Schema (MongoDB with Prisma)
 
@@ -45,6 +45,7 @@ This matrix is based directly on the provided information and serves as the sour
 - **site_customization** - Logo and color scheme settings
 
 ### Key Schema Features:
+
 - MongoDB ObjectId for all primary keys
 - Proper foreign key relationships using ObjectId references
 - JSON storage for complex data (addresses, settings)
@@ -291,6 +292,7 @@ These components are persistent across most pages of the dashboard.
 ## 6. Technical Implementation Notes
 
 ### 6.1. Database Setup
+
 ```javascript
 // Environment configuration
 DATABASE_URL="mongodb://localhost:27017/ulks_ecommerce"

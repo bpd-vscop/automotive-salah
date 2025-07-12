@@ -8,31 +8,24 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf dist .turbo node_modules/.prisma",
-    
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:pull": "prisma db pull",
     "db:studio": "prisma studio",
-    
     "db:setup": "tsx prisma/setup-database.ts",
     "db:setup:fresh": "tsx prisma/setup-database.ts --recreate",
     "db:setup:no-seed": "tsx prisma/setup-database.ts --no-seed",
-    
     "db:seed": "tsx prisma/seed.ts",
     "db:reset-seed": "tsx prisma/reset-and-seed.ts",
     "db:reset": "tsx prisma/empty-db.ts",
-    
     "db:backup": "tsx scripts/backup.ts",
     "db:restore": "tsx scripts/restore.ts",
-    
     "db:migrate-admin": "tsx prisma/migrate-to-admin-schema.ts",
     "db:complete-migration": "tsx prisma/complete-migration-fixed.ts",
     "db:repair-data": "tsx prisma/repair-product-data.ts",
-    
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",

@@ -25,10 +25,7 @@
     "types": ["node"],
     "lib": ["ES2022"]
   },
-  "include": [
-    "src/**/*",
-    "prisma/**/*"
-  ],
+  "include": ["src/**/*", "prisma/**/*"],
   "exclude": [
     "node_modules",
     "dist",

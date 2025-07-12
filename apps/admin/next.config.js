@@ -1,120 +1,38 @@
 ﻿// filepath: automotive-salah/apps/admin/next.config.js
 /** @type {import('next').NextConfig} */
 
-
-
 const nextConfig = {
-
-
-
   experimental: {
-
-
-
     appDir: true,
-
-
-
   },
-
-
 
   images: {
-
-
-
     domains: [
+      "localhost",
 
+      "yourdomain.com",
 
+      "www.key4.com",
 
-      'localhost',
+      "img1.wsimg.com",
 
-
-
-      'yourdomain.com',
-
-
-
-      'www.key4.com',
-
-
-
-      'img1.wsimg.com',
-
-
-
-      'i.postimg.cc'
-
-
-
+      "i.postimg.cc",
     ],
-
-
-
   },
 
-
-
-  basePath: '',
-
-
+  basePath: "",
 
   async redirects() {
-
-
-
     return [
-
-
-
       {
+        source: "/",
 
-
-
-        source: '/',
-
-
-
-        destination: '/login',
-
-
+        destination: "/login",
 
         permanent: false,
-
-
-
       },
-
-
-
-    ]
-
-
-
+    ];
   },
+};
 
-
-
-}
-
-
-
-
-
-
-
-module.exports = nextConfig
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = nextConfig;

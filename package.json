@@ -12,8 +12,9 @@
     "lint": "turbo run lint"
   },
   "devDependencies": {
-    "turbo": "^1.10.0",
     "@types/node": "^20.0.0",
+    "prettier": "^3.6.2",
+    "turbo": "^1.10.0",
     "typescript": "^5.0.0"
   }
 }

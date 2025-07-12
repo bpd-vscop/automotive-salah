@@ -1,88 +1,34 @@
 ﻿// filepath: automotive-salah/apps/web/next.config.js
 /** @type {import('next').NextConfig} */
 
-
-
 const nextConfig = {
-
-
-
   images: {
-
-
-
     domains: [
+      "localhost",
 
+      "yourdomain.com",
 
+      "www.key4.com",
 
-      'localhost',
+      "img1.wsimg.com",
 
+      "i.postimg.cc",
 
+      "i.ebayimg.com",
 
-      'yourdomain.com',
+      "m.media-amazon.com",
 
+      "cdn.freebiesupply.com",
 
+      "auto-sens.com",
 
-      'www.key4.com',
+      "upload.wikimedia.org",
 
-
-
-      'img1.wsimg.com',
-
-
-
-      'i.postimg.cc',
-
-
-
-      'i.ebayimg.com',
-
-
-
-      'm.media-amazon.com',
-
-
-
-      'cdn.freebiesupply.com',
-
-
-
-      'auto-sens.com',
-
-
-
-      'upload.wikimedia.org',
-
-
-
-      'static.vecteezy.com',
-
-
-
+      "static.vecteezy.com",
     ],
-
-
-
   },
 
+  transpilePackages: ["@automotive/ui"],
+};
 
-
-  transpilePackages: ['@automotive/ui'],
-
-
-
-}
-
-
-
-
-
-
-
-module.exports = nextConfig
-
-
-
-
-
-
+module.exports = nextConfig;
